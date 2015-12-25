@@ -1,0 +1,40 @@
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    {% if page.tags %}
+        <meta name="keywords" content="{{ page.tags|join: ',' }}">
+    {% endif %}
+    <meta name="author" content="akademi.help">
+
+    <link rel="stylesheet" href="{{"/css/main.css" | prepend: site.baseurl }}">
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <link href="{{ site.baseurl }}/images/favicon.png" rel="icon" type="image/ico" >
+    <!--[if IE]><link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico"><![endif]-->
+
+    <link rel="canonical" href="{{page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{"/feed.xml" | prepend: site.baseurl | prepend: site.url}}">
+
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="og:site_name" content="https://akademi.help" />
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+</head>
+
+

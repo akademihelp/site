@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Hakkımızda
-permalink: /Hakkimizda/
+permalink: /hakkimizda/
 ---
 
 Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.

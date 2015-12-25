@@ -18,23 +18,28 @@ layout: default
       {{ content }}
   </div>
   <hr>
+  <!--Tags-->
+  <div class="post-content">
+    <ul class="tag-list-inline">
+      <li>
+        Etiketler:
+      </li>
+      {% for tag in page.tags %}
+      <li>
+        <a href="/tag/{{ tag }}">
+          <small>
+            {{ tag }}
+          </small>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <hr>
   <!-- Author -->
   <div class="post-content" itemprop="articleFooter">
     <img src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=40">
     <small class="author">{{ author.display_name }}</small>
-  </div>
-  <!-- Related Posts -->
-  <div class="post-content">
-    <ul>
-      {% for post in site.related_posts limit:3 %}
-      <li>
-        <a href="{{ post.url }}">
-          {{ post.title }}
-        </a>
-        <time>{{ post.date | date: "%B %-d, %Y" }}</time>
-      </li>
-      {% endfor %}
-    </ul>
   </div>
 
 </article>

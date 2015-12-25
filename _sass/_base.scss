@@ -106,7 +106,7 @@ a {
     transition: color 300ms ease-out, border 300ms ease-out;
 
     &:visited {
-        color: lighten(#222, 15%);
+        color: lighten($brand-color, 15%);
 
     }
 

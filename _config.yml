@@ -7,7 +7,6 @@
 
 # Site settings
 title: Akademi Help
-email: info@akademi.help
 description: > # this means to ignore newlines until "baseurl:"
   Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -16,7 +15,7 @@ github_username:  akademihelp
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /:title
 sass:
   style: :compressed
 

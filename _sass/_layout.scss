@@ -34,7 +34,6 @@
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
-
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
@@ -105,9 +104,14 @@
 }
 
 .contact-list,
-.social-media-list {
+.social-media-list,
+.tag-list-inline {
   list-style: none;
   margin-left: 0;
+}
+
+.tag-list-inline > li{
+  display: inline-block;
 }
 
 .footer-col-wrapper {
@@ -199,6 +203,9 @@
   &:hover {
     border-bottom-color: #000;
     color: #000;
+  }
+  &:visited{
+    color: lighten(#222, 10%);
   }
 }
 

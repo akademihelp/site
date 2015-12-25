@@ -6,23 +6,110 @@
 </description>
     <link>http://akademi.help/</link>
     <atom:link href="http://akademi.help/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Dec 2015 16:08:09 +0800</pubDate>
-    <lastBuildDate>Fri, 25 Dec 2015 16:08:09 +0800</lastBuildDate>
+    <pubDate>Fri, 25 Dec 2015 22:54:49 +0200</pubDate>
+    <lastBuildDate>Fri, 25 Dec 2015 22:54:49 +0200</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>Akademi Help&#39;de İlk Gün!</title>
-        <description>&lt;p&gt;Hello folks!&lt;/p&gt;
+        <title>Bulutfon&#39;da kullanılan açık kaynak yazılımlar</title>
+        <description>&lt;p&gt;Bir çok geliştiriciden Bulutfon’un alt yapısıyla ilgili detaylı sorular alıyoruz. Genel olarak alt yapıyı ve kullandığımız yazılımları merak ediyorlar. Hem onların sorularını cevaplamak, hem staj ve iş başvurusunda bulunacak arkadaşlar için genel olarak bu soruya cevap vermeye çalışacağım.&lt;/p&gt;
+
+&lt;h1 id=&quot;programlama-dilleri&quot;&gt;Programlama Dilleri&lt;/h1&gt;
+
+&lt;p&gt;Bulutfon’da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebilirim.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby&lt;/li&gt;
+  &lt;li&gt;Javascript; Server site tarafında kullanmıyoruz.&lt;/li&gt;
+  &lt;li&gt;Python; Bazı workerları Ruby yerine Python ile yazmayı tercih ettik.&lt;/li&gt;
+  &lt;li&gt;C; Freeswitch’e modul yazmak için kullanılıyor.&lt;/li&gt;
+  &lt;li&gt;Lua; Nginx ve Freeswitch LUA script çalıştırabiliyor.&lt;/li&gt;
+  &lt;li&gt;PHP; Sadece composer paketi için kullanılıyor.&lt;/li&gt;
+  &lt;li&gt;C#; Sadece nuget paketi için kullanılıyor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;gelitirme-atlar&quot;&gt;Geliştirme Çatıları&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ruby’de Ruby on Rails&lt;/li&gt;
+  &lt;li&gt;Javascript’de Angular (Yeni başladık)&lt;/li&gt;
+  &lt;li&gt;CSS ve JS’de Bootstrap&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not: Admin temamız lab2023.com tarafından yapılan açık kaynaklı &lt;a href=&quot;http://github.com/lab2023/hierapolis&quot;&gt;Hierapolis&lt;/a&gt; temasıdır.&lt;/p&gt;
+
+&lt;h1 id=&quot;veritabanlar&quot;&gt;Veritabanları&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;İlişkisel&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NoSQL&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Redis&lt;/li&gt;
+  &lt;li&gt;MongoDB&lt;/li&gt;
+  &lt;li&gt;CouchDB&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;mq&quot;&gt;MQ&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RabbitMQ&lt;/li&gt;
+  &lt;li&gt;SideKiq&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;medya-sunucusu&quot;&gt;Medya Sunucusu&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Freeswitch&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;sip&quot;&gt;Sip&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Opensips&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;http-server&quot;&gt;HTTP Server&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Nginx&lt;/li&gt;
+  &lt;li&gt;Unicorn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not: lab2023.com firmasında Unicorn yerine PUMA kullanılmaya başlandı. Çok överlerse taşınabiliriz.&lt;/p&gt;
+
+&lt;h1 id=&quot;letim-sistemi&quot;&gt;İşletim Sistemi&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ubuntu&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not: CTO’muz Volkan genellikle Centos tercih etmesine rağmen Bulutfon’un sunucularının büyük kısmı Ubuntu’da çalışıyor diye biliyorum.&lt;/p&gt;
+
+&lt;h1 id=&quot;dier&quot;&gt;Diğer&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wireshark&lt;/li&gt;
+  &lt;li&gt;Monit&lt;/li&gt;
+  &lt;li&gt;Git&lt;/li&gt;
+  &lt;li&gt;Xen&lt;/li&gt;
+  &lt;li&gt;Wordpress - &lt;a href=&quot;http://bulutfon.com/cms/&quot;&gt;Bilgi bankası&lt;/a&gt; için kullanıldı.&lt;/li&gt;
+  &lt;li&gt;Discourse - &lt;a href=&quot;devforums.bulutfon.com&quot;&gt;Geliştirici Topluluğu&lt;/a&gt; için kullanıldı.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;İlerleyen dönemlerde yeni araçlar eklendikte bu listeyi güncelleyeceğim. Her türlü sorunuzu yorumlar kısmına sorabilirsiniz.&lt;/p&gt;
 </description>
-        <pubDate>Fri, 25 Dec 2015 10:18:06 +0800</pubDate>
-        <link>http://akademi.help/akademide-ilk-gun</link>
-        <guid isPermaLink="true">http://akademi.help/akademide-ilk-gun</guid>
+        <pubDate>Fri, 25 Dec 2015 15:53:06 +0200</pubDate>
+        <link>http://akademi.help/bulutfonda-kullan%C4%B1lan-acik-kaynak-yazilimlar</link>
+        <guid isPermaLink="true">http://akademi.help/bulutfonda-kullan%C4%B1lan-acik-kaynak-yazilimlar</guid>
         
         <category>bulutfon</category>
         
-        <category>lab2023</category>
-        
-        <category>netinternet</category>
+        <category>açık kaynak</category>
         
         
         <category>introduction</category>
@@ -30,12 +117,12 @@
       </item>
     
       <item>
-        <title>Akademi Help&#39;de Bir Diger Gün!</title>
-        <description>&lt;p&gt;Hello other folks!&lt;/p&gt;
+        <title>Akademi Help&#39;de İlk Gün!</title>
+        <description>&lt;p&gt;Hello folks!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 25 Dec 2015 10:18:06 +0800</pubDate>
-        <link>http://akademi.help/akademide-bir-diger-gun</link>
-        <guid isPermaLink="true">http://akademi.help/akademide-bir-diger-gun</guid>
+        <pubDate>Fri, 25 Dec 2015 04:18:06 +0200</pubDate>
+        <link>http://akademi.help/akademide-ilk-gun</link>
+        <guid isPermaLink="true">http://akademi.help/akademide-ilk-gun</guid>
         
         <category>bulutfon</category>
         

@@ -3,45 +3,47 @@
 
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
 
+    <!-- Global stuff -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Robots & indexing -->
+    
     <meta name="robots" content="index,follow">
     <meta name="revisit-after" content="1 days">
+    
 
     <title>Akademi Help</title>
-    <meta name="description" content="Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
+
+    <meta name="description" content="Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
 ">
     
-    <meta name="author" content="akademi.help">
+    <meta name="author" content="http://akademi.help">
 
     <link rel="stylesheet" href="/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
     <link href="/images/favicon.png" rel="icon" type="image/ico" >
     <!--[if IE]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
 
     <link rel="canonical" href="http://akademi.help/">
-    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/feed.xml">
 
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/rss" />
+
+    <!-- Open Graph data -->
     <meta property="og:title" content="Akademi Help" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://akademi.help/" />
-    <meta property="og:description" content="Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
+    <meta property="og:description" content="Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
 " />
+    <meta property="og:image" content="/images/akademi-help.png" />
     <meta property="og:site_name" content="https://akademi.help" />
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Akademi Help">
-    <meta name="twitter:description" content="Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
-">
-
-    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
 </head>
-
-
 
 
   <body>
@@ -84,7 +86,7 @@
       <li>
         <span class="post-meta post-date">25-12-2015</span>
         <h2>
-          <a class="post-link" href="/bulutfonda-kullan%C4%B1lan-acik-kaynak-yazilimlar">Bulutfon'da kullanılan açık kaynak yazılımlar</a>
+          <a class="post-link" href="/bulutfonda-kullanilan-acik-kaynak-yazilimlar">Bulutfon'da kullanılan açık kaynak yazılımlar</a>
         </h2>
       </li>
     
@@ -128,7 +130,7 @@
       <div class="footer-col footer-col-2">
       </div>
       <div class="footer-col footer-col-1 text-right">
-        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
+        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
 </p>
       </div>
     </div>
@@ -136,6 +138,15 @@
   </div>
 
 </footer>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
   </body>

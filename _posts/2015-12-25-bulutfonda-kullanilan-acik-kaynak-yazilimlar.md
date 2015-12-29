@@ -30,6 +30,7 @@ Bulutfon'da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebiliri
 * Ruby'de Ruby on Rails
 * Javascript'de Angular (Yeni başladık)
 * CSS ve JS'de Bootstrap
+* Electron (Atom shell)
 
 Not: Admin temamız lab2023.com tarafından yapılan açık kaynaklı [Hierapolis](http://github.com/lab2023/hierapolis) temasıdır.
 
@@ -80,4 +81,4 @@ Not: CTO'muz Volkan genellikle Centos tercih etmesine rağmen Bulutfon'un sunucu
 * Wordpress - [Bilgi bankası](http://bulutfon.com/cms/) için kullanıldı.
 * Discourse - [Geliştirici Topluluğu](devforums.bulutfon.com) için kullanıldı.
 
-İlerleyen dönemlerde yeni araçlar eklendikte bu listeyi güncelleyeceğim. Her türlü sorunuzu yorumlar kısmına sorabilirsiniz.
+İlerleyen dönemlerde yeni araçlar eklendikçe bu listeyi güncelleyeceğim. Her türlü sorunuzu yorumlar kısmına sorabilirsiniz.

@@ -109,9 +109,34 @@
   list-style: none;
   margin-left: 0;
 }
-
+.social-media-list > li,
 .tag-list-inline > li{
   display: inline-block;
+}
+
+.social-media-list > li{
+  height: 30px;
+  line-height: 17px;
+  vertical-align: middle;
+}
+
+.btn{
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.btn-email{
+  font-size: 12px;
+  background-color: #0E547F;
+  color: #fff;
+  &:visited{
+    color: #fff;
+  }
+}
+
+.btn-sm{
+    padding: 2px 10px;
 }
 
 .footer-col-wrapper {

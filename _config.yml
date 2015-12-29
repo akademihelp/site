@@ -8,7 +8,7 @@
 # Site settings
 title: Akademi Help
 description: > # this means to ignore newlines until "baseurl:"
-  Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımları
+  Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://akademi.help" # the base hostname & protocol for your site
 github_username:  akademihelp
@@ -20,21 +20,22 @@ sass:
   style: :compressed
 
 # Authors Setup
-author_ids: [coskuntekin, onurozgurozkan]
+author_ids: [onurozgurozkan, tayfunoziserkan, coskuntekin, huseyintunc]
 
 authors:
-  coskuntekin:
-    display_name: Coskun Tekin
-    gravatar: 5564589155f579413c909fa1f8ad5d5b
-    email: mail@coskuntekin.com
-    web: http://www.coskuntekin.com/
-    twitter: coskuntekin
-    github: coskuntekin
-    company: bulutfon.com
   onurozgurozkan:
     display_name: Onur Özgür ÖZKAN
     gravatar: 785e3d9660ae3d43f961a6fc608b9695
-    email: onur.ozgur.ozkan@bulutfon.com
-    web: http://www.onurozgurozkan.com
-    twitter: onurozgurozkan
+    company: bulutfon.com
+  tayfunoziserkan:
+    display_name: Tayfun Öziş ERIKAN
+    gravatar: 9c55af85fdee9df09c5fa7dd3d1945b0
+    company: lab2023.com
+  coskuntekin:
+    display_name: Coşkun TEKIN
+    gravatar: 5564589155f579413c909fa1f8ad5d5b
+    company: bulutfon.com
+  huseyintunc:
+    display_name: Hüseyin TUNÇ
+    gravatar: 7eab3defefdd13406fa68ed21d79795e
     company: bulutfon.com

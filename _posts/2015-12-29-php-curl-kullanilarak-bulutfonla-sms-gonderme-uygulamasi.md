@@ -23,7 +23,8 @@ Bir çok arkadaşın Bulutfon Api'yi kullanırken problem yaşadığını görü
 * Curl kullanarak Bulutfon üzerinden sms gönderimi
 
 # Formun Oluşturulması
-```
+
+{% highlight html %}
 <html>
 <head>
   <meta charset="UTF-8">
@@ -54,12 +55,14 @@ Bir çok arkadaşın Bulutfon Api'yi kullanırken problem yaşadığını görü
   </form>
 </body>
 </html>
-```
+{% endhighlight %}
+
 Numaraların girileceği bir textbox alanı ve mesaj için textarena kullanarak sms gönderim formumuzu oluşturuyoruz. Uygulamamızdaki tüm kodlar en basit haliyle yer almaktadır. Dilerseniz css kullanarak görsel açıdan daha iyi bir form oluşturabilirsiniz. 
 Formumuzu oluşturduktan sonra olayın arkaplanına geçip php kodlarımızı yazmaya başlayabiliriz. 
 
 # Sabit Değişkenlerin Tanımlanması
-```
+
+{% highlight php %}
 <?php 
 	/*
 	* Bulutfon Api
@@ -67,11 +70,13 @@ Formumuzu oluşturduktan sonra olayın arkaplanına geçip php kodlarımızı ya
 	*/
 	$token    = ""; // Bulutfon panelinden alcağınız master token
 	$title    = ""; // Bulutfon üzerinden onaylattığınız sms başlığı
-```
+{% endhighlight %}
+
 Başlangıç olarak kullanacağımız sabit değişkenleri tanımlıyoruz. Buradaki '$token' değişkeni Bulutfon'dan alacağımız master token değeridir.  '$title' ise Bulutfon tarafından onaylanmış sms başlığımızdır.
 
 # Formdan Gelen Verilerin Çekilmesi
-```
+
+{% highlight php %}
 if (@$_POST){ // Formun post edilip edilmediğinin kontrolü
   $receivers    = $_POST['receivers']; // Formdan gelen alıcı listesi
   $message      = $_POST['message']; // Formdan gelen mesaj alanı
@@ -81,17 +86,20 @@ if (@$_POST){ // Formun post edilip edilmediğinin kontrolü
     // Curl işlemleri yapılacak.
   }
 }
-```
+{% endhighlight %}
+
 Yukarıda ilk olarak '@$_POST' ifadesi ile formun post edilip edilmediğini kontrol ediyoruz. Daha sonra formdan gönderilen verileri alıp değişkenlere atadık ve boş olup olmadıklarını kontrol ediyoruz. 
+
 # Curl İşlemleri
-```
+
+{% highlight php %}
 $ch = curl_init();  // Curl oturumunu başlattık 
 curl_setopt($ch,CURLOPT_URL,'https://api.bulutfon.com/messages'); // SMS gönderimi için kullanacağımız api adresi
 curl_setopt($ch,CURLOPT_POST, 1); // Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
 curl_setopt($ch,CURLOPT_POSTFIELDS,'title='.$title.'&access_token='.$token.'&receivers='.$receivers.'&content='.$message); //  Burada ise göndereceğimiz parametreleri belirtiyoruz.
 curl_exec($ch); // Curl calıştır.
 curl_close($ch); // Curl oturumunu kapat
-```
+{% endhighlight %}
 
 Son olarak curl ile verileri Bulutfon api adresine post methodu ile gönderiyoruz. 
 Uygulamanın tam kodlarına [buraya][df2] tıklayarak ulaşabilirsiniz.

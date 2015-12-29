@@ -1,0 +1,41 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Akademi Help
+description: > # this means to ignore newlines until "baseurl:"
+  Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://akademi.help" # the base hostname & protocol for your site
+github_username:  akademihelp
+
+# Build settings
+markdown: kramdown
+permalink: /:title
+sass:
+  style: :compressed
+
+# Authors Setup
+author_ids: [onurozgurozkan, tayfunoziserkan, coskuntekin, huseyintunc]
+
+authors:
+  onurozgurozkan:
+    display_name: Onur Özgür ÖZKAN
+    gravatar: 785e3d9660ae3d43f961a6fc608b9695
+    company: bulutfon.com
+  tayfunoziserkan:
+    display_name: Tayfun Öziş ERIKAN
+    gravatar: 9c55af85fdee9df09c5fa7dd3d1945b0
+    company: lab2023.com
+  coskuntekin:
+    display_name: Coşkun TEKIN
+    gravatar: 5564589155f579413c909fa1f8ad5d5b
+    company: bulutfon.com
+  huseyintunc:
+    display_name: Hüseyin TUNÇ
+    gravatar: 7eab3defefdd13406fa68ed21d79795e
+    company: bulutfon.com

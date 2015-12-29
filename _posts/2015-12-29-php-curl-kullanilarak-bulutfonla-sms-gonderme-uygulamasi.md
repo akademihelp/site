@@ -17,6 +17,7 @@ Bir çok arkadaşın Bulutfon Api'yi kullanırken problem yaşadığını görü
 İlk makalemi de [buradaki][df1] arkadaşın problemi üzerinden yola çıkarak Bulutfon Api'yi kullanarak SMS gönderme üzerine yazmaya karar verdim. 
 
 Öncelikle yapacağımız işlemlerden kısaca bahsedelim;
+
 * SMS detaylarını gireceğimiz formun oluşturulması.
 * Sabit değişkenlerin tanımlanması
 * Formdan gelen verilerin çekilmesi

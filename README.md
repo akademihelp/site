@@ -2,7 +2,7 @@
 
 Live preview is [here](http://akademi.help/)
 
-# Akademi Help Blog 'da Nasil Kullanilir?
+# Akademi Help Nasil Kullanilir?
 
 * Post'lar markdown ile yazilabilir.
 * Yazi publish etmek icin `gh-pages` branch'ini kullanabilirsiniz.

@@ -14,7 +14,7 @@ tags:
 
 Bir çok arkadaşın Bulutfon Api'yi kullanırken problem yaşadığını görüyorum. Yeni başlayan arkadaşlar için fazla programlama bilgisi gerektirmeden apiyi en faydalı şekilde kullanma kılavuzu olabilecek bir yazı dizisine başlamak istedim.
 
-İlk makalemi de [buradaki][df1] arkadaşın problemi üzerinden yola çıkarak Bulutfon Api'yi kullanarak SMS gönderme üzerine yazmaya karar verdim.
+İlk makalemi Bulutfon Api'yi kullanarak SMS gönderme üzerine yazmaya karar verdim.
 
 Öncelikle yapacağımız işlemlerden kısaca bahsedelim;
 
@@ -174,5 +174,4 @@ if (@$_POST){ // Formun post edilip edilmediğinin kontrolü
 
 Faydalı olması dileğiyle.
 
-   [df1]: <http://devforums.bulutfon.com/t/php-sms-gonderim-kodum-calismiyor/122/4>
    [df2]: <https://gist.github.com/hsyntnc/4a9334feb1da3030b0f2>

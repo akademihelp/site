@@ -158,11 +158,15 @@ curl_close($curl); // Curl oturumunu kapattık
 $result = json_decode($curl_response, true); // Burada ise bize json olarak gelen sonuçları php nesnesine dönüştürüyoruz
 $extensions = $result['extensions']; 
 ?>
-```
+
+{% endhighlight %}
+
 Artık dahili listesi elimizde ve istediğimiz şekilde kullanabiliriz. 
 
 Şimdi de kullanıcıların e-mail adreslerinden profil resimlerini elde edebilmek için gravatar fonksiyonunu yazıyoruyz.
-```
+
+{% highlight php %}
+
 function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
   $url = 'https://s.gravatar.com/avatar/';
   $url .= md5( strtolower( trim( $email ) ) );
@@ -179,7 +183,9 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 
 # Dahili Listeleme
 Son olarak elimizdeki dahili listesini az önce yazdığımız html koduna entegre ediyoruz. 
-```
+
+{% highlight php %}
+
 <div id="extensions">
 <?php
     foreach($extensions as $extension){

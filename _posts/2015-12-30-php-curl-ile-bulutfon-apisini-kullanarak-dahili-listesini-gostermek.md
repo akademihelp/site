@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Bulutfon API'sini kullanarak dahili listesini göstermek"
+title:  "Php, Curl ile Bulutfon API'sini kullanarak dahili listesini göstermek"
 date:   2015-12-30 22:53:06 +0800
 author: huseyintunc
 categories:

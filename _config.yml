@@ -14,7 +14,9 @@ url: "http://akademi.help" # the base hostname & protocol for your site
 github_username:  akademihelp
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
 permalink: /:title
 sass:
   style: :compressed

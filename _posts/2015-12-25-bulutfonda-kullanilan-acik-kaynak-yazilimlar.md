@@ -79,6 +79,6 @@ Not: CTO'muz Volkan genellikle Centos tercih etmesine rağmen Bulutfon'un sunucu
 * Git
 * Xen
 * Wordpress - [Bilgi bankası](http://bulutfon.com/cms/) için kullanıldı.
-* Discourse - [Geliştirici Topluluğu](devforums.bulutfon.com) için kullanıldı.
+* Discourse - [Geliştirici Topluluğu](http://devforums.bulutfon.com) için kullanıldı.
 
 İlerleyen dönemlerde yeni araçlar eklendikçe bu listeyi güncelleyeceğim. Her türlü sorunuzu yorumlar kısmına sorabilirsiniz.

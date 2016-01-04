@@ -19,6 +19,7 @@ Merhaba arkadaşlar,
 Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burda bitirmek istiyorum. 
 
 Bu makalede yapacağımız işlemler;
+
 * HTML yapısının oluşturulması
 * CSS ile şekillendirilmesi (Bu kısımda detaya girmeyeceğim, proje örnek kodlarında inceleyebilirsiniz)
 * PHP ile gelen faxların çekilmesi
@@ -28,9 +29,6 @@ Bu makalede yapacağımız işlemler;
 
 Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak ([demo][df1]);
 ![](http://i.imgur.com/pW0GFhs.png)
-
-
-
 
 # HTML Yapısının Oluşturulması
 ```

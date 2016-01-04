@@ -100,8 +100,10 @@ Bulutfon Api'deki gelen faxlar servisine tokenımızı post ederek gelen faxlar�
 
 
 # Gelen faxların listelenmesi
+
 Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTML kodumuzdaki <ul> (yani liste) alanına aşağıdaki kodlarımızı yazıyoruz.
-```
+
+```html
 <ul class="list">
     <?php
     foreach($faxes as $fax){
@@ -124,9 +126,11 @@ Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTM
     <?php } ?>
 </ul>
 ```
+
 Birazdan yapacağımız indirme işlemi için link veriyoruz. Ama öncesinde filtreleme işlemi için kullanacağımız list.js kütüphanesinden bahsederek kısa bir ara verelim. 
 List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme kütüphanesidir. Bu kütüphane ile filtrelenmesini istediğiniz alanların sınıflarını girerek filtreleme işlemi yapabilirsiniz. List.js kütüphanesini indirip uygulamamıza dahil ettikten sonra uygulamamıza entegre ediyoruz.
-```
+
+```html
 <script type="text/javascript" src="js/list.js"></script>
 <script type="text/javascript">
     var options = {
@@ -137,8 +141,10 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 ```
 
 # İndirme işlemi
+
 İndirme işlemi için download linkimizden gelen fax idsini alarak bulutfon api indirme servisine post ediyoruz. Ayrıca güvenlik açısından tokenımızı url'ye eklemek yerine hader ile gönderiyoruz. 
-```
+
+```php
 if (isset($_GET['download'])){
     $url    = 'https://api.bulutfon.com/incoming-faxes/'.$_GET['download'].'?';
     header('Location: '.$url . http_build_query(array(

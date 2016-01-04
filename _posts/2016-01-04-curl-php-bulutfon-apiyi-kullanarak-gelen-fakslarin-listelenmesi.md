@@ -14,10 +14,9 @@ tags:
   - list.js
 ---
 
-Merhaba arkadaşlar,
-Öncelikle hepinizin yeni yılını kutlarım. Yeni yılın ilk yazısıyla tekrar birlikteyiz. Yazı dizimizin bu bölümünde gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamamamsı için CSS kodlarını açıklamayıp projenin tamamını paylaşacağım. Ayrıca bu uygulamamızda google fonts ve download iconu için iconfont kullanacağız. 
+Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açıklamayıp projenin tamamını paylaşacağım. Ayrıca bu uygulamamızda **google fonts** ve download iconu için **iconfont** kullanacağız. 
 
-Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burda bitirmek istiyorum. 
+Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burada bitirmek istiyorum. 
 
 Bu makalede yapacağımız işlemler;
 
@@ -32,7 +31,8 @@ Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak ([demo]
 ![](https://camo.githubusercontent.com/bf32e206e99eb453db8044f60c6039848a3cc752/687474703a2f2f692e696d6775722e636f6d2f705730474668732e706e67)
 
 # HTML Yapısının Oluşturulması
-```
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,13 +73,16 @@ Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak ([demo]
 </body>
 </html>
 ```
+
 Uygulamalarımız geliştikçe, yazdığımız kodlar da daha karmaşıklaşıyor. Bu uygulamadan itibaren css ve javascript kodlarını html dosyasında tutmak yerine ayrıdosyalar kullanacağız. Bu sayede uygulamamız daha düzenli bir şekilde geliştirilmiş olacak.
 
 # CSS ile uygılamanın şekillendirilmesi
+
 CSS kodları çok uzun olduğu için burada uzun uzun anlatmak ve paylaşmak yerine proje ile birlikte paylaşma kararı aldım. Ayrıca kodları anlamakta zorluk çekmemeniz için yorum satırlarıyla açıklamaya çalıştım. 
 
 # PHP ile gelen faxların çekilmesi
-```
+
+```php
 <?php
 /*
  * Bulutfon Api

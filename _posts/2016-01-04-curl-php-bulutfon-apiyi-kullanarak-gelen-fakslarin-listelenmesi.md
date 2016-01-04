@@ -11,6 +11,7 @@ tags:
   - api
   - curl
   - gelen faxlar
+  - list.js
 ---
 
 Merhaba arkadaşlar,
@@ -98,10 +99,9 @@ $faxes      = $result['incoming_faxes']; // Gelen faxları değişkene atıyoruz
 ```
 Bulutfon Api'deki gelen faxlar servisine tokenımızı post ederek gelen faxları çekiyoruz. 
 
-
 # Gelen faxların listelenmesi
 
-Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTML kodumuzdaki <ul> (yani liste) alanına aşağıdaki kodlarımızı yazıyoruz.
+Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTML kodumuzdaki `<ul>` (yani liste) alanına aşağıdaki kodlarımızı yazıyoruz.
 
 ```html
 <ul class="list">

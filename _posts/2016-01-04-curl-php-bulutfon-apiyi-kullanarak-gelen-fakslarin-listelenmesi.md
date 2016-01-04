@@ -29,7 +29,7 @@ Bu makalede yapacağımız işlemler;
 * İndirme işlemi
 
 Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak ([demo][df1]);
-![](http://i.imgur.com/pW0GFhs.png)
+![](https://camo.githubusercontent.com/bf32e206e99eb453db8044f60c6039848a3cc752/687474703a2f2f692e696d6775722e636f6d2f705730474668732e706e67)
 
 # HTML Yapısının Oluşturulması
 ```

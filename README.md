@@ -1,5 +1,7 @@
 # Akademi Help Blog
 
+Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+
 Live preview is [here](http://akademi.help/)
 
 # Akademi Help Nasil Kullanilir?

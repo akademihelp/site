@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Curl, Php, Bulutfon API'yi kullanarak gelen faksların listelenmesi"
+title:  "Php, Curl, Bulutfon API'yi kullanarak gelen faksların listelenmesi"
 date:   2016-01-04 22:53:06 +0800
 author: huseyintunc
 categories:

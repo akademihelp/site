@@ -18,6 +18,8 @@ markdown: kramdown
 permalink: /:title
 sass:
   style: :compressed
+exclude: [node_modules, Gruntfile.js, package.json, ‘css’, ‘_scss’]
+keep_files: ['_site/css']
 
 # Authors Setup
 author_ids: [onurozgurozkan, tayfunoziserkan, coskuntekin, huseyintunc]

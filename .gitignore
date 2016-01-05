@@ -2,5 +2,5 @@ _site
 .sass-cache
 .jekyll-metadata
 .idea
-ngrok
 /feed.xml
+node_modules

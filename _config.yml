@@ -20,7 +20,7 @@ redcarpet:
 permalink: /:title
 sass:
   style: :compressed
-exclude: [node_modules, Gruntfile.js, package.json, ‘css’, ‘_scss’]
+exclude: [node_modules, Gruntfile.js, package.json, ‘_sass’]
 keep_files: ['_site/css']
 
 # Authors Setup

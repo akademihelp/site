@@ -13,6 +13,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://akademi.help" # the base hostname & protocol for your site
 github_username:  akademihelp
 
+
 # Build settings
 markdown: redcarpet
 redcarpet:
@@ -20,7 +21,7 @@ redcarpet:
 permalink: /:title
 sass:
   style: :compressed
-exclude: ['node_modules','css', '_scss']
+exclude: ['node_modules', 'css', '_scss']
 keep_files: ['_site/css']
 
 # Authors Setup

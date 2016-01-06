@@ -6,8 +6,8 @@
 </description>
     <link>http://akademi.help/</link>
     <atom:link href="http://akademi.help/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Jan 2016 14:26:44 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Jan 2016 14:26:44 +0800</lastBuildDate>
+    <pubDate>Wed, 06 Jan 2016 14:45:47 +0800</pubDate>
+    <lastBuildDate>Wed, 06 Jan 2016 14:45:47 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -170,7 +170,7 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
     
       <item>
         <title>Php, Curl ile Bulutfon API&#39;sini kullanarak dahili listesini göstermek</title>
-        <description>&lt;p&gt;Merhaba, bu yazımızda Bulutfon Api&amp;#39;yi kullanarak dahili listesini nasıl çekebileceğinizi anlatmaya çalışacağım. &lt;/p&gt;
+        <description>&lt;p&gt;Merhaba, bu yazımızda Bulutfon Api&amp;#39;yi kullanarak dahili listesini nasıl çekebileceğinizi anlatmaya çalışacağım.&lt;/p&gt;
 
 &lt;p&gt;Bu makaledeki kodları anlayabilmeniz için temel seviyede html, css ve php bilginizin olması gerektiğini hatırlatarak başlayalım.&lt;/p&gt;
 
@@ -179,14 +179,14 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 &lt;ul&gt;
 &lt;li&gt;HTML yapısının oluşturulması&lt;/li&gt;
 &lt;li&gt;CSS ile uygulamamızı görsel açıdan daha iyi bir hale getirmek&lt;/li&gt;
-&lt;li&gt;PHP ile dahili listesini çekmek &lt;/li&gt;
+&lt;li&gt;PHP ile dahili listesini çekmek&lt;/li&gt;
 &lt;li&gt;Dahili listesini hazırladığımız tasarımla listelemek&lt;/li&gt;
 &lt;li&gt;Kullanıcı profil resmi için gravatar fonksiyonu yazmak&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Bu işlemlerin sonucunda elde edeceğimiz sonuç;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/lxT4NSo.png&quot; alt=&quot;drawing&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/bulutfon-dahili-listesi.png&quot; alt=&quot;Bulutfon dahili listesi&quot;&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;html-yap-s-n-n-olu-turulmas&quot;&gt;HTML Yapısının Oluşturulması&lt;/h1&gt;
 
@@ -199,7 +199,7 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Sayfa Başlığı --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;DAHİLİ LİSTESİ&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Dahili Listesi --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;extensions&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;extensions&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Dahili --&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;extension&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ornek.jpg&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -286,8 +286,7 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
     &lt;span class=&quot;nc&quot;&gt;.extension&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.name&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.offline&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#c66747&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Bu kısımda uygulamamızın görsel açıdan daha iyi görünmesi için gereken CSS kodlarını yazdık. Artık olayı biraz hareketlendirip dahili listesini çekebiliriz. Öncelikle dahili listesini çekip bir değişkene atalım;&lt;/p&gt;
 
@@ -306,10 +305,10 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 &lt;span class=&quot;nv&quot;&gt;$curl_response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Gelen sonucu bir değişkene aktardık.
 &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;curl_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Curl oturumunu kapattık
 &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;json_decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Burada ise bize json olarak gelen sonuçları php nesnesine dönüştürüyoruz
-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$extensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;extensions&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; 
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$extensions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;extensions&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Artık dahili listesi elimizde ve istediğimiz şekilde kullanabiliriz. &lt;/p&gt;
+&lt;p&gt;Artık dahili listesi elimizde ve istediğimiz şekilde kullanabiliriz.&lt;/p&gt;
 
 &lt;p&gt;Şimdi de kullanıcıların e-mail adreslerinden profil resimlerini elde edebilmek için gravatar fonksiyonunu yazıyoruyz.&lt;/p&gt;
 
@@ -327,7 +326,7 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 
 &lt;h1 id=&quot;dahili-listeleme&quot;&gt;Dahili Listeleme&lt;/h1&gt;
 
-&lt;p&gt;Son olarak elimizdeki dahili listesini az önce yazdığımız html koduna entegre ediyoruz. &lt;/p&gt;
+&lt;p&gt;Son olarak elimizdeki dahili listesini az önce yazdığımız html koduna entegre ediyoruz.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;extensions&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;

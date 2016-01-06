@@ -13,7 +13,7 @@ tags:
   - php
 ---
 
-Merhaba, bu yazımızda Bulutfon Api'yi kullanarak dahili listesini nasıl çekebileceğinizi anlatmaya çalışacağım. 
+Merhaba, bu yazımızda Bulutfon Api'yi kullanarak dahili listesini nasıl çekebileceğinizi anlatmaya çalışacağım.
 
 Bu makaledeki kodları anlayabilmeniz için temel seviyede html, css ve php bilginizin olması gerektiğini hatırlatarak başlayalım.
 
@@ -21,13 +21,14 @@ Yapacağımız işlemleri listeleyecek olursak;
 
 * HTML yapısının oluşturulması
 * CSS ile uygulamamızı görsel açıdan daha iyi bir hale getirmek
-* PHP ile dahili listesini çekmek 
+* PHP ile dahili listesini çekmek
 * Dahili listesini hazırladığımız tasarımla listelemek
 * Kullanıcı profil resmi için gravatar fonksiyonu yazmak
 
 Bu işlemlerin sonucunda elde edeceğimiz sonuç;
 
-![drawing](http://i.imgur.com/lxT4NSo.png)
+![Bulutfon dahili listesi](/images/bulutfon-dahili-listesi.png)
+
 
 # HTML Yapısının Oluşturulması
 
@@ -42,7 +43,7 @@ Bu işlemlerin sonucunda elde edeceğimiz sonuç;
 <!-- Sayfa Başlığı -->
 <div class="title">DAHİLİ LİSTESİ</div>
 <!-- Dahili Listesi -->
-<div id="extensions"> 
+<div id="extensions">
     <!-- Dahili -->
     <div class="extension">
         <img src="ornek.jpg">
@@ -134,7 +135,7 @@ Yukarıda kullanacağımız html yapısına uygun kodları yazmış bulunuyoruz.
       background: #c66747;
     }
   </style>
-  
+
 {% endhighlight %}
 
 Bu kısımda uygulamamızın görsel açıdan daha iyi görünmesi için gereken CSS kodlarını yazdık. Artık olayı biraz hareketlendirip dahili listesini çekebiliriz. Öncelikle dahili listesini çekip bir değişkene atalım;
@@ -156,12 +157,12 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 $curl_response = curl_exec($curl); // Gelen sonucu bir değişkene aktardık.
 curl_close($curl); // Curl oturumunu kapattık
 $result = json_decode($curl_response, true); // Burada ise bize json olarak gelen sonuçları php nesnesine dönüştürüyoruz
-$extensions = $result['extensions']; 
+$extensions = $result['extensions'];
 ?>
 
 {% endhighlight %}
 
-Artık dahili listesi elimizde ve istediğimiz şekilde kullanabiliriz. 
+Artık dahili listesi elimizde ve istediğimiz şekilde kullanabiliriz.
 
 Şimdi de kullanıcıların e-mail adreslerinden profil resimlerini elde edebilmek için gravatar fonksiyonunu yazıyoruyz.
 
@@ -182,7 +183,7 @@ function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts
 {% endhighlight %}
 
 # Dahili Listeleme
-Son olarak elimizdeki dahili listesini az önce yazdığımız html koduna entegre ediyoruz. 
+Son olarak elimizdeki dahili listesini az önce yazdığımız html koduna entegre ediyoruz.
 
 {% highlight php %}
 

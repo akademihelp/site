@@ -104,7 +104,7 @@ a {
     color: $brand-color;
     text-decoration: none;
     &:hover {
-      color: darken($brand-color,10%);
+      color: darken($text-color,10%);
       transition: color, 300ms, ease-in;
     }
 }

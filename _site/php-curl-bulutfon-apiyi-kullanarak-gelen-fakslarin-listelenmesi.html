@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+
+    <!-- Global stuff -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Robots & indexing -->
+    
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+
+    <title>Php, Curl, Bulutfon API'yi kullanarak gelen faksların listelenmesi</title>
+
+    <meta name="description" content="Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açık...">
+    
+        <meta name="keywords" content="bulutfon,fax,api,curl,gelen faxlar,list.js">
+    
+    <meta name="author" content="http://akademi.help">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <link href="/images/favicon.png" rel="icon" type="image/ico" >
+    <!--[if IE]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
+
+    <link rel="canonical" href="http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-gelen-fakslarin-listelenmesi">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/rss" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Php, Curl, Bulutfon API'yi kullanarak gelen faksların listelenmesi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-gelen-fakslarin-listelenmesi" />
+    <meta property="og:description" content="Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açık..." />
+    <meta property="og:image" content="/images/akademi-help.png" />
+    <meta property="og:site_name" content="https://akademi.help" />
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <strong>
+        Akademi Help
+      </strong>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/hakkimizda">Hakkımızda</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Php, Curl, Bulutfon API'yi kullanarak gelen faksların listelenmesi</h1>
+    <p class="post-meta"><time datetime="2016-01-04T22:53:06+08:00" itemprop="datePublished">04-01-2016</time> | <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">huseyintunc</span></span></p>
+  </header>
+  <!-- Author -->
+  
+  <!-- Post -->
+  <div class="post-content" itemprop="articleBody">
+      <p>Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açıklamayıp projenin tamamını paylaşacağım. Ayrıca bu uygulamamızda <strong>google fonts</strong> ve download iconu için <strong>iconfont</strong> kullanacağız. </p>
+
+<p>Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burada bitirmek istiyorum. </p>
+
+<p>Bu makalede yapacağımız işlemler;</p>
+
+<ul>
+<li>HTML yapısının oluşturulması</li>
+<li>CSS ile şekillendirilmesi (Bu kısımda detaya girmeyeceğim, proje örnek kodlarında inceleyebilirsiniz)</li>
+<li>PHP ile gelen faxların çekilmesi</li>
+<li>Faxların listelenmesi</li>
+<li>Filtreleme için list.js kullanımı</li>
+<li>İndirme işlemi</li>
+</ul>
+
+<p>Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak (<a href="http://tunc.tk/Bulutfon/incomingFaxes/index.php">demo</a>);
+<img src="https://camo.githubusercontent.com/bf32e206e99eb453db8044f60c6039848a3cc752/687474703a2f2f692e696d6775722e636f6d2f705730474668732e706e67" alt=""></p>
+
+<h1 id="html-yap-s-n-n-olu-turulmas">HTML Yapısının Oluşturulması</h1>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Gelen Faxlar<span class="nt">&lt;/title&gt;</span>
+    <span class="c">&lt;!-- Google Fonts --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700,600,300,200&amp;subset=latin,latin-ext'</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Main CSS --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/main.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Font CSS --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/fonts.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="c">&lt;!-- Container --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Arama Textbox--&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"search"</span> <span class="na">placeholder=</span><span class="s">"Filtrele"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Başlıklar --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"title"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span>Gönderen<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span>Alan<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span>Tarih<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span>İşlem<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- Liste Başlangıç --&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span>905068118260<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"receiver"</span><span class="nt">&gt;</span>905068118260<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"time"</span><span class="nt">&gt;</span>01.01.2016 - 23:30<span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"details"</span><span class="nt">&gt;&lt;span&gt;</span>DETAY<span class="nt">&lt;/span&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="c">&lt;!-- Liste Bitiş --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- Container Bitiş --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<p>Uygulamalarımız geliştikçe, yazdığımız kodlar da daha karmaşıklaşıyor. Bu uygulamadan itibaren css ve javascript kodlarını html dosyasında tutmak yerine ayrıdosyalar kullanacağız. Bu sayede uygulamamız daha düzenli bir şekilde geliştirilmiş olacak.</p>
+
+<h1 id="css-ile-uyg-laman-n-ekillendirilmesi">CSS ile uygılamanın şekillendirilmesi</h1>
+
+<p>CSS kodları çok uzun olduğu için burada uzun uzun anlatmak ve paylaşmak yerine proje ile birlikte paylaşma kararı aldım. Ayrıca kodları anlamakta zorluk çekmemeniz için yorum satırlarıyla açıklamaya çalıştım. </p>
+
+<h1 id="php-ile-gelen-faxlar-n-ekilmesi">PHP ile gelen faxların çekilmesi</h1>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cm">/*
+ * Bulutfon Api
+ * Gelen Faxlar
+ */</span>
+<span class="nv">$token</span>      <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
+</span><span class="nv">$url</span>        <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/incoming-faxes?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
+<span class="nv">$curl</span>       <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nv">$curl_response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$result</span>     <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// JSON olarak gelen verileri PHP dizisine çeviriyoruz.
+</span><span class="nv">$faxes</span>      <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'incoming_faxes'</span><span class="p">];</span> <span class="c1">// Gelen faxları değişkene atıyoruz.
+</span><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Bulutfon Api&#39;deki gelen faxlar servisine tokenımızı post ederek gelen faxları çekiyoruz. </p>
+
+<h1 id="gelen-faxlar-n-listelenmesi">Gelen faxların listelenmesi</h1>
+
+<p>Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTML kodumuzdaki <code>&lt;ul&gt;</code> (yani liste) alanına aşağıdaki kodlarımızı yazıyoruz.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
+    <span class="cp">&lt;?php
+    foreach($faxes as $fax){
+    ?&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sender"</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $fax['sender']; ?&gt;</span><span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- Gönderen --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"receiver"</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $fax['receiver']; ?&gt;</span><span class="nt">&lt;/div&gt;</span> <span class="c">&lt;!-- Alıcı --&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"time"</span><span class="nt">&gt;</span>
+            <span class="cp">&lt;?php
+            $yeni   = strtotime($fax['created_at']);
+            $son    = date('Y-m-d H:i:s', $yeni); // Burada bulutfondan datetime formatında gelen tarih bilgisini yeniden formatlıyoruz.
+            echo $son;
+            ?&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"details"</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- İndirme Linki --&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"button"</span> <span class="na">href=</span><span class="s">"?download=&lt;?php echo $fax['uuid']; ?&gt;"</span><span class="nt">&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="cp">&lt;?php } ?&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div>
+<p>Birazdan yapacağımız indirme işlemi için link veriyoruz. Ama öncesinde filtreleme işlemi için kullanacağımız list.js kütüphanesinden bahsederek kısa bir ara verelim. 
+List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme kütüphanesidir. Bu kütüphane ile filtrelenmesini istediğiniz alanların sınıflarını girerek filtreleme işlemi yapabilirsiniz. List.js kütüphanesini indirip uygulamamıza dahil ettikten sonra uygulamamıza entegre ediyoruz.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"js/list.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+    <span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">valueNames</span><span class="p">:</span> <span class="p">[</span> <span class="s1">'receiver'</span><span class="p">,</span> <span class="s1">'sender'</span><span class="p">,</span> <span class="s1">'time'</span> <span class="p">]</span> <span class="c1">// Filtrelenmesini istediğimiz alanlar</span>
+    <span class="p">};</span>
+    <span class="kd">var</span> <span class="nx">faxlar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">List</span><span class="p">(</span><span class="s1">'container'</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span> <span class="c1">// Buradaki container kapsayıcı div'in id'sidir.</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<h1 id="ndirme-i-lemi">İndirme işlemi</h1>
+
+<p>İndirme işlemi için download linkimizden gelen fax idsini alarak bulutfon api indirme servisine post ediyoruz. Ayrıca güvenlik açısından tokenımızı url&#39;ye eklemek yerine hader ile gönderiyoruz. </p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">if (isset($_GET['download'])){
+    $url    = 'https://api.bulutfon.com/incoming-faxes/'.$_GET['download'].'?';
+    header('Location: '.$url . http_build_query(array(
+            'access_token' =&gt; $token,
+        )));
+}
+</code></pre></div>
+<p>Uygulamamızın sonuna gelmiş bulunuyoruz. Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/incomingFaxes">buraya</a> tıklayarak inceleyebilirsiniz. Çalışan halini görüntülemek için de <a href="http://tunc.tk/Bulutfon/incomingFaxes/index.php">buraya</a> tıklayabilirsiniz.</p>
+
+<p>Faydalı olması dileğiyle.
+İyi çalışmalar.</p>
+
+  </div>
+  <hr>
+  <!--Tags List-->
+  <div class="post-content">
+    <ul class="tag-list-inline">
+      <li>
+        Etiketler:
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#bulutfon">
+          bulutfon
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#fax">
+          fax
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#api">
+          api
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#curl">
+          curl
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#gelen-faxlar">
+          gelen faxlar
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag/#list-js">
+          list.js
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr>
+  <!--Social Icons-->
+  <div class="post-content">
+    <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
+      <li>
+        <div class="fb-share-button" data-href="" data-layout="button"></div>
+      </li>
+      <li>
+        <a href="" class="twitter-share-button"{count} data-via="akademi_help">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: tr_TR</script>
+        <script type="IN/Share"></script>
+      </li>
+      <li>
+        <a target="_blank" class="btn btn-email btn-sm" href="mailto:arkadasinizin@epostaadresi.com?subject=Php, Curl, Bulutfon API'yi kullanarak gelen faksların listelenmesi" title="Email ile paylaşabilirsiniz">
+          e-posta
+        </a>
+      </li>
+      <li>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
+          {lang: 'tr'}
+        </script>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-annotation="none"></div>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <!-- Author -->
+  <div class="post-content" itemprop="articleFooter">
+    <img src="http://www.gravatar.com/avatar/7eab3defefdd13406fa68ed21d79795e?s=40">
+    <small class="author">Hüseyin TUNÇ</small> -
+    <small class="author">https://github.com/hsyntnc</small>
+  </div>
+  <hr>
+  <!-- Disqus -->
+  <div class="post-content">
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    var disqus_config = function () {
+    this.page.url = 'http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-gelen-fakslarin-listelenmesi'; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-gelen-fakslarin-listelenmesi'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//akademihelp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <ul class="contact-list">
+          <li>Akademi Help Iletisim Bilgileri</li>
+          
+          <li>
+            Github:
+            <a href="https://github.com/akademihelp">
+              akademihelp
+            </a>
+          </li>
+          
+          <li>
+            Bizi
+            <a href="/feed.xml"> RSS ile </a>
+            takip edebilirsiniz.
+          </li>
+          <li>
+            <a target="_blank" href="https://www.bulutfon.com/">
+              <small>
+                bulutfon.com
+              </small>
+            </a>|
+            <a target="_blank" href="http://www.lab2023.com/">
+              <small>
+                lab2023.com
+              </small>
+              </a>|
+            <a target="_blank" href="https://www.netinternet.com.tr">
+              <small>
+                netinternet.com.tr
+              </small>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+      </div>
+      <div class="footer-col footer-col-1 text-right">
+        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71823740-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>

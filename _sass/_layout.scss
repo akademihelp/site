@@ -114,6 +114,11 @@
   display: inline-block;
 }
 
+.tag-list-inline > li{
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 .social-media-list > li{
   height: 30px;
   line-height: 17px;
@@ -213,9 +218,21 @@
   color: #ccc;
 }
 
+.post-tag{
+  margin-right: 5px;
+}
+
+.post-badge{
+  padding: 2px 4px;
+  background-color: #03A9F4;
+  border: 1px solid darken(#03A9F4, 5%);
+  border-radius: 2px;
+  font-size: 12px;
+  color: #fff;
+}
+
 @media (min-width: 34rem) {
   .post-date {
-    float: right;
     margin-top: 10px;
   }
 }
@@ -223,14 +240,10 @@
 .post-link {
   display: inline;
   font-size: 24px;
-  border-bottom: 1px solid #ddd;
-  color: #222;
+  transition: border, 300ms, linear;
   &:hover {
-    border-bottom-color: #000;
-    color: #000;
-  }
-  &:visited{
-    color: lighten(#222, 10%);
+    border-bottom: 1px solid #d7d7d7;
+    transition: border, 300ms, linear;
   }
 }
 
@@ -245,10 +258,13 @@
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1;
-
   @include media-query($on-laptop) {
     font-size: 36px;
   }
+}
+
+.post-list-title{
+  margin-bottom: 0;
 }
 
 .post-content {
@@ -277,4 +293,8 @@
       font-size: 18px;
     }
   }
+}
+
+h3[id]{
+  padding-top: 20px;
 }

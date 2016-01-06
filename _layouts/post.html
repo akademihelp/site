@@ -24,18 +24,20 @@ layout: default
       </li>
       {% for tag in page.tags %}
       <li>
-        <a href="/tag/{{ tag }}">
-          <small>
-            {{ tag }}
-          </small>
+        <a class="post-badge" href="/tag/#{{ tag | slugify }}">
+          {{ tag }}
         </a>
       </li>
       {% endfor %}
     </ul>
   </div>
   <hr>
+  <!--Social Icons-->
   <div class="post-content">
     <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
       <li>
         <div class="fb-share-button" data-href="{{ post.url | prepend: site.baseurl }}" data-layout="button"></div>
       </li>
@@ -62,6 +64,7 @@ layout: default
       </li>
     </ul>
   </div>
+  <hr>
   <!-- Author -->
   <div class="post-content" itemprop="articleFooter">
     <img src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=40">

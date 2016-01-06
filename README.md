@@ -7,6 +7,7 @@ Live preview is [here](http://akademi.help/)
 # Akademi Help Nasil Kullanilir?
 
 * Repo yu clone yin ve branch'i `gh-pages`a switch edin. Sonrasinda `bundle install` ile gem'leri yukleyin.
+* Eger `grunt` ile kullanmak isterseniz. `npm install` ile npm paketlerini yuklemeyi unutmayin. (`grunt serve`)
 * Post'lar markdown ile yazilabilir.
 * Code highlight icin `redcarpet` kullanabilirsiniz
 * Yazi publish etmek icin `gh-pages` branch'ini kullanabilirsiniz.

@@ -7,10 +7,17 @@ layout: default
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta post-date">{{ post.date | date: "%d-%m-%Y" }}</span>
-        <h2>
+        <h2 class="post-list-title">
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        {% if post.tags != empty %}
+        {% for tag in post.tags %}
+        <a class="post-tag post-badge" href="/tag/#{{ tag | slugify }}">
+          {{ tag }}
+        </a>
+        {% endfor %}
+        {% endif %}
+        <time class="post-meta post-date"> | {{ post.date | date: "%d-%m-%Y" }}</time>
       </li>
     {% endfor %}
   </ul>

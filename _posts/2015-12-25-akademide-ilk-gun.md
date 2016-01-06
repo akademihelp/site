@@ -11,5 +11,17 @@ tags:
   - netinternet
 
 ---
-
-Hello folks!
+```html
+  <h1>Hello folks!</h1>
+```
+```js
+  alert('Hello Folks')
+```
+```php
+  <?php
+    echo "Hello Folks";
+   ?>
+```
+```ruby
+  puts('Hello Folks')
+```

@@ -16,25 +16,6 @@ layout: default
       {{ content }}
   </div>
   <hr>
-  <!--Related Post List-->
-  <div class="post-content">
-    <h4>Belki aşağıdaki yazılarda ilginizi çekebilir.</h4>
-    <ul>
-      {% for post in site.related_posts limit:3 %}
-        <li>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-          <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-              {{ page.date | date: "%d-%m-%Y" }}
-            </time>
-          </p>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <hr>
   <!--Tags List-->
   <div class="post-content">
     <ul class="tag-list-inline">
@@ -43,18 +24,20 @@ layout: default
       </li>
       {% for tag in page.tags %}
       <li>
-        <a href="/tag/{{ tag }}">
-          <small>
-            {{ tag }}
-          </small>
+        <a class="post-badge" href="/tag/#{{ tag | slugify }}">
+          {{ tag }}
         </a>
       </li>
       {% endfor %}
     </ul>
   </div>
   <hr>
+  <!--Social Icons-->
   <div class="post-content">
     <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
       <li>
         <div class="fb-share-button" data-href="{{ post.url | prepend: site.baseurl }}" data-layout="button"></div>
       </li>
@@ -81,6 +64,7 @@ layout: default
       </li>
     </ul>
   </div>
+  <hr>
   <!-- Author -->
   <div class="post-content" itemprop="articleFooter">
     <img src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=40">

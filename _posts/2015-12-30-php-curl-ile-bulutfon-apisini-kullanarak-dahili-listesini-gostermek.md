@@ -29,7 +29,6 @@ Bu işlemlerin sonucunda elde edeceğimiz sonuç;
 
 ![Bulutfon dahili listesi](/images/bulutfon-dahili-listesi.png)
 
-
 # HTML Yapısının Oluşturulması
 
 {% highlight html %}

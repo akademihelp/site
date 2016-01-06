@@ -14,9 +14,9 @@ tags:
   - list.js
 ---
 
-Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açıklamayıp projenin tamamını paylaşacağım. Ayrıca bu uygulamamızda **google fonts** ve download iconu için **iconfont** kullanacağız. 
+Bu yazımızda gelen faxları nasıl görüntüleyeceğimiz ve indireceğimizden bahsedeceğiz. Bu yazımda makalenin gereğinden fazla uzamaması için CSS kodlarını açıklamayıp projenin tamamını paylaşacağım. Ayrıca bu uygulamamızda **google fonts** ve download iconu için **iconfont** kullanacağız.
 
-Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burada bitirmek istiyorum. 
+Font iconlardan biraz bahsedecek olursak, web uygulamalarında kullanılan iconların resim dosyası kullanmak yerine font şeklinde kullanmamıza yarayan bir araç. Avantajları neler diye soracak olursanız da; resim dosyası olmadığı için renk ve büyüklüklerini css ile değiştirebiliyor olmamız bu avantajların başında gelir. Makalemiz font iconlar üzerine olmadığı için yüzeysel bahsedip konuyu burada bitirmek istiyorum.
 
 Bu makalede yapacağımız işlemler;
 
@@ -28,7 +28,8 @@ Bu makalede yapacağımız işlemler;
 * İndirme işlemi
 
 Uygulamanızı tamamladığımızda ise şu şekilde görünüyor olacak ([demo][df1]);
-![](https://camo.githubusercontent.com/bf32e206e99eb453db8044f60c6039848a3cc752/687474703a2f2f692e696d6775722e636f6d2f705730474668732e706e67)
+
+![Bulutfon API'yi kullanarak gelen faksların listelenmesi](/images/bulutfon-gelen-fakslarin-goruntulenmesi.png)
 
 # HTML Yapısının Oluşturulması
 
@@ -78,7 +79,7 @@ Uygulamalarımız geliştikçe, yazdığımız kodlar da daha karmaşıklaşıyo
 
 # CSS ile uygılamanın şekillendirilmesi
 
-CSS kodları çok uzun olduğu için burada uzun uzun anlatmak ve paylaşmak yerine proje ile birlikte paylaşma kararı aldım. Ayrıca kodları anlamakta zorluk çekmemeniz için yorum satırlarıyla açıklamaya çalıştım. 
+CSS kodları çok uzun olduğu için burada uzun uzun anlatmak ve paylaşmak yerine proje ile birlikte paylaşma kararı aldım. Ayrıca kodları anlamakta zorluk çekmemeniz için yorum satırlarıyla açıklamaya çalıştım.
 
 # PHP ile gelen faxların çekilmesi
 
@@ -100,7 +101,7 @@ $result     = json_decode($curl_response, true); // JSON olarak gelen verileri P
 $faxes      = $result['incoming_faxes']; // Gelen faxları değişkene atıyoruz.
 ?>
 ```
-Bulutfon Api'deki gelen faxlar servisine tokenımızı post ederek gelen faxları çekiyoruz. 
+Bulutfon Api'deki gelen faxlar servisine tokenımızı post ederek gelen faxları çekiyoruz.
 
 # Gelen faxların listelenmesi
 
@@ -130,7 +131,7 @@ Sıra gelen faxlarımızı hazırladığımız html yapısında listelemede. HTM
 </ul>
 ```
 
-Birazdan yapacağımız indirme işlemi için link veriyoruz. Ama öncesinde filtreleme işlemi için kullanacağımız list.js kütüphanesinden bahsederek kısa bir ara verelim. 
+Birazdan yapacağımız indirme işlemi için link veriyoruz. Ama öncesinde filtreleme işlemi için kullanacağımız list.js kütüphanesinden bahsederek kısa bir ara verelim.
 List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme kütüphanesidir. Bu kütüphane ile filtrelenmesini istediğiniz alanların sınıflarını girerek filtreleme işlemi yapabilirsiniz. List.js kütüphanesini indirip uygulamamıza dahil ettikten sonra uygulamamıza entegre ediyoruz.
 
 ```html
@@ -145,7 +146,7 @@ List.js basit uygulamalar için kullanılabilecek kullanışlı bir filtreleme k
 
 # İndirme işlemi
 
-İndirme işlemi için download linkimizden gelen fax idsini alarak bulutfon api indirme servisine post ediyoruz. Ayrıca güvenlik açısından tokenımızı url'ye eklemek yerine hader ile gönderiyoruz. 
+İndirme işlemi için download linkimizden gelen fax idsini alarak bulutfon api indirme servisine post ediyoruz. Ayrıca güvenlik açısından tokenımızı url'ye eklemek yerine hader ile gönderiyoruz.
 
 ```php
 if (isset($_GET['download'])){

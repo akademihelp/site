@@ -1,5 +1,7 @@
 .sass-cache
 .jekyll-metadata
 .idea
+.DS_Store
+images/DS_Store
 /feed.xml
 node_modules

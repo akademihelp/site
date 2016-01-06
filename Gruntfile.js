@@ -33,7 +33,7 @@ module.exports = function (grunt) {
             options: {
                 sourceMap: true,
                 relativeAssets: false,
-                outputStyle: 'expanded',
+                outputStyle: 'compressed',
                 sassDir: '_sass',
                 cssDir: '_site/css'
             },
@@ -42,7 +42,8 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '_sass/',
                     src: ['**/*.{scss,sass}'],
-                    dest: '_site/css'
+                    dest: '_site/css',
+                    ext: '.css'
                 }]
             }
         },

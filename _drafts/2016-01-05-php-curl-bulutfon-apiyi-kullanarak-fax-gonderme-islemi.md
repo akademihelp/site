@@ -20,7 +20,7 @@ Yapacağımız işlemler başta biraz karışık görünebilir ama olayın özü
 
 Yapacağımız uygulamanın bitmiş halinden bir ekran görüntüsüyle başlayalım;
 ![Bulutfon Fax Gönderme](/images/bulutfon-fax-gonderme.png)
-
+ 
 Bu makalede yapacağımız işlemler;
 
 * HTML yapısının oluşturulması

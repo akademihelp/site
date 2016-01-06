@@ -161,6 +161,7 @@ Gelen faxları listeledikten sonra detay.php adında yeni bir sayfa oluşturup f
 </body>
 </html>
 ```
+
 ```php
 <?php
 /*
@@ -182,6 +183,7 @@ $fax            = $result['fax'];
 ```
 
 Artık son işlem olarak fax detaylarını görüntülemek kaldı.
+
 ```
 <!-- Container -->
 <div id="detail">
@@ -207,6 +209,7 @@ Artık son işlem olarak fax detaylarını görüntülemek kaldı.
     </ul>
 </div>
 ```
+
 Bu uygulamamızın da sonuna gelmiş bulunuyoruz.  Örnek kodları [buraya][df1] tıklayarak inceleyebilirsiniz. 
 Uygulamanın çalışan hali içinse [buraya][df2] tıklayabilirsiniz.
 

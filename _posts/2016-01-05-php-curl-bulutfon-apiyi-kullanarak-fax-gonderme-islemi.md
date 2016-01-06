@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Php, Curl, Bulutfon Apiyi Kullanarak Fax Gönderme İşlemi"
-date:   2016-01-04 22:53:06 +0800
+date:   2016-01-05 22:53:06 +0800
 author: huseyintunc
 categories:
   - introduction
@@ -117,6 +117,7 @@ Fax gönderme işlemi için gerekli parametreler; fax başlığı, gönderilecek
 Yukarıda değişkenlere atadığımız verileri kullanacağımız alan da burası. 
 
 ```php
+<?php
 $url            = 'https://api.bulutfon.com/outgoing-faxes?access_token='.$token; // Fax gönderme işlemini yapacağımız servis
 // Elimizdeki verileri bir dizi değişkene aktararak post etmeye hazır hale getiriyoruz.
 $data           = array("title" => $title, "receivers" => $receivers, "did" => $did, "attachment" => $file);
@@ -136,6 +137,7 @@ curl_close($curl);
 $result         = json_decode($curl_response, true);
 var_dump($result);
 die();
+?>
 ```
 Fax gönderme işlemini de bu şekilde tamamlamış bulunuyoruz. Örnek kodları [buraya][df1] tıklayarak inceleyebilirsiniz. 
 

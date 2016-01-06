@@ -115,6 +115,7 @@ Fax gönderme işlemi için gerekli parametreler; fax başlığı, gönderilecek
 
 # Curl ile Fax Gönderme
 Yukarıda değişkenlere atadığımız verileri kullanacağımız alan da burası. 
+
 ```php
 $url            = 'https://api.bulutfon.com/outgoing-faxes?access_token='.$token; // Fax gönderme işlemini yapacağımız servis
 // Elimizdeki verileri bir dizi değişkene aktararak post etmeye hazır hale getiriyoruz.

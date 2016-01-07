@@ -14,11 +14,13 @@ url: "http://akademi.help" # the base hostname & protocol for your site
 github_username:  akademihelp
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
 permalink: /:title
 sass:
   style: :compressed
-exclude: [node_modules, Gruntfile.js, package.json, ‘css’, ‘_scss’]
+exclude: ['node_modules']
 keep_files: ['_site/css']
 
 # Authors Setup
@@ -40,4 +42,4 @@ authors:
   huseyintunc:
     display_name: Hüseyin TUNÇ
     gravatar: 7eab3defefdd13406fa68ed21d79795e
-    company: freelancer
+    company: https://github.com/hsyntnc

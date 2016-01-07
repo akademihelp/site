@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+
+    <!-- Global stuff -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Robots & indexing -->
+    
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+
+    <title>Php, Curl kullanılarak Bulutfon'la SMS gönderme uygulaması</title>
+
+    <!-- Page specific content -->
+    <meta name="description" content="Bir çok arkadaşın Bulutfon Api&#39;yi kullanırken problem yaşadığını görüyorum. Yeni başlayan arkadaşlar için fazla programlama bilgisi gerektirmeden apiyi e...">
+    
+        <meta name="keywords" content="bulutfon,sms,api,curl">
+    
+    <meta name="author" content="http://akademi.help">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Web fonts -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- Favicon -->
+    <link href="/images/favicon.png" rel="icon" type="image/ico" >
+    <!--[if IE]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
+
+    <link rel="canonical" href="http://akademi.help/php-curl-kullanilarak-bulutfonla-sms-gonderme-uygulamasi">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/rss" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Php, Curl kullanılarak Bulutfon'la SMS gönderme uygulaması" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://akademi.help/php-curl-kullanilarak-bulutfonla-sms-gonderme-uygulamasi" />
+    <meta property="og:description" content="Bir çok arkadaşın Bulutfon Api&#39;yi kullanırken problem yaşadığını görüyorum. Yeni başlayan arkadaşlar için fazla programlama bilgisi gerektirmeden apiyi e..." />
+    <meta property="og:image" content="/images/akademi-help.png" />
+    <meta property="og:site_name" content="https://akademi.help" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@akademi_help">
+    <meta name="twitter:title" content="Php, Curl kullanılarak Bulutfon'la SMS gönderme uygulaması">
+    <meta name="twitter:description" content="Bir çok arkadaşın Bulutfon Api&#39;yi kullanırken problem yaşadığını görüyorum. Yeni başlayan arkadaşlar için fazla programlama bilgisi gerektirmeden apiyi e...">
+    <meta name="twitter:creator" content="@akademi_help">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <strong>
+        Akademi Help
+      </strong>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/hakkimizda">Hakkımızda</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Php, Curl kullanılarak Bulutfon'la SMS gönderme uygulaması</h1>
+    <p class="post-meta"><time datetime="2015-12-29T22:53:06+08:00" itemprop="datePublished">29-12-2015</time> | <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">huseyintunc</span></span></p>
+  </header>
+  <!-- Author -->
+  
+  <!-- Post -->
+  <div class="post-content" itemprop="articleBody">
+      <p>Bir çok arkadaşın Bulutfon Api&#39;yi kullanırken problem yaşadığını görüyorum. Yeni başlayan arkadaşlar için fazla programlama bilgisi gerektirmeden apiyi en faydalı şekilde kullanma kılavuzu olabilecek bir yazı dizisine başlamak istedim.</p>
+
+<p>İlk makalemi Bulutfon Api&#39;yi kullanarak SMS gönderme üzerine yazmaya karar verdim.</p>
+
+<p>Öncelikle yapacağımız işlemlerden kısaca bahsedelim;</p>
+
+<ul>
+<li>SMS detaylarını gireceğimiz formun oluşturulması.</li>
+<li>Sabit değişkenlerin tanımlanması</li>
+<li>Formdan gelen verilerin çekilmesi</li>
+<li>Curl kullanarak Bulutfon üzerinden sms gönderimi</li>
+</ul>
+
+<h1 id="formun-olu-turulmas">Formun Oluşturulması</h1>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Bulutfon SMS Gönderme<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- Form --&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">valign=</span><span class="s">"top"</span> <span class="na">width=</span><span class="s">"150"</span><span class="nt">&gt;</span>Alıcı Listesi<span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"receivers"</span><span class="nt">&gt;&lt;br&gt;</span>
+            <span class="nt">&lt;small&gt;</span>Birden fazla alıcı girmek için araya virgül (,) işareti koyunuz. Lütfen numaraları ülke kodu ile birlikte giriniz ör: 905326203322<span class="nt">&lt;/small&gt;</span>
+          <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td</span> <span class="na">valign=</span><span class="s">"top"</span><span class="nt">&gt;</span>Mesaj<span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"message"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+          <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Gönder<span class="nt">&lt;/button&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Numaraların girileceği bir textbox alanı ve mesaj için textarena kullanarak sms gönderim formumuzu oluşturuyoruz. Uygulamamızdaki tüm kodlar en basit haliyle yer almaktadır. Dilerseniz css kullanarak görsel açıdan daha iyi bir form oluşturabilirsiniz.
+Formumuzu oluşturduktan sonra olayın arkaplanına geçip php kodlarımızı yazmaya başlayabiliriz.</p>
+
+<h1 id="sabit-de-i-kenlerin-tan-mlanmas">Sabit Değişkenlerin Tanımlanması</h1>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+    <span class="cm">/*
+    * Bulutfon Api
+    * SMS Gönderme
+    */</span>
+    <span class="nv">$token</span>    <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1"># Bulutfon panelinden alcağınız master token
+</span>    <span class="nv">$title</span>    <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1"># Bulutfon üzerinden onaylattığınız sms başlığı
+</span>
+  <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Başlangıç olarak kullanacağımız sabit değişkenleri tanımlıyoruz. Buradaki &#39;$token&#39; değişkeni Bulutfon&#39;dan alacağımız master token değeridir.  &#39;$title&#39; ise Bulutfon tarafından onaylanmış sms başlığımızdır.</p>
+
+<h1 id="formdan-gelen-verilerin-ekilmesi">Formdan Gelen Verilerin Çekilmesi</h1>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">){</span> <span class="c1">// Formun post edilip edilmediğinin kontrolü
+</span>      <span class="nv">$receivers</span>    <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
+</span>      <span class="nv">$message</span>      <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'message'</span><span class="p">];</span> <span class="c1">// Formdan gelen mesaj alanı
+</span>      <span class="k">if</span> <span class="p">(</span><span class="nv">$receivers</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">||</span> <span class="nv">$message</span> <span class="o">==</span> <span class="s2">""</span><span class="p">){</span> <span class="c1">// Formdan gelen verilerin boş olup olmadığını kontrol ediyoruz.
+</span>        <span class="k">echo</span> <span class="s2">"Lütfen tüm alanları doldurunuz."</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// Curl işlemleri yapılacak.
+</span>      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Yukarıda ilk olarak &#39;@$_POST&#39; ifadesi ile formun post edilip edilmediğini kontrol ediyoruz. Daha sonra formdan gönderilen verileri alıp değişkenlere atadık ve boş olup olmadıklarını kontrol ediyoruz.</p>
+
+<h1 id="curl-lemleri">Curl İşlemleri</h1>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+    <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>  <span class="c1">// Curl oturumunu başlattık
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="s1">'https://api.bulutfon.com/messages'</span><span class="p">);</span> <span class="c1">// SMS gönderimi için kullanacağımız api adresi
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="s1">'title='</span><span class="o">.</span><span class="nv">$title</span><span class="o">.</span><span class="s1">'&amp;access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="o">.</span><span class="s1">'&amp;receivers='</span><span class="o">.</span><span class="nv">$receivers</span><span class="o">.</span><span class="s1">'&amp;content='</span><span class="o">.</span><span class="nv">$message</span><span class="p">);</span> <span class="c1">//  Burada ise göndereceğimiz parametreleri belirtiyoruz.
+</span>    <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl calıştır.
+</span>    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl oturumunu kapat
+</span>  <span class="cp">?&gt;</span></code></pre></figure>
+
+<p>Son olarak curl ile verileri Bulutfon api adresine post methodu ile gönderiyoruz.</p>
+
+<h1 id="uygulaman-n-son-hali">Uygulamanın Son Hali</h1>
+
+<p>Uygulamanın tam kodlarına <a href="https://gist.github.com/hsyntnc/4a9334feb1da3030b0f2">buraya</a> tıklayarak ulaşabilirsiniz.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="cm">/*
+* Bulutfon Api
+* SMS Gönderme
+*/</span>
+<span class="nv">$token</span>    <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden alcağınız master token
+</span><span class="nv">$title</span>    <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon üzerinden onaylattığınız sms başlığı
+</span><span class="k">if</span> <span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">){</span> <span class="c1">// Formun post edilip edilmediğinin kontrolü
+</span>  <span class="nv">$receivers</span>    <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
+</span>  <span class="nv">$message</span>      <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'message'</span><span class="p">];</span> <span class="c1">// Formdan gelen mesaj alanı
+</span>  <span class="k">if</span> <span class="p">(</span><span class="nv">$receivers</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">||</span> <span class="nv">$message</span> <span class="o">==</span> <span class="s2">""</span><span class="p">){</span> <span class="c1">// Formdan gelen verilerin boş olup olmadığını kontrol ediyoruz.
+</span>    <span class="k">echo</span> <span class="s2">"Lütfen tüm alanları doldurunuz."</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>  <span class="c1">// Curl oturumunu başlattık 
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_URL</span><span class="p">,</span><span class="s1">'https://api.bulutfon.com/messages'</span><span class="p">);</span> <span class="c1">// SMS gönderimi için kullanacağımız api adresi
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="s1">'title='</span><span class="o">.</span><span class="nv">$title</span><span class="o">.</span><span class="s1">'&amp;access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="o">.</span><span class="s1">'&amp;receivers='</span><span class="o">.</span><span class="nv">$receivers</span><span class="o">.</span><span class="s1">'&amp;content='</span><span class="o">.</span><span class="nv">$message</span><span class="p">);</span> <span class="c1">//  Burada ise göndereceğimiz parametreleri belirtiyoruz.
+</span>    <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl calıştır.
+</span>    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl oturumunu kapat
+</span>  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Bulutfon SMS Gönderme<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- Form --&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">valign=</span><span class="s">"top"</span> <span class="na">width=</span><span class="s">"150"</span><span class="nt">&gt;</span>Alıcı Listesi<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+          <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"receivers"</span><span class="nt">&gt;&lt;br&gt;</span>
+          <span class="nt">&lt;small&gt;</span>Birden fazla alıcı girmek için araya virgül (,) işareti koyunuz. Lütfen numaraları ülke kodu ile birlikte giriniz ör: 905326203322<span class="nt">&lt;/small&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">valign=</span><span class="s">"top"</span><span class="nt">&gt;</span>Mesaj<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+          <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"message"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Gönder<span class="nt">&lt;/button&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Faydalı olması dileğiyle.</p>
+
+  </div>
+  <hr>
+  <!--Tags List-->
+  <div class="post-content">
+    <ul class="tag-list-inline">
+      <li>
+        Etiketler:
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#bulutfon">
+          bulutfon
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#sms">
+          sms
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#api">
+          api
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#curl">
+          curl
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr>
+  <!--Social Icons-->
+  <div class="post-content">
+    <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
+      <li>
+        <div class="fb-share-button" data-href="" data-layout="button"></div>
+      </li>
+      <li>
+        <a href="" class="twitter-share-button"{count} data-via="akademi_help">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: tr_TR</script>
+        <script type="IN/Share"></script>
+      </li>
+      <li>
+        <a target="_blank" class="btn btn-email btn-sm" href="mailto:arkadasinizin@epostaadresi.com?subject=Php, Curl kullanılarak Bulutfon'la SMS gönderme uygulaması" title="Email ile paylaşabilirsiniz">
+          e-posta
+        </a>
+      </li>
+      <li>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
+          {lang: 'tr'}
+        </script>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-annotation="none"></div>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <!-- Author -->
+  <div class="post-content" itemprop="articleFooter">
+    <img src="http://www.gravatar.com/avatar/7eab3defefdd13406fa68ed21d79795e?s=40">
+    <small class="author">Hüseyin TUNÇ</small> -
+    <small class="author">https://github.com/hsyntnc</small>
+  </div>
+  <hr>
+  <!-- Disqus -->
+  <div class="post-content">
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    var disqus_config = function () {
+    this.page.url = 'http://akademi.help/php-curl-kullanilarak-bulutfonla-sms-gonderme-uygulamasi'; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'http://akademi.help/php-curl-kullanilarak-bulutfonla-sms-gonderme-uygulamasi'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//akademihelp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <ul class="contact-list">
+          <li>Akademi Help Iletisim Bilgileri</li>
+          
+          <li>
+            Github:
+            <a href="https://github.com/akademihelp">
+              akademihelp
+            </a>
+          </li>
+          
+          <li>
+            Bizi
+            <a href="/feed.xml"> RSS ile </a>
+            takip edebilirsiniz.
+          </li>
+          <li>
+            <a target="_blank" href="https://www.bulutfon.com/">
+              <small>
+                bulutfon.com
+              </small>
+            </a>|
+            <a target="_blank" href="http://www.lab2023.com/">
+              <small>
+                lab2023.com
+              </small>
+              </a>|
+            <a target="_blank" href="https://www.netinternet.com.tr">
+              <small>
+                netinternet.com.tr
+              </small>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+      </div>
+      <div class="footer-col footer-col-1 text-right">
+        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71823740-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>

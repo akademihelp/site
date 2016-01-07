@@ -17,16 +17,22 @@
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
+    <!-- Page specific content -->
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     {% if page.tags %}
         <meta name="keywords" content="{{ page.tags|join: ',' }}">
     {% endif %}
     <meta name="author" content="http://akademi.help">
 
-    <link rel="stylesheet" href="{{"/css/main.css" | prepend: site.baseurl }}">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+
+    <!-- Web fonts -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
+    <!-- Favicon -->
     <link href="{{ site.baseurl }}/images/favicon.png" rel="icon" type="image/ico" >
     <!--[if IE]><link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico"><![endif]-->
 
@@ -42,5 +48,12 @@
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <meta property="og:image" content="{{ site.baseurl }}/images/akademi-help.png" />
     <meta property="og:site_name" content="https://akademi.help" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@akademi_help">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:creator" content="@akademi_help">
 
 </head>

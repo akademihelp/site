@@ -24,7 +24,7 @@ layout: default
       </li>
       {% for tag in page.tags %}
       <li>
-        <a class="post-badge" href="/tag/#{{ tag | slugify }}">
+        <a class="post-badge" href="/tag.html#{{ tag | slugify }}">
           {{ tag }}
         </a>
       </li>
@@ -42,7 +42,7 @@ layout: default
         <div class="fb-share-button" data-href="{{ post.url | prepend: site.baseurl }}" data-layout="button"></div>
       </li>
       <li>
-        <a href="{{ post.url | prepend: site.baseurl }}" class="twitter-share-button"{count} data-via="akademihelp">Tweet</a>
+        <a href="{{ post.url | prepend: site.baseurl }}" class="twitter-share-button"{count} data-via="akademi_help">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </li>
       <li>

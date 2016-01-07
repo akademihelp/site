@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Php, Curl, Bulutfon Apiyi Kullanarak Gönderilen Faxların Listelenmesi"
-date:   2016-01-06 22:53:06 +0800
+title: 'Php, Curl, Bulutfon Apiyi Kullanarak Gönderilen Faxların Listelenmesi'
+date: '2016-01-06 22:53:06 +0800'
 author: huseyintunc
 categories:
   - introduction
@@ -19,19 +19,19 @@ Merhaba arkadaşlar. Yine yepyeni bir yazıyla daha birlikteyiz. Bu yazımda gö
 Aynı zamanda gelen faxlar uygulamamızda kullandığımız list.js, font icon ve google fonts araçlarını bu uygulamamızda da kullanacağız fakat önceki yazımda bahsettiğim için detaya girmeyeceğim. Eğer ki aklınıza takılan bir konu olursa yorum yazarak hiç çekinmeden sorabilirsiniz.
 
 Gelenek haline getirdiğimiz ekran görüntüsüyle başlayalım yazımıza;
+
 # Listeleme Sayfası
 ![Giden Faxlar](/images/bulutfon-giden-faxlar.png)
+
 # Detay Sayfası
 ![Giden Fax Detay](/images/bulutfon-giden-fax-detay.png)
 
 Bu makalede yapacağımız işlemler;
-
-* HTML yapısının oluşturulması (listeleme)
-* PHP ile gönderilen faxların çekilmesi
-* Gönderilen faxların listelenmesi
-* Detay sayfası HTML oluşturulması
-* Fax detaylarının çekilmesi
-
+- HTML yapısının oluşturulması (listeleme)
+- PHP ile gönderilen faxların çekilmesi
+- Gönderilen faxların listelenmesi
+- Detay sayfası HTML oluşturulması
+- Fax detaylarının çekilmesi
 
 # HTML Yapısının Oluşturulması
 
@@ -83,28 +83,28 @@ Bu makalede yapacağımız işlemler;
 Listeleme yapacağımız sayfanın html yapısını oluşturmuş bulunuyoruz. Bir sonraki aşamada curl ile verileri çekip listeleme yapabiliriz artık.
 
 # PHP ile Gönderilen Faxların Çekilmesi
-
 Formdan gelen verileri alarak birer değişkene atıp dosya yükleme işlemini yapıyoruz. Burada dikkat etmemiz gereken bir konu daha var. Bulutfona fax gönderebilmemiz için dosyamızın base64 kodlama şemasını kullanıyor olması gerekiyor. Bu işlem için de yardımcı bir fonksiyon kullanıyoruz.
 
 ```php
   <?php
-  /*
-   * Bulutfon Api
-   * Fax Gönderme
-   */
-  $token              = ""; // Bulutfon panelinden aldığımız master token
+    /*
+     * Bulutfon Api
+     * Fax Gönderme
+     */
+    $token              = ""; // Bulutfon panelinden aldığımız master token
 
-  $url                = 'https://api.bulutfon.com/outgoing-faxes?access_token='.$token;
-  $curl               = curl_init($url);
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-  $curl_response = curl_exec($curl);
-  curl_close($curl);
-  $result             = json_decode($curl_response, true);
-  $faxes              = $result['faxes'];
+    $url                = 'https://api.bulutfon.com/outgoing-faxes?access_token='.$token;
+    $curl               = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    $curl_response = curl_exec($curl);
+    curl_close($curl);
+    $result             = json_decode($curl_response, true);
+    $faxes              = $result['faxes'];
   ?>
 ```
+
 Bu bölümde ise gelen faxları api üzerinden çekip $faxes değişkenine atıyoruz. Daha sorna foreach kullanarak listeleme işlemini yapabileceğiz.
 
 # Gönderilen Faxların Listelenmesi
@@ -165,21 +165,21 @@ Gelen faxları listeledikten sonra detay.php adında yeni bir sayfa oluşturup f
 
 ```php
   <?php
-  /*
-   * Bulutfon Api
-   * Gelen Faxlar
-   */
-  $token          = ""; // Bulutfon panelinden aldığımız master token
-  // URL'de GET methodu ile gönderdiğimiz id değerini burada kullanarak fax detaylarını çekiyoruz
-  $url            = 'https://api.bulutfon.com/outgoing-faxes/'.$_GET['id'].'?access_token='.$token;
-  $curl           = curl_init($url);
-  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-  curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-  curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-  $curl_response  = curl_exec($curl);
-  curl_close($curl);
-  $result         = json_decode($curl_response, true);
-  $fax            = $result['fax'];
+    /*
+     * Bulutfon Api
+     * Gelen Faxlar
+     */
+    $token          = ""; // Bulutfon panelinden aldığımız master token
+    // URL'de GET methodu ile gönderdiğimiz id değerini burada kullanarak fax detaylarını çekiyoruz
+    $url            = 'https://api.bulutfon.com/outgoing-faxes/'.$_GET['id'].'?access_token='.$token;
+    $curl           = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+    $curl_response  = curl_exec($curl);
+    curl_close($curl);
+    $result         = json_decode($curl_response, true);
+    $fax            = $result['fax'];
   ?>
 ```
 
@@ -210,11 +210,9 @@ Artık son işlem olarak fax detaylarını görüntülemek kaldı.
   </div>
 ```
 
-Bu uygulamamızın da sonuna gelmiş bulunuyoruz.  Örnek kodları [buraya][df1] tıklayarak inceleyebilirsiniz.
-Uygulamanın çalışan hali içinse [buraya][df2] tıklayabilirsiniz.
+Bu uygulamamızın da sonuna gelmiş bulunuyoruz.  Örnek kodları [buraya][df1] tıklayarak inceleyebilirsiniz. Uygulamanın çalışan hali içinse [buraya][df2] tıklayabilirsiniz.
 
-Faydalı olması dileğiyle.
-İyi çalışmalar.
+Faydalı olması dileğiyle. İyi çalışmalar.
 
-   [df1]: <https://github.com/hsyntnc/BulutfonSampleApps/tree/master/outgoingFaxes>
-   [df2]: <http://tunc.tk/Bulutfon/outgoingFaxes/>
+[df1]: https://github.com/hsyntnc/BulutfonSampleApps/tree/master/outgoingFaxes
+[df2]: http://tunc.tk/Bulutfon/outgoingFaxes/

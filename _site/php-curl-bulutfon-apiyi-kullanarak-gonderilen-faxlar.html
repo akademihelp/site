@@ -115,15 +115,12 @@
 
 <p><img src="/images/bulutfon-giden-fax-detay.png" alt="Giden Fax Detay"></p>
 
-<p>Bu makalede yapacağımız işlemler;</p>
-
-<ul>
-<li>HTML yapısının oluşturulması (listeleme)</li>
-<li>PHP ile gönderilen faxların çekilmesi</li>
-<li>Gönderilen faxların listelenmesi</li>
-<li>Detay sayfası HTML oluşturulması</li>
-<li>Fax detaylarının çekilmesi</li>
-</ul>
+<p>Bu makalede yapacağımız işlemler;
+- HTML yapısının oluşturulması (listeleme)
+- PHP ile gönderilen faxların çekilmesi
+- Gönderilen faxların listelenmesi
+- Detay sayfası HTML oluşturulması
+- Fax detaylarının çekilmesi</p>
 
 <h1 id="html-yap-s-n-n-olu-turulmas">HTML Yapısının Oluşturulması</h1>
 <div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -175,21 +172,21 @@
 
 <p>Formdan gelen verileri alarak birer değişkene atıp dosya yükleme işlemini yapıyoruz. Burada dikkat etmemiz gereken bir konu daha var. Bulutfona fax gönderebilmemiz için dosyamızın base64 kodlama şemasını kullanıyor olması gerekiyor. Bu işlem için de yardımcı bir fonksiyon kullanıyoruz.</p>
 <div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
-  <span class="cm">/*
-   * Bulutfon Api
-   * Fax Gönderme
-   */</span>
-  <span class="nv">$token</span>              <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
+    <span class="cm">/*
+     * Bulutfon Api
+     * Fax Gönderme
+     */</span>
+    <span class="nv">$token</span>              <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
 </span>
-  <span class="nv">$url</span>                <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
-  <span class="nv">$curl</span>               <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="nv">$curl_response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-  <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-  <span class="nv">$result</span>             <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="nv">$faxes</span>              <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'faxes'</span><span class="p">];</span>
+    <span class="nv">$url</span>                <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
+    <span class="nv">$curl</span>               <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nv">$curl_response</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nv">$result</span>             <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$faxes</span>              <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'faxes'</span><span class="p">];</span>
   <span class="cp">?&gt;</span>
 </code></pre></div>
 <p>Bu bölümde ise gelen faxları api üzerinden çekip $faxes değişkenine atıyoruz. Daha sorna foreach kullanarak listeleme işlemini yapabileceğiz.</p>
@@ -246,21 +243,21 @@
   <span class="nt">&lt;/body&gt;</span>
   <span class="nt">&lt;/html&gt;</span>
 </code></pre></div><div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
-  <span class="cm">/*
-   * Bulutfon Api
-   * Gelen Faxlar
-   */</span>
-  <span class="nv">$token</span>          <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
-</span>  <span class="c1">// URL'de GET methodu ile gönderdiğimiz id değerini burada kullanarak fax detaylarını çekiyoruz
-</span>  <span class="nv">$url</span>            <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes/'</span><span class="o">.</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="o">.</span><span class="s1">'?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
-  <span class="nv">$curl</span>           <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="nv">$curl_response</span>  <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-  <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-  <span class="nv">$result</span>         <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="nv">$fax</span>            <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'fax'</span><span class="p">];</span>
+    <span class="cm">/*
+     * Bulutfon Api
+     * Gelen Faxlar
+     */</span>
+    <span class="nv">$token</span>          <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
+</span>    <span class="c1">// URL'de GET methodu ile gönderdiğimiz id değerini burada kullanarak fax detaylarını çekiyoruz
+</span>    <span class="nv">$url</span>            <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes/'</span><span class="o">.</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span><span class="o">.</span><span class="s1">'?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
+    <span class="nv">$curl</span>           <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nv">$curl_response</span>  <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nv">$result</span>         <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nv">$fax</span>            <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'fax'</span><span class="p">];</span>
   <span class="cp">?&gt;</span>
 </code></pre></div>
 <p>Artık son işlem olarak fax detaylarını görüntülemek kaldı.</p>
@@ -287,11 +284,9 @@
     <span class="nt">&lt;/ul&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
-<p>Bu uygulamamızın da sonuna gelmiş bulunuyoruz.  Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/outgoingFaxes">buraya</a> tıklayarak inceleyebilirsiniz.
-Uygulamanın çalışan hali içinse <a href="http://tunc.tk/Bulutfon/outgoingFaxes/">buraya</a> tıklayabilirsiniz.</p>
+<p>Bu uygulamamızın da sonuna gelmiş bulunuyoruz.  Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/outgoingFaxes">buraya</a> tıklayarak inceleyebilirsiniz. Uygulamanın çalışan hali içinse <a href="http://tunc.tk/Bulutfon/outgoingFaxes/">buraya</a> tıklayabilirsiniz.</p>
 
-<p>Faydalı olması dileğiyle.
-İyi çalışmalar.</p>
+<p>Faydalı olması dileğiyle. İyi çalışmalar.</p>
 
   </div>
   <hr>

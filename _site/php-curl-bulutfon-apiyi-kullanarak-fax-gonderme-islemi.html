@@ -101,40 +101,38 @@
   
   <!-- Post -->
   <div class="post-content" itemprop="articleBody">
-      <p>Merhaba arkadaşlar, gelen faxları listeleme işleminden sonra bir sonraki konumuz olan fax gönderme işlemini ile tekrar beraberiz. Bu yazımızda yapacağımız işlem daha önce birlikte yapmış olduğumuz sms gönderme uygulamasına benzeyen bir işlem. Kullanıcıdan bazı parametreler isteyip bunları Bulutfon Api&#39;ye curl yardımı ile post methoduyla göndereceğiz. </p>
+      <p>Merhaba arkadaşlar, gelen faxları listeleme işleminden sonra bir sonraki konumuz olan fax gönderme işlemini ile tekrar beraberiz. Bu yazımızda yapacağımız işlem daha önce birlikte yapmış olduğumuz sms gönderme uygulamasına benzeyen bir işlem. Kullanıcıdan bazı parametreler isteyip bunları Bulutfon Api&#39;ye curl yardımı ile post methoduyla göndereceğiz.</p>
 
-<p>Yapacağımız işlemler başta biraz karışık görünebilir ama olayın özünü anladığınızda hiç zor olmadığını göreceksiniz. Lafı fazla uzatmadan uygulamamıza geçelim. </p>
+<p>Yapacağımız işlemler başta biraz karışık görünebilir ama olayın özünü anladığınızda hiç zor olmadığını göreceksiniz. Lafı fazla uzatmadan uygulamamıza geçelim.</p>
 
-<p>Yapacağımız uygulamanın bitmiş halinden bir ekran görüntüsüyle başlayalım;
-<img src="/images/bulutfon-fax-gonderme.png" alt="Bulutfon Fax Gönderme"></p>
+<p>Yapacağımız uygulamanın bitmiş halinden bir ekran görüntüsüyle başlayalım;</p>
 
-<p>Bu makalede yapacağımız işlemler;</p>
+<p><img src="/images/bulutfon-fax-gonderme.png" alt="Bulutfon Fax Gönderme"></p>
 
-<ul>
-<li>HTML yapısının oluşturulması</li>
-<li>PHP ile formdan gelen verilerin işlenmesi</li>
-<li>Sunucuya dosya yükleme işlemi</li>
-<li>Curl ile fax gönderme işlemi</li>
-</ul>
+<p>Bu makalede yapacağımız işlemler;
+- HTML yapısının oluşturulması
+- PHP ile formdan gelen verilerin işlenmesi
+- Sunucuya dosya yükleme işlemi
+- Curl ile fax gönderme işlemi</p>
 
 <h1 id="html-yap-s-n-n-olu-turulmas">HTML Yapısının Oluşturulması</h1>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>Fax Gönder<span class="nt">&lt;/title&gt;</span>
-    <span class="c">&lt;!-- Google Fonts --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700,600,300,200&amp;subset=latin,latin-ext'</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!-- Main CSS --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/main.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
-    <span class="c">&lt;!-- Font CSS --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/fonts.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Bulutfon Api Fax Gönderme<span class="nt">&lt;/div&gt;</span>
-<span class="c">&lt;!-- Container --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="language-html" data-lang="html">  <span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+      <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;title&gt;</span>Fax Gönder<span class="nt">&lt;/title&gt;</span>
+      <span class="c">&lt;!-- Google Fonts --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900,700,600,300,200&amp;subset=latin,latin-ext'</span> <span class="na">rel=</span><span class="s">'stylesheet'</span> <span class="na">type=</span><span class="s">'text/css'</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Main CSS --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/main.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Font CSS --&gt;</span>
+      <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/fonts.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Bulutfon Api Fax Gönderme<span class="nt">&lt;/div&gt;</span>
+  <span class="c">&lt;!-- Container --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"#"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">enctype=</span><span class="s">"multipart/form-data"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">placeholder=</span><span class="s">"Fax Başlığı"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;small&gt;</span>Gönderilecek faxın başlığı.<span class="nt">&lt;/small&gt;</span>
 
@@ -148,83 +146,82 @@
         <span class="nt">&lt;small&gt;</span>Göndermek istediğiniz dosyayı seçin.<span class="nt">&lt;/small&gt;</span>
 
         <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Gönder <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"flaticon-arrow487"</span><span class="nt">&gt;&lt;/i&gt;&lt;/button&gt;</span>
-    <span class="nt">&lt;/form&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-<span class="c">&lt;!-- Container Bitiş --&gt;</span>
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="c">&lt;!-- Container Bitiş --&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
 </code></pre></div>
 <p>İhtiyacımız olan formu oluşturuyoruz. Başlık alanı, alıcı listesi ve gönderilecek numara alanları için input html elementinin text türünü kullanıyoruz. Yükelenecek olan dosya için ise type parametresini file olarak belirtiyoruz. Ayrıca burada dikkat etmemiz gereken diğer bir konu da forma eklediğimiz enctype parametresi. Bu parametre sayesinde form ile dosya göndereceğimizi belirmiş oluyoruz.  </p>
 
 <h1 id="php-ile-formdan-gelen-verilerin-lenmesi">PHP ile Formdan Gelen Verilerin İşlenmesi</h1>
 
-<p>Formdan gelen verileri alarak birer değişkene atıp dosya yükleme işlemini yapıyoruz. Burada dikkat etmemiz gereken bir konu daha var. Bulutfona fax gönderebilmemiz için dosyamızın base64 kodlama şemasını kullanıyor olması gerekiyor. Bu işlem için de yardımcı bir fonksiyon kullanıyoruz. </p>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="cm">/*
- * Bulutfon Api
- * Fax Gönderme
- */</span>
-<span class="nv">$token</span>              <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
+<p>Formdan gelen verileri alarak birer değişkene atıp dosya yükleme işlemini yapıyoruz. Burada dikkat etmemiz gereken bir konu daha var. Bulutfona fax gönderebilmemiz için dosyamızın base64 kodlama şemasını kullanıyor olması gerekiyor. Bu işlem için de yardımcı bir fonksiyon kullanıyoruz.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+    <span class="cm">/*
+     * Bulutfon Api
+     * Fax Gönderme
+     */</span>
+    <span class="nv">$token</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
 </span>
-<span class="c1">// Base64 dönüşümünü yapacak olan yardımcı fonksiyonumuz.
-</span><span class="k">function</span> <span class="nf">prepareFaxAttachment</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$type</span> <span class="o">=</span> <span class="nb">mime_content_type</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
-    <span class="nv">$basename</span> <span class="o">=</span> <span class="nb">basename</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nb">pathinfo</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nx">PATHINFO_EXTENSION</span><span class="p">));</span>
-    <span class="nv">$data</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
-    <span class="nv">$base64</span> <span class="o">=</span> <span class="s1">'data:'</span><span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s1">';name:'</span><span class="o">.</span> <span class="nv">$basename</span> <span class="o">.</span><span class="s1">';base64:'</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nv">$base64</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">)){</span> <span class="c1">// Post işlemi sonrası verileri işlemeye başlıyoruz
-</span>    <span class="nv">$title</span>          <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'title'</span><span class="p">];</span> <span class="c1">// Formdan gelen fax başlığı
-</span>    <span class="nv">$receivers</span>      <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
-</span>    <span class="nv">$did</span>            <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'did'</span><span class="p">];</span> <span class="c1">// Formdan gelen gönderilen numara
-</span>
-    <span class="nv">$dir</span>            <span class="o">=</span> <span class="s1">'files/'</span><span class="p">;</span> <span class="c1">// Dosyamızın kopyalanacağı dizin. Bu dizinin izinleri 777 olacak şekilde ayarlanmalıdır. 
-</span>    <span class="nv">$file</span>           <span class="o">=</span> <span class="nv">$dir</span><span class="o">.</span><span class="nb">basename</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span> <span class="c1">// Kopyalama işlemi öncesi gelen dosyanın nereye hangi isimle kayıt olacağını belirliyoruz.
-</span>    <span class="k">if</span> <span class="p">(</span><span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">],</span><span class="nv">$file</span><span class="p">)){</span> <span class="c1">// Kopyalam işlemi
-</span>        <span class="nv">$file</span>       <span class="o">=</span> <span class="nx">prepareFaxAttachment</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span> <span class="c1">// Base64 dönüşümü
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">die</span><span class="p">(</span><span class="s2">"Dosya aktarımı sırasında hata oluştu."</span><span class="p">);</span>
+    <span class="c1">// Base64 dönüşümünü yapacak olan yardımcı fonksiyonumuz.
+</span>    <span class="k">function</span> <span class="nf">prepareFaxAttachment</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$type</span> <span class="o">=</span> <span class="nb">mime_content_type</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+        <span class="nv">$basename</span> <span class="o">=</span> <span class="nb">basename</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nb">pathinfo</span><span class="p">(</span><span class="nv">$path</span><span class="p">,</span> <span class="nx">PATHINFO_EXTENSION</span><span class="p">));</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+        <span class="nv">$base64</span> <span class="o">=</span> <span class="s1">'data:'</span><span class="o">.</span> <span class="nv">$type</span> <span class="o">.</span> <span class="s1">';name:'</span><span class="o">.</span> <span class="nv">$basename</span> <span class="o">.</span><span class="s1">';base64:'</span> <span class="o">.</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$base64</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="cm">/*
-    * CURL işlemleri buraya gelecek
-    */</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">)){</span> <span class="c1">// Post işlemi sonrası verileri işlemeye başlıyoruz
+</span>        <span class="nv">$title</span>          <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'title'</span><span class="p">];</span> <span class="c1">// Formdan gelen fax başlığı
+</span>        <span class="nv">$receivers</span>      <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
+</span>        <span class="nv">$did</span>            <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'did'</span><span class="p">];</span> <span class="c1">// Formdan gelen gönderilen numara
+</span>
+        <span class="nv">$dir</span>            <span class="o">=</span> <span class="s1">'files/'</span><span class="p">;</span> <span class="c1">// Dosyamızın kopyalanacağı dizin. Bu dizinin izinleri 777 olacak şekilde ayarlanmalıdır.
+</span>        <span class="nv">$file</span>           <span class="o">=</span> <span class="nv">$dir</span><span class="o">.</span><span class="nb">basename</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]);</span> <span class="c1">// Kopyalama işlemi öncesi gelen dosyanın nereye hangi isimle kayıt olacağını belirliyoruz.
+</span>        <span class="k">if</span> <span class="p">(</span><span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">],</span><span class="nv">$file</span><span class="p">)){</span> <span class="c1">// Kopyalam işlemi
+</span>            <span class="nv">$file</span>       <span class="o">=</span> <span class="nx">prepareFaxAttachment</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span> <span class="c1">// Base64 dönüşümü
+</span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">die</span><span class="p">(</span><span class="s2">"Dosya aktarımı sırasında hata oluştu."</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="cm">/*
+        * CURL işlemleri buraya gelecek
+        */</span>
+    <span class="p">}</span>
+  <span class="cp">?&gt;</span>
 </code></pre></div>
 <p>Fax gönderme işlemi için gerekli parametreler; fax başlığı, gönderilecek numara, alıcı listesi ve dosyadır. Yukarıdaki kodlar sayesinde artık ihtiyacımız olan tüm parametrelere sahibiz. Şimdi bu parametreleri curl ile apideki endpointe post ederek fax gönderme işlemini gerçekleştirebiliriz.</p>
 
 <h1 id="curl-ile-fax-g-nderme">Curl ile Fax Gönderme</h1>
 
-<p>Yukarıda değişkenlere atadığımız verileri kullanacağımız alan da burası. </p>
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="nv">$url</span>            <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span> <span class="c1">// Fax gönderme işlemini yapacağımız servis
-// Elimizdeki verileri bir dizi değişkene aktararak post etmeye hazır hale getiriyoruz.
-</span><span class="nv">$data</span>           <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span> <span class="s2">"receivers"</span> <span class="o">=&gt;</span> <span class="nv">$receivers</span><span class="p">,</span> <span class="s2">"did"</span> <span class="o">=&gt;</span> <span class="nv">$did</span><span class="p">,</span> <span class="s2">"attachment"</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">);</span>
-<span class="nv">$data_string</span>    <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span> <span class="c1">// Bu dataları JSON formatına çeviriyoruz.
-</span><span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">);</span>                                                                     
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data_string</span><span class="p">);</span>                                                                  
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>                                                                   
-<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>                                                                          
-    <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>                                                                                
-    <span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">))</span>                                                                       
-<span class="p">);</span>
-<span class="nv">$curl_response</span>  <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
-<span class="nv">$result</span>         <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
-<span class="k">die</span><span class="p">();</span>
-<span class="cp">?&gt;</span>
+<p>Yukarıda değişkenlere atadığımız verileri kullanacağımız alan da burası.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
+    <span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/outgoing-faxes?access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span> <span class="c1">// Fax gönderme işlemini yapacağımız servis
+</span>    <span class="c1">// Elimizdeki verileri bir dizi değişkene aktararak post etmeye hazır hale getiriyoruz.
+</span>    <span class="nv">$data</span>           <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"title"</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span> <span class="s2">"receivers"</span> <span class="o">=&gt;</span> <span class="nv">$receivers</span><span class="p">,</span> <span class="s2">"did"</span> <span class="o">=&gt;</span> <span class="nv">$did</span><span class="p">,</span> <span class="s2">"attachment"</span> <span class="o">=&gt;</span> <span class="nv">$file</span><span class="p">);</span>
+    <span class="nv">$data_string</span>    <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span> <span class="c1">// Bu dataları JSON formatına çeviriyoruz.
+</span>    <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_CUSTOMREQUEST</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data_string</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'Content-Type: application/json'</span><span class="p">,</span>
+        <span class="s1">'Content-Length: '</span> <span class="o">.</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$data_string</span><span class="p">))</span>
+    <span class="p">);</span>
+    <span class="nv">$curl_response</span>  <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+    <span class="nv">$result</span>         <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+    <span class="k">die</span><span class="p">();</span>
+  <span class="cp">?&gt;</span>
 </code></pre></div>
-<p>Fax gönderme işlemini de bu şekilde tamamlamış bulunuyoruz. Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/sendFax">buraya</a> tıklayarak inceleyebilirsiniz. </p>
+<p>Fax gönderme işlemini de bu şekilde tamamlamış bulunuyoruz. Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/sendFax">buraya</a> tıklayarak inceleyebilirsiniz.</p>
 
-<p>Faydalı olması dileğiyle.
-İyi çalışmalar.</p>
+<p>Faydalı olması dileğiyle. İyi çalışmalar.</p>
 
   </div>
   <hr>

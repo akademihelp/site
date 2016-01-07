@@ -20,7 +20,7 @@ redcarpet:
 permalink: /:title
 sass:
   style: :compressed
-exclude: ['node_modules','css','_scss']
+exclude: ['node_modules']
 keep_files: ['_site/css']
 
 # Authors Setup

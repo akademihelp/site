@@ -72,6 +72,7 @@ Html yapısını oluşturarak kodları yazmaya başlayalım.
 # Curl ile Arama Kayıtlarının Çekilmesi
 Arama kayıtlarını çekerken dikkat etmemiz gereken birkaç önemli nokta var. Bunlardan ilki sayfa numarası, ikincisi ise limit değeri.  Sayfa numarası çekeceğimiz verilerden kaçıncı sayfayı çekmek istediğimizi gösteriyor. Limit ise her sayfada kaç veri olacağını belirtiyor. 
 Örneğin toplamda 23 kaydımız varsa limit değeri olarak 5 yazdığımızda, 5 sayfalık veri dönecektir. Lafı fazla uzatmadan php kısmına geçelim.
+
 ```php
 <?php
 $token          = ""; // Bulutfon panelinden aldığımız master token
@@ -128,7 +129,9 @@ foreach($cdrs as $cdr){
 </tr>
 <?php } ?>
 ```
+
 Kullanıcıya tüm verileri tek sayfada göstermek yerine sayfalama işlemi yapıyoruz.  Sayfa sayısını ise bize gelen pagination verilerine göre belirliyoruz. 
+
 ```
 <!-- Gelen verilere göre sayfalama yapıyoruz. -->
 <div class="pagination">

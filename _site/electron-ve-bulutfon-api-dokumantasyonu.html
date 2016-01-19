@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+
+    <!-- Global stuff -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Robots & indexing -->
+    
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+
+    <title>Electron ve Bulutfon Api Dokumantosyonu</title>
+
+    <!-- Page specific content -->
+    <meta name="description" content="Electron (AtomShell) Nedir?">
+    
+        <meta name="keywords" content="bulutfon,bulutfon api dokumantasyonu,electron,atom shell">
+    
+    <meta name="author" content="http://akademi.help">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Web fonts -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- Favicon -->
+    <link href="/images/favicon.png" rel="icon" type="image/ico" >
+    <!--[if IE]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
+
+    <link rel="canonical" href="http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/rss" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Electron ve Bulutfon Api Dokumantosyonu" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu" />
+    <meta property="og:description" content="Electron (AtomShell) Nedir?" />
+    <meta property="og:image" content="/images/akademi-help.png" />
+    <meta property="og:site_name" content="https://akademi.help" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@akademi_help">
+    <meta name="twitter:title" content="Electron ve Bulutfon Api Dokumantosyonu">
+    <meta name="twitter:description" content="Electron (AtomShell) Nedir?">
+    <meta name="twitter:creator" content="@akademi_help">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <strong>
+        Akademi Help
+      </strong>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/hakkimizda">Hakkımızda</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Electron ve Bulutfon Api Dokumantosyonu</h1>
+    <p class="post-meta"><time datetime="2016-01-19T11:36:23+08:00" itemprop="datePublished">19-01-2016</time> | <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">coskuntekin</span></span></p>
+  </header>
+  <!-- Author -->
+  
+  <!-- Post -->
+  <div class="post-content" itemprop="articleBody">
+      <h2 id="electron-atomshell-nedir">Electron (AtomShell) Nedir?</h2>
+
+<p>Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazilmasina imkan saglayan bir framework. Adinda anlasilacagi uzere <a href="https://atom.io/">Atom</a> icin yazilmis bir framework ve open source.</p>
+
+<p>Electron <code>Node.js</code> ve <code>Chromium</code> uzerine bina edildigi icin <code>webkit</code> nimetlerinden yararlanarak cok efektif projeler yaratilabilir.</p>
+
+<p>(Ben burada hemen bir parantez acmak istiyorum, yillar once Mozilla camiasinin onculugu ile baslayan IE&#39;ye karsi alternative bir browser olusturma girisimine saygi duyarak, sadece <code>webkit</code> i ustun kilip diger yapilari yok sayarak bir seyler yapmak, interneti IE olmasada, IE&#39;nin yerine bir baska yapinin tekeline birakmaktir diye dusunuyorum ve bu bana cok da dogru gelmiyor. Elbette Electron&#39;da benzer bir durum soz konusu degil, ama ortaya cikartilan projelerde internetin gelecegi adina bu gibi konular es gecilmemelidir. Eger okumak isterseniz <a href="http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/">soyle</a> bir yazida mevcut.)</p>
+
+<h2 id="electron-icin-hazirlik">Electron Icin Hazirlik</h2>
+
+<p>Node.js uzerine bina edildigi icin oncelikle <a href="https://nodejs.org/">Node.js&#39;in</a> kurulu olmasi gerekiyor.</p>
+
+<h4 id="nereden-baslamaliyim">Nereden Baslamaliyim?</h4>
+
+<p>Iste burda bir secim yapmaniz gerekiyor. Electron ile calismak icin ya native <a href="http://electron.atom.io/docs/v0.36.4/">documentation&#39;i</a> takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.</p>
+
+<p>Boilerplate size hizli bir sekilde sonuc almaniza yardimci olacaktir. Ama documentation&#39;ni da kesinlikle okumanizi tavsiye ederim. Zira ilerde karsilacaginiz her turlu issue&#39;nun cevabini orada bulabilirsiniz.</p>
+
+<p>Electron&#39;un open source boilerplate&#39;lerine <a href="https://github.com/sindresorhus/awesome-electron#boilerplates">buradan</a> ulasabilirsiniz.</p>
+
+<p>Bizler <a href="https://github.com/bulutfon/bulutfon-api-electron">Bulutfon Api Dokumantosyonu</a> icin <a href="https://github.com/szwacz/electron-boilerplate">electron-boilerplate&#39;i</a> kullandik.</p>
+
+<h4 id="neden-electron-boilerplate-sectik">Neden electron-boilerplate Sectik?</h4>
+
+<ul>
+<li>Diger boilerplate&#39;ler release&#39;leri raw seklinde veriyor. Yani installer olmadan release yapiyor. Bu da son kullanici tarafinda memnuniyetesizlik dogurabilir.</li>
+<li><a href="http://gulpjs.com/">Gulp</a> kullandigi icin HAML, Sass, Less, Coffee Script gibi powerful tool&#39;lar ile calismaya imkan sagliyor.</li>
+<li>Kolayca installer banner, desktop icon, docker icon eklemeyip installer window&#39;u customize edebilirsiniz.</li>
+<li>ES6 kullanimina olanak sagliyor. Yani yazdiginiz bir javascript module ES6 ile Kolayca import yapabilirsiniz.</li>
+<li>Development, production ve test environment &#39;larina sahip.</li>
+<li><a href="http://jasmine.github.io/2.0/introduction.html">Jasmine</a> ile test yapabilirsiniz.</li>
+<li>Star, watch, fork gibi rakamlari fena degil ve repo owner pull-request leri es gecmiyor. Bence bu reponun gelismesi icin gerekli olan en buyuk etken, zira sizlerde reponun gelismesine katki saglayabilirsiniz. Ornegin <a href="https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b">soyle.</a></li>
+</ul>
+
+<h2 id="bulutfon-api-dokumantasyonu">Bulutfon Api Dokumantasyonu</h2>
+
+<p>Electron, <a href="http://developer.android.com/reference/android/webkit/WebView.html">Android</a> ve <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx">.NET</a> developer&#39; larin asina oldugu <a href="http://electron.atom.io/docs/v0.36.4/api/web-view-tag/">webview</a> ozelligine sahip.</p>
+
+<p>Bizler <a href="https://github.com/bulutfon/bulutfon-api-electron">bulutfon api dokumantasyonu</a> icin bu ozellikten yararlandik.</p>
+
+<p>Kisaca bulutfon api dokumantasyonu reposuna goz atacak olursak;</p>
+<div class="highlight"><pre><code class="language-" data-lang="">git clone https://github.com/bulutfon/bulutfon-api-electron.git
+cd bulutfon-api-electron
+npm install
+</code></pre></div>
+<p>ve</p>
+<div class="highlight"><pre><code class="language-" data-lang="">npm start
+</code></pre></div>
+<p>ile Bulutfon Api Dokumantasyonu&#39;na merhaba diyebilirsiniz.</p>
+
+<h4 id="development-environment">Development Environment</h4>
+
+<p>Ilk screen&#39;de eminimki Devtools dikkatinizi cekmistir. Zira Electron basic olarak <a href="http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/">Devtools extension&#39;a</a> sahip ve bu da hata ayiklamada buyuk bir avantaj sagliyor.</p>
+
+<h4 id="project-folders">Project Folders</h4>
+
+<h5 id="app">app</h5>
+
+<p><code>app</code> icinde uygulamanizin kodlari bulunuyor.
+<code>app/package.json</code> de application&#39;a ait kimlik bilgileri ve yine application&#39;a ait dependencies&#39;leri bulabilirsiniz.
+<code>app/background.js</code> de application&#39;a ait electron base tanimlamalari mevcut. Ornegin, <a href="https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17">surada</a> application&#39;a ait screen size degerleri mevcut. Bir diger code block&#39;da Devtools&#39;a ait. Bazen development environment ile production environment&#39;da Devtools kullanma ihtiyaci dogabiliyor. Onun icin <a href="https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41">suradan</a> ilgili degisikligi yapabilirsiniz.</p>
+
+<h5 id="config">config</h5>
+
+<p><code>config</code> folder icinde uc environment&#39;a ait json dosyalari var. Burada environment&#39;lara ait specific atamalar yapilabilir.</p>
+
+<h5 id="resources">resources</h5>
+
+<p><code>resources</code> icinde installer banner, desktop icon, docker icon gibi image&#39;lar mevcut. Orginal size ve format&#39; lara sadik kalarak burada istediginiz degisikligi yapabilirsiniz.</p>
+
+<h5 id="task">task</h5>
+
+<p><code>task</code> icinde build ve environment icin kullanilan kodlar mevcut. Burada onemli bir husus var. Eger <code>app</code> folder icinde herhangi bir folder/file structure&#39; da bir degisiklik yapmis iseniz bunu <a href="https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17">build.js</a> icinde tanimlamayi unutmayin. Zira daha oncede bahsettigim gibi proje Gulp ile entegre ve <code>npm start</code> dediginizde Gulp projeyi build.js icindeki tanimalara gore build edecektir.</p>
+
+<p>Eger herhangi bir npm package eklemek isterseniz ise asagidaki yolu kullanabilirsiniz.</p>
+
+<ul>
+<li><code>cd/app</code></li>
+<li><code>npm install name_of_npm_module --save</code></li>
+</ul>
+
+<h4 id="production-environment">Production Environment</h4>
+
+<p>Release almak istediginiz operation system&#39;e sahip olmak zorundasiniz. Yani MAC icin OSX, Linux icin Ubuntu ya da bir digeri, Windows icin Windows 7&#39;in hali hazirda kurulu olmasi gerekiyor.</p>
+
+<p>Bunun icin <a href="https://www.vagrantup.com/">Vagrant</a> ya da <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box</a> kullanabilirsiniz. Ayrica Microsoft&#39;un developer icin hazirladigi <a href="https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/">soyle</a> bir sayfadan da yararlanabilirsiniz.</p>
+
+<h5 id="linux">Linux</h5>
+
+<p><code>npm run release</code></p>
+
+<h5 id="windows">Windows</h5>
+
+<ul>
+<li><p>Oncelikle <a href="http://nsis.sourceforge.net/">NSIS</a> indirip kurmamiz gerekiyor. NSIS v3.0b3 kurmanizi tavsiye ederim, zira daha onceki surumler turkce karakterlerde sorun yaratabiliyor.</p></li>
+<li><p>Kurulum tamamladiktan sonra NSIS icin windows icinde <code>environment variables</code> set etmeniz gerekiyor. Sanirim <a href="http://www.computerhope.com/issues/ch000549.htm">suradaki</a> tutorial yardimci olacaktir.</p></li>
+<li><p><a href="https://nodejs.org/en/">Node.js</a> ve <a href="https://git-scm.com/download/win">git</a> install edin.</p></li>
+<li><p>Terminal olarak git ile beraber gelen <code>git bash</code> kullanabilirsiniz.</p></li>
+<li><p><code>npm run release</code></p></li>
+</ul>
+
+<h2 id="son-olarak">Son Olarak</h2>
+
+<p>Genel hatlariyla Electron&#39;u &quot;Bulutfon Api Dokumantasyonu&quot; uzerinden anlatmaya calistim.
+Bulutfon Api Dokumantasyonu basic bir yapiya sahip yani herhangi bir third party framework ya da library kullanmiyor.</p>
+
+<p>Ama ilerleyen zaman icin Bulutfon icin gelistirdigimiz MVP&#39;yi (yangying) duyuracagiz ve bu application icin de AngularJS gibi bazi framework ve library&#39;leri kullandik. Bu baglamda &quot;yangying&quot; (Bulutfon MVP) electron icin cok daha gelismis bir ornek olacaktir. Yine akademi.help altinda konuyu etraflica ele alan bir yazi yazmayi dusunuyorum. Takipte kalin.</p>
+
+<p>Karsilastiginiz sorun ya da kafaniza takilan sorulari yorum yazarak bizlere aktarabilirsiniz.</p>
+
+  </div>
+  <hr>
+  <!--Tags List-->
+  <div class="post-content">
+    <ul class="tag-list-inline">
+      <li>
+        Etiketler:
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#bulutfon">
+          bulutfon
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#bulutfon-api-dokumantasyonu">
+          bulutfon api dokumantasyonu
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#electron">
+          electron
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#atom-shell">
+          atom shell
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr>
+  <!--Social Icons-->
+  <div class="post-content">
+    <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
+      <li>
+        <div class="fb-share-button" data-href="" data-layout="button"></div>
+      </li>
+      <li>
+        <a href="" class="twitter-share-button"{count} data-via="akademi_help">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: tr_TR</script>
+        <script type="IN/Share"></script>
+      </li>
+      <li>
+        <a target="_blank" class="btn btn-email btn-sm" href="mailto:arkadasinizin@epostaadresi.com?subject=Electron ve Bulutfon Api Dokumantosyonu" title="Email ile paylaşabilirsiniz">
+          e-posta
+        </a>
+      </li>
+      <li>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
+          {lang: 'tr'}
+        </script>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-annotation="none"></div>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <!-- Author -->
+  <div class="post-content" itemprop="articleFooter">
+    <img src="http://www.gravatar.com/avatar/5564589155f579413c909fa1f8ad5d5b?s=40">
+    <small class="author">Coşkun TEKIN</small> -
+    <small class="author">bulutfon.com</small>
+  </div>
+  <hr>
+  <!-- Disqus -->
+  <div class="post-content">
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    var disqus_config = function () {
+    this.page.url = 'http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu'; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//akademihelp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <ul class="contact-list">
+          <li>Akademi Help Iletisim Bilgileri</li>
+          
+          <li>
+            Github:
+            <a href="https://github.com/akademihelp">
+              akademihelp
+            </a>
+          </li>
+          
+          <li>
+            Bizi
+            <a href="/feed.xml"> RSS ile </a>
+            takip edebilirsiniz.
+          </li>
+          <li>
+            <a target="_blank" href="https://www.bulutfon.com/">
+              <small>
+                bulutfon.com
+              </small>
+            </a>|
+            <a target="_blank" href="http://www.lab2023.com/">
+              <small>
+                lab2023.com
+              </small>
+              </a>|
+            <a target="_blank" href="https://www.netinternet.com.tr">
+              <small>
+                netinternet.com.tr
+              </small>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+      </div>
+      <div class="footer-col footer-col-1 text-right">
+        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71823740-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>

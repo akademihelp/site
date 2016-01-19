@@ -6,9 +6,303 @@
 </description>
     <link>http://akademi.help/</link>
     <atom:link href="http://akademi.help/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 07 Jan 2016 10:31:10 +0800</pubDate>
-    <lastBuildDate>Thu, 07 Jan 2016 10:31:10 +0800</lastBuildDate>
+    <pubDate>Tue, 19 Jan 2016 14:10:59 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2016 14:10:59 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Electron ve Bulutfon Api Dokumantosyonu</title>
+        <description>&lt;h2 id=&quot;electron-atomshell-nedir&quot;&gt;Electron (AtomShell) Nedir?&lt;/h2&gt;
+
+&lt;p&gt;Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazilmasina imkan saglayan bir framework. Adinda anlasilacagi uzere &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; icin yazilmis bir framework ve open source.&lt;/p&gt;
+
+&lt;p&gt;Electron &lt;code&gt;Node.js&lt;/code&gt; ve &lt;code&gt;Chromium&lt;/code&gt; uzerine bina edildigi icin &lt;code&gt;webkit&lt;/code&gt; nimetlerinden yararlanarak cok efektif projeler yaratilabilir.&lt;/p&gt;
+
+&lt;p&gt;(Ben burada hemen bir parantez acmak istiyorum, yillar once Mozilla camiasinin onculugu ile baslayan IE&amp;#39;ye karsi alternative bir browser olusturma girisimine saygi duyarak, sadece &lt;code&gt;webkit&lt;/code&gt; i ustun kilip diger yapilari yok sayarak bir seyler yapmak, interneti IE olmasada, IE&amp;#39;nin yerine bir baska yapinin tekeline birakmaktir diye dusunuyorum ve bu bana cok da dogru gelmiyor. Elbette Electron&amp;#39;da benzer bir durum soz konusu degil, ama ortaya cikartilan projelerde internetin gelecegi adina bu gibi konular es gecilmemelidir. Eger okumak isterseniz &lt;a href=&quot;http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/&quot;&gt;soyle&lt;/a&gt; bir yazida mevcut.)&lt;/p&gt;
+
+&lt;h2 id=&quot;electron-icin-hazirlik&quot;&gt;Electron Icin Hazirlik&lt;/h2&gt;
+
+&lt;p&gt;Node.js uzerine bina edildigi icin oncelikle &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&amp;#39;in&lt;/a&gt; kurulu olmasi gerekiyor.&lt;/p&gt;
+
+&lt;h4 id=&quot;nereden-baslamaliyim&quot;&gt;Nereden Baslamaliyim?&lt;/h4&gt;
+
+&lt;p&gt;Iste burda bir secim yapmaniz gerekiyor. Electron ile calismak icin ya native &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/&quot;&gt;documentation&amp;#39;i&lt;/a&gt; takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.&lt;/p&gt;
+
+&lt;p&gt;Boilerplate size hizli bir sekilde sonuc almaniza yardimci olacaktir. Ama documentation&amp;#39;ni da kesinlikle okumanizi tavsiye ederim. Zira ilerde karsilacaginiz her turlu issue&amp;#39;nun cevabini orada bulabilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;Electron&amp;#39;un open source boilerplate&amp;#39;lerine &lt;a href=&quot;https://github.com/sindresorhus/awesome-electron#boilerplates&quot;&gt;buradan&lt;/a&gt; ulasabilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;Bulutfon Api Dokumantosyonu&lt;/a&gt; icin &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate&quot;&gt;electron-boilerplate&amp;#39;i&lt;/a&gt; kullandik.&lt;/p&gt;
+
+&lt;h4 id=&quot;neden-electron-boilerplate-sectik&quot;&gt;Neden electron-boilerplate Sectik?&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Diger boilerplate&amp;#39;ler release&amp;#39;leri raw seklinde veriyor. Yani installer olmadan release yapiyor. Bu da son kullanici tarafinda memnuniyetesizlik dogurabilir.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; kullandigi icin HAML, Sass, Less, Coffee Script gibi powerful tool&amp;#39;lar ile calismaya imkan sagliyor.&lt;/li&gt;
+&lt;li&gt;Kolayca installer banner, desktop icon, docker icon eklemeyip installer window&amp;#39;u customize edebilirsiniz.&lt;/li&gt;
+&lt;li&gt;ES6 kullanimina olanak sagliyor. Yani yazdiginiz bir javascript module ES6 ile Kolayca import yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Development, production ve test environment &amp;#39;larina sahip.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jasmine.github.io/2.0/introduction.html&quot;&gt;Jasmine&lt;/a&gt; ile test yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Star, watch, fork gibi rakamlari fena degil ve repo owner pull-request leri es gecmiyor. Bence bu reponun gelismesi icin gerekli olan en buyuk etken, zira sizlerde reponun gelismesine katki saglayabilirsiniz. Ornegin &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b&quot;&gt;soyle.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bulutfon-api-dokumantasyonu&quot;&gt;Bulutfon Api Dokumantasyonu&lt;/h2&gt;
+
+&lt;p&gt;Electron, &lt;a href=&quot;http://developer.android.com/reference/android/webkit/WebView.html&quot;&gt;Android&lt;/a&gt; ve &lt;a href=&quot;https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx&quot;&gt;.NET&lt;/a&gt; developer&amp;#39; larin asina oldugu &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/api/web-view-tag/&quot;&gt;webview&lt;/a&gt; ozelligine sahip.&lt;/p&gt;
+
+&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;bulutfon api dokumantasyonu&lt;/a&gt; icin bu ozellikten yararlandik.&lt;/p&gt;
+
+&lt;p&gt;Kisaca bulutfon api dokumantasyonu reposuna goz atacak olursak;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;git clone https://github.com/bulutfon/bulutfon-api-electron.git
+cd bulutfon-api-electron
+npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ve&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;ile Bulutfon Api Dokumantasyonu&amp;#39;na merhaba diyebilirsiniz.&lt;/p&gt;
+
+&lt;h4 id=&quot;development-environment&quot;&gt;Development Environment&lt;/h4&gt;
+
+&lt;p&gt;Ilk screen&amp;#39;de eminimki Devtools dikkatinizi cekmistir. Zira Electron basic olarak &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/&quot;&gt;Devtools extension&amp;#39;a&lt;/a&gt; sahip ve bu da hata ayiklamada buyuk bir avantaj sagliyor.&lt;/p&gt;
+
+&lt;h4 id=&quot;project-folders&quot;&gt;Project Folders&lt;/h4&gt;
+
+&lt;h5 id=&quot;app&quot;&gt;app&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt; icinde uygulamanizin kodlari bulunuyor.
+&lt;code&gt;app/package.json&lt;/code&gt; de application&amp;#39;a ait kimlik bilgileri ve yine application&amp;#39;a ait dependencies&amp;#39;leri bulabilirsiniz.
+&lt;code&gt;app/background.js&lt;/code&gt; de application&amp;#39;a ait electron base tanimlamalari mevcut. Ornegin, &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17&quot;&gt;surada&lt;/a&gt; application&amp;#39;a ait screen size degerleri mevcut. Bir diger code block&amp;#39;da Devtools&amp;#39;a ait. Bazen development environment ile production environment&amp;#39;da Devtools kullanma ihtiyaci dogabiliyor. Onun icin &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41&quot;&gt;suradan&lt;/a&gt; ilgili degisikligi yapabilirsiniz.&lt;/p&gt;
+
+&lt;h5 id=&quot;config&quot;&gt;config&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;config&lt;/code&gt; folder icinde uc environment&amp;#39;a ait json dosyalari var. Burada environment&amp;#39;lara ait specific atamalar yapilabilir.&lt;/p&gt;
+
+&lt;h5 id=&quot;resources&quot;&gt;resources&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;resources&lt;/code&gt; icinde installer banner, desktop icon, docker icon gibi image&amp;#39;lar mevcut. Orginal size ve format&amp;#39; lara sadik kalarak burada istediginiz degisikligi yapabilirsiniz.&lt;/p&gt;
+
+&lt;h5 id=&quot;task&quot;&gt;task&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;task&lt;/code&gt; icinde build ve environment icin kullanilan kodlar mevcut. Burada onemli bir husus var. Eger &lt;code&gt;app&lt;/code&gt; folder icinde herhangi bir folder/file structure&amp;#39; da bir degisiklik yapmis iseniz bunu &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17&quot;&gt;build.js&lt;/a&gt; icinde tanimlamayi unutmayin. Zira daha oncede bahsettigim gibi proje Gulp ile entegre ve &lt;code&gt;npm start&lt;/code&gt; dediginizde Gulp projeyi build.js icindeki tanimalara gore build edecektir.&lt;/p&gt;
+
+&lt;p&gt;Eger herhangi bir npm package eklemek isterseniz ise asagidaki yolu kullanabilirsiniz.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cd/app&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm install name_of_npm_module --save&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;production-environment&quot;&gt;Production Environment&lt;/h4&gt;
+
+&lt;p&gt;Release almak istediginiz operation system&amp;#39;e sahip olmak zorundasiniz. Yani MAC icin OSX, Linux icin Ubuntu ya da bir digeri, Windows icin Windows 7&amp;#39;in hali hazirda kurulu olmasi gerekiyor.&lt;/p&gt;
+
+&lt;p&gt;Bunun icin &lt;a href=&quot;https://www.vagrantup.com/&quot;&gt;Vagrant&lt;/a&gt; ya da &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;Virtual Box&lt;/a&gt; kullanabilirsiniz. Ayrica Microsoft&amp;#39;un developer icin hazirladigi &lt;a href=&quot;https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/&quot;&gt;soyle&lt;/a&gt; bir sayfadan da yararlanabilirsiniz.&lt;/p&gt;
+
+&lt;h5 id=&quot;linux&quot;&gt;Linux&lt;/h5&gt;
+
+&lt;p&gt;&lt;code&gt;npm run release&lt;/code&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;windows&quot;&gt;Windows&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Oncelikle &lt;a href=&quot;http://nsis.sourceforge.net/&quot;&gt;NSIS&lt;/a&gt; indirip kurmamiz gerekiyor. NSIS v3.0b3 kurmanizi tavsiye ederim, zira daha onceki surumler turkce karakterlerde sorun yaratabiliyor.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Kurulum tamamladiktan sonra NSIS icin windows icinde &lt;code&gt;environment variables&lt;/code&gt; set etmeniz gerekiyor. Sanirim &lt;a href=&quot;http://www.computerhope.com/issues/ch000549.htm&quot;&gt;suradaki&lt;/a&gt; tutorial yardimci olacaktir.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js&lt;/a&gt; ve &lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;git&lt;/a&gt; install edin.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Terminal olarak git ile beraber gelen &lt;code&gt;git bash&lt;/code&gt; kullanabilirsiniz.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;npm run release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;son-olarak&quot;&gt;Son Olarak&lt;/h2&gt;
+
+&lt;p&gt;Genel hatlariyla Electron&amp;#39;u &amp;quot;Bulutfon Api Dokumantasyonu&amp;quot; uzerinden anlatmaya calistim.
+Bulutfon Api Dokumantasyonu basic bir yapiya sahip yani herhangi bir third party framework ya da library kullanmiyor.&lt;/p&gt;
+
+&lt;p&gt;Ama ilerleyen zaman icin Bulutfon icin gelistirdigimiz MVP&amp;#39;yi (yangying) duyuracagiz ve bu application icin de AngularJS gibi bazi framework ve library&amp;#39;leri kullandik. Bu baglamda &amp;quot;yangying&amp;quot; (Bulutfon MVP) electron icin cok daha gelismis bir ornek olacaktir. Yine akademi.help altinda konuyu etraflica ele alan bir yazi yazmayi dusunuyorum. Takipte kalin.&lt;/p&gt;
+
+&lt;p&gt;Karsilastiginiz sorun ya da kafaniza takilan sorulari yorum yazarak bizlere aktarabilirsiniz.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Jan 2016 11:36:23 +0800</pubDate>
+        <link>http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu</link>
+        <guid isPermaLink="true">http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu</guid>
+        
+        <category>bulutfon</category>
+        
+        <category>bulutfon api dokumantasyonu</category>
+        
+        <category>electron</category>
+        
+        <category>atom shell</category>
+        
+        
+        <category>introduction</category>
+        
+      </item>
+    
+      <item>
+        <title>PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi</title>
+        <description>&lt;p&gt;Merhaba arkadaşlar,
+Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kullanarak arama kayıtlarını çekip, listelemesini yapacağız. &lt;/p&gt;
+
+&lt;p&gt;Eğer önceki yazıları okuduysanız az çok neler yapacağımızı tahmin ediyorsunuzdur. İlk olarak uygulamanın html yapısını oluşturacağız. Ardından Curl ile arama kayıtlarını çekip listeleme yapacağız. Artık gereksiz kod kalabalağı yapmamak için CSS kodlarını makaleye eklemiyorum. Basit haliyle anlatıp ihtiyaç duyanlar için kodları paylaşıyorum ki uygulamanın çalışan halini ve kodlarını inceleyebilesiniz. &lt;/p&gt;
+
+&lt;h1 id=&quot;uygulamam-z-n-ekran-g-r-nt-s&quot;&gt;Uygulamamızın Ekran Görüntüsü&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/gelen-aramalar-ekran-goruntusu.png&quot; alt=&quot;Uygulamanın ekran görüntüsü&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Html yapısını oluşturarak kodları yazmaya başlayalım.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Bulutfon Api CDR&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Main CSS --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;css/main.css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;table&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Arayan&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Aranan&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Yönü&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Arama Tipi&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Tarih&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Ses Kaydı&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;th&amp;gt;&lt;/span&gt;Kapanma&lt;span class=&quot;nt&quot;&gt;&amp;lt;/th&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Örnek Kayıt --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Daha sonra bu alana arama kayıtlarını çekeceğiz. --&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;905068118260&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;905068118260&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Gelen&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Arama Tipi&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Aramanın sesli arama mı veya fax mı olduğunu göstereceğimiz alan --&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;15-01-2016 19:59:00&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Yok&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;Kapanma Sebebi&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Örnek Kayıt Bitiş --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/table&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Gelen verilere göre sayfalama yapacağımız alan. --&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pagination&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;current&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Sayfalama bitiş --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;curl-ile-arama-kay-tlar-n-n-ekilmesi&quot;&gt;Curl ile Arama Kayıtlarının Çekilmesi&lt;/h1&gt;
+
+&lt;p&gt;Arama kayıtlarını çekerken dikkat etmemiz gereken birkaç önemli nokta var. Bunlardan ilki sayfa numarası, ikincisi ise limit değeri.  Sayfa numarası çekeceğimiz verilerden kaçıncı sayfayı çekmek istediğimizi gösteriyor. Limit ise her sayfada kaç veri olacağını belirtiyor. 
+Örneğin toplamda 23 kaydımız varsa limit değeri olarak 5 yazdığımızda, 5 sayfalık veri dönecektir. Lafı fazla uzatmadan php kısmına geçelim.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$token&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Bulutfon panelinden aldığımız master token
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Başlangıç değeri olarak sayfa numarasını 1 yapıyoruz.
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$limit&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Her sayfada kaç veri gösterileceğini belirliyoruz.
+// Bu alanda eğer kullanıcı bir sayfa numarasına tıklamışsa sayfa değerini değiştirerek kullanıcının girdiği sayfanın verilerini çekiyoruz.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;page&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])){&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;page&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Başka bir sayfaya tıklandıysa 1. sayfa yerine o sayfayı çektireceğiz.
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Burada ise arama kayıtlarını çekeceğimiz bulutfon tarafındaki servise gönderilecek parametreleri belirliyoruz.
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$url&lt;/span&gt;            &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;https://api.bulutfon.com/cdrs?limit=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&amp;amp;page=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$page&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&amp;amp;access_token=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_RETURNTRANSFER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_SSL_VERIFYHOST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_setopt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;CURLOPT_SSL_VERIFYPEER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$curl_response&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;curl_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;curl_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;json_decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$curl_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$cdrs&lt;/span&gt;           &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;cdrs&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Arama kayıtlarını değişkene atıyoruz.
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$pages&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;pagination&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Sayfalama ve diğer bilgileri pages değişkenine atıyoruz.
+&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bulutfon&amp;#39;dan verileri çektiğimizde bize 2 tipte  veri dönüyor. Birincisi arama kayıtları, diğeri ise sayfalama ve diğer istatistiki bilgiler. Daha sonra bu sayfalama bilgilerini aşağıda sayfalama işlemi yaparken kullanacağız. &lt;/p&gt;
+
+&lt;h1 id=&quot;gelen-verilerin-listelenmesi&quot;&gt;Gelen Verilerin Listelenmesi&lt;/h1&gt;
+
+&lt;p&gt;Artık html sayfamız hazır, veriler elimizde. Geriye bu verileri listelemek kalıyor. Oluşturduğumuz tablodaki örnek kaydı aşağıdaki kodlarla değiştiriyoruz. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Gelen verileri foreach döngüsüyle tek tek alıyoruz.
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdrs&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;caller&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;callee&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;direction&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;IN&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;td class=&quot;in&quot;&amp;gt;Gelen&amp;lt;/td&amp;gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;td class=&quot;out&quot;&amp;gt;Giden&amp;lt;/td&amp;gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;bf_calltype&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;call_time&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;call_record&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Var&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;a href=&quot;?download=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;uuid&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&quot;&amp;gt;İndir&amp;lt;/a&amp;gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Yok&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;hangup_cause&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/td&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/tr&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kullanıcıya tüm verileri tek sayfada göstermek yerine sayfalama işlemi yapıyoruz.  Sayfa sayısını ise bize gelen pagination verilerine göre belirliyoruz. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;&amp;lt;!-- Gelen verilere göre sayfalama yapıyoruz. --&amp;gt;
+&amp;lt;div class=&quot;pagination&quot;&amp;gt;
+    &amp;lt;?php
+    for ($i=1;$i&amp;lt;=$pages[&#39;total_pages&#39;];$i++){
+        if ($i==$page)
+            echo &#39;&amp;lt;a class=&quot;current&quot;&amp;gt;&#39;.$i.&#39;&amp;lt;/a&amp;gt;&#39;;
+        else
+            echo &#39;&amp;lt;a href=&quot;?page=&#39;.$i.&#39;&quot;&amp;gt;&#39;.$i.&#39;&amp;lt;/a&amp;gt;&#39;;
+    }
+    ?&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Son olarak ses kaydı olan aramalar için ses dosyasını indirme işlemini gerçekleştiriyoruz. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;// Ses Dosyasını İndirme İşlemi
+if(isset($_GET[&#39;download&#39;])){
+    $url    = &#39;https://api.bulutfon.com/call-records/&#39;.$_GET[&#39;download&#39;].&#39;?&#39;;
+    header(&#39;Location: &#39;.$url . http_build_query(array(
+            &#39;access_token&#39; =&amp;gt; $token,
+        )));
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha fazla veriye ihtiyaç duyanlar için Bulutfon&amp;#39;dan gelen verilerin tam listesi;
+&lt;img src=&quot;/images/veriler-tam-liste.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Soru ve isteklerinizi yorum olarak belirtebilirsiniz.&lt;br&gt;
+Örnek kodları &lt;a href=&quot;https://github.com/hsyntnc/BulutfonSampleApps/tree/master/CDR&quot;&gt;buraya&lt;/a&gt; tıklayarak inceleyebilir, uygulamanın çalışan hali içinse &lt;a href=&quot;http://tunc.tk/Bulutfon/CDR/&quot;&gt;buraya&lt;/a&gt; tıklayabilirsiniz.&lt;/p&gt;
+
+&lt;p&gt;Faydalı olması dileğiyle.
+İyi çalışmalar.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jan 2016 22:53:06 +0800</pubDate>
+        <link>http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi</link>
+        <guid isPermaLink="true">http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi</guid>
+        
+        <category>bulutfon</category>
+        
+        <category>cdr</category>
+        
+        <category>api</category>
+        
+        <category>curl</category>
+        
+        <category>arama kayıtları</category>
+        
+        <category>post</category>
+        
+        
+        <category>introduction</category>
+        
+      </item>
     
       <item>
         <title>Php, Curl, Bulutfon Apiyi Kullanarak Gönderilen Faxların Listelenmesi</title>

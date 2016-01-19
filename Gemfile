@@ -2,5 +2,5 @@
 # the following line to use "https"
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'redcarpet'
+gem 'jekyll', '>= 3.0.1'
+gem 'redcarpet', '>= 3.3.4'

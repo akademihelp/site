@@ -14,43 +14,43 @@ tags:
 
 ## Electron (AtomShell) Nedir?
 
-Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazilmasina imkan saglayan bir framework. Adinda anlasilacagi uzere [Atom](https://atom.io/) icin yazilmis bir framework ve open source.
+Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazılmasına imkan sağlayan bir framework. Adından anaşılacağı üzere [Atom](https://atom.io/) için yazılmış bir framework ve open source projedir.
 
-Electron `Node.js` ve `Chromium` uzerine bina edildigi icin `webkit` nimetlerinden yararlanarak cok efektif projeler yaratilabilir.
+Electron `Node.js` ve `Chromium` üzerinden geliştirildiği için `webkit` nimetlerinden yararlanarak çok efektif projeler yaratılabilir.
 
-(Ben burada hemen bir parantez acmak istiyorum, yillar once Mozilla camiasinin onculugu ile baslayan IE'ye karsi alternative bir browser olusturma girisimine saygi duyarak, sadece `webkit` i ustun kilip diger yapilari yok sayarak bir seyler yapmak, interneti IE olmasada, IE'nin yerine bir baska yapinin tekeline birakmaktir diye dusunuyorum ve bu bana cok da dogru gelmiyor. Elbette Electron'da benzer bir durum soz konusu degil, ama ortaya cikartilan projelerde internetin gelecegi adina bu gibi konular es gecilmemelidir. Eger okumak isterseniz [soyle](http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/) bir yazida mevcut.)
+(Ben burada hemen bir parantez açmak istiyorum, yıllar önce Mozilla camiasinin öncülüğü ile başlayan IE'ye karsi alternatif bir tarayıcı oluşturma girişimine saygı duyarak, sadece `webkit` i üstün kılıp diğer yapıları yok sayarak bir şeyler yapmak, interneti IE olmasada, IE'nin yerine bir başka yapının tekeline bırakmaktır diye düşünüyorum ve bu bana çok da doğru gelmiyor. Elbette Electron'da benzer bir durum söz konusu değil, ama ortaya çıkan projelerde internetin geleceği adına bu gibi konular es geçilmemelidir. Eğer okumak isterseniz [soyle](http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/) bir yazıda mevcut.)
 
-## Electron Icin Hazirlik
+## Electron İçin Hazırlık
 
-Node.js uzerine bina edildigi icin oncelikle [Node.js'in](https://nodejs.org/) kurulu olmasi gerekiyor.
+Node.js ile geliştirildiği için öncelikle [Node.js'in](https://nodejs.org/) kurulu olması gerekiyor.
 
-#### Nereden Baslamaliyim?
+#### Nereden Başlamalıyım?
 
-Iste burda bir secim yapmaniz gerekiyor. Electron ile calismak icin ya native [documentation'i](http://electron.atom.io/docs/v0.36.4/) takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.
+İste burda bir seçim yapmanız gerekiyor. Electron ile çalışmak için ya native [documentation'ı](http://electron.atom.io/docs/v0.36.4/) takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.
 
-Boilerplate size hizli bir sekilde sonuc almaniza yardimci olacaktir. Ama documentation'ni da kesinlikle okumanizi tavsiye ederim. Zira ilerde karsilacaginiz her turlu issue'nun cevabini orada bulabilirsiniz.
+Boilerplate size hızlı bir şekilde sonuç almanızda yardımcı olacaktır. Ama documentation'ı da kesinlikle okumanızı tavsiye ederim. Zira ilerde karşılaşacağınız her türlü sorunun cevabını orada bulabilirsiniz.
 
-Electron'un open source boilerplate'lerine [buradan](https://github.com/sindresorhus/awesome-electron#boilerplates) ulasabilirsiniz.
+Electron'un açık kaynak boilerplate'lerine [buradan](https://github.com/sindresorhus/awesome-electron#boilerplates) ulasabilirsiniz.
 
-Bizler [Bulutfon Api Dokumantosyonu](https://github.com/bulutfon/bulutfon-api-electron) icin [electron-boilerplate'i](https://github.com/szwacz/electron-boilerplate) kullandik.
+Bizler [Bulutfon Api Dokumantosyonu](https://github.com/bulutfon/bulutfon-api-electron) için [electron-boilerplate'i](https://github.com/szwacz/electron-boilerplate) kullandık.
 
-#### Neden electron-boilerplate Sectik?
+#### Neden Electron-Boilerplate Seçtik?
 
-* Diger boilerplate'ler release'leri raw seklinde veriyor. Yani installer olmadan release yapiyor. Bu da son kullanici tarafinda memnuniyetesizlik dogurabilir.
-* [Gulp](http://gulpjs.com/) kullandigi icin HAML, Sass, Less, Coffee Script gibi powerful tool'lar ile calismaya imkan sagliyor.
-* Kolayca installer banner, desktop icon, docker icon eklemeyip installer window'u customize edebilirsiniz.
-* ES6 kullanimina olanak sagliyor. Yani yazdiginiz bir javascript module ES6 ile Kolayca import yapabilirsiniz.
-* Development, production ve test environment 'larina sahip.
+* Diğer boilerplate'ler release'leri raw şeklinde veriyor. Yani installer olmadan release yapıyor. Bu da son kullanıcı tarafında memnuniyetesizlik doğurabilir.
+* [Gulp](http://gulpjs.com/) kullandığı icin HAML, Sass, Less, Coffee Script gibi powerful araçlar ile çalışmaya imkan sagliyor.
+* Kolayca installer banner, desktop icon, docker icon ekleyip installer window'u customize edebilirsiniz.
+* ES6 kullanımına olanak sağlıyor. Yani yazdığınız bir javascript module ES6 ile kolayca import yapabilirsiniz.
+* Development, production ve test ortamlarına sahip.
 * [Jasmine](http://jasmine.github.io/2.0/introduction.html) ile test yapabilirsiniz.
-* Star, watch, fork gibi rakamlari fena degil ve repo owner pull-request leri es gecmiyor. Bence bu reponun gelismesi icin gerekli olan en buyuk etken, zira sizlerde reponun gelismesine katki saglayabilirsiniz. Ornegin [soyle.](https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b)
+* Star, watch, fork gibi rakamlari fena değil ve repo owner pull-request leri es geçmiyor. Bence bu reponun gelişmesi için gerekli olan en buyuk etken, zira sizlerde reponun gelişmesine katkı sağlayabilirsiniz. Örnegin [şöyle.](https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b)
 
-## Bulutfon Api Dokumantasyonu
+## Bulutfon Api Dokümanstasyonu
 
-Electron, [Android](http://developer.android.com/reference/android/webkit/WebView.html) ve [.NET](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) developer' larin asina oldugu [webview](http://electron.atom.io/docs/v0.36.4/api/web-view-tag/) ozelligine sahip.
+Electron, [Android](http://developer.android.com/reference/android/webkit/WebView.html) ve [.NET](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) geliştiricilerinin aşina olduğu [webview](http://electron.atom.io/docs/v0.36.4/api/web-view-tag/) özelliğine sahip.
 
-Bizler [bulutfon api dokumantasyonu](https://github.com/bulutfon/bulutfon-api-electron) icin bu ozellikten yararlandik.
+Bizler [bulutfon api dokümantasyonu](https://github.com/bulutfon/bulutfon-api-electron) için bu özellikten yararlandık.
 
-Kisaca bulutfon api dokumantasyonu reposuna goz atacak olursak;
+Kısaca bulutfon api dokümantasyonu reposuna göz atacak olursak;
 
 ```
 git clone https://github.com/bulutfon/bulutfon-api-electron.git
@@ -63,36 +63,36 @@ ve
 npm start
 ```
 
-ile Bulutfon Api Dokumantasyonu'na merhaba diyebilirsiniz.
+ile Bulutfon Api Dokümantasyonu'na merhaba diyebilirsiniz.
 
 #### Development Environment
-Ilk screen'de eminimki Devtools dikkatinizi cekmistir. Zira Electron basic olarak [Devtools extension'a](http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/) sahip ve bu da hata ayiklamada buyuk bir avantaj sagliyor.
+İlk ekranda eminimki Devtools dikkatinizi çekmiştir. Zira Electron basit olarak [Devtools extension'a](http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/) sahip ve bu da hata ayiklamada büyük bir avantaj sağlıyor.
 
-#### Project Folders
+#### Proje Dizinleri
 
 ##### app
-`app` icinde uygulamanizin kodlari bulunuyor.
-`app/package.json` de application'a ait kimlik bilgileri ve yine application'a ait dependencies'leri bulabilirsiniz.
-`app/background.js` de application'a ait electron base tanimlamalari mevcut. Ornegin, [surada](https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17) application'a ait screen size degerleri mevcut. Bir diger code block'da Devtools'a ait. Bazen development environment ile production environment'da Devtools kullanma ihtiyaci dogabiliyor. Onun icin [suradan](https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41) ilgili degisikligi yapabilirsiniz.
+`app` içinde uygulamanizin kodlari bulunuyor.
+`app/package.json` de uygulamaya ait kimlik bilgileri ve yine uygulamaya ait dependencies'leri bulabilirsiniz.
+`app/background.js` de uygulamaya ait electron base tanımlamaları mevcut. Örneğin, [şurada](https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17) uygulamaya ait ekran boyutu değerleri mevcut. Bir diğer kod bloğu da Devtools'a ait. Bazen geliştirme ortamı ile üretim ortamında Devtools kullanma ihtiyacı doğabiliyor. Onun için [şuradan](https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41) ilgili değişikliği yapabilirsiniz.
 
 ##### config
-`config` folder icinde uc environment'a ait json dosyalari var. Burada environment'lara ait specific atamalar yapilabilir.
+`config` klasörü içinde üç ortama ait json dosyalari var. Burada ortamlara ait spesifik atamalar yapilabilir.
 
 ##### resources
-`resources` icinde installer banner, desktop icon, docker icon gibi image'lar mevcut. Orginal size ve format' lara sadik kalarak burada istediginiz degisikligi yapabilirsiniz.
+`resources` içinde installer banner, desktop icon, docker icon gibi görseller mevcut. Orjinal boyut ve formatlara sadık kalarak burada istediğinizi yapabilirsiniz.
 
 ##### task
-`task` icinde build ve environment icin kullanilan kodlar mevcut. Burada onemli bir husus var. Eger `app` folder icinde herhangi bir folder/file structure' da bir degisiklik yapmis iseniz bunu [build.js](https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17) icinde tanimlamayi unutmayin. Zira daha oncede bahsettigim gibi proje Gulp ile entegre ve `npm start` dediginizde Gulp projeyi build.js icindeki tanimalara gore build edecektir.
+`task` içinde build ve environment için kullanılan kodlar mevcut. Burada önemli bir husus var. Eğer `app` klasörü içinde  herhangi bir dosya/dizin yapısında deişiklik yapmış iseniz bunu [build.js](https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17) içinde tanımlamayı unutmayin. Zira daha önce de bahsettiğim gibi proje Gulp ile entegre ise `npm start` dediginizde Gulp projeyi build.js icindeki tanımlara göre build edecektir.
 
-Eger herhangi bir npm package eklemek isterseniz ise asagidaki yolu kullanabilirsiniz.
+Eğer herhangi bir npm package eklemek isterseniz aşağıdaki yolu kullanabilirsiniz.
 
 * `cd/app`
 * `npm install name_of_npm_module --save`
 
 #### Production Environment
-Release almak istediginiz operation system'e sahip olmak zorundasiniz. Yani MAC icin OSX, Linux icin Ubuntu ya da bir digeri, Windows icin Windows 7'in hali hazirda kurulu olmasi gerekiyor.
+Geliştirme yapmak istediğiniz işletim sistemine sahip olmak zorundasiniz. Yani MAC için OSX, Linux için Ubuntu ya da bir digeri, Windows için Windows 7'in hali hazirda kurulu olması gerekiyor.
 
-Bunun icin [Vagrant](https://www.vagrantup.com/) ya da [Virtual Box](https://www.virtualbox.org/wiki/Downloads) kullanabilirsiniz. Ayrica Microsoft'un developer icin hazirladigi [soyle](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/) bir sayfadan da yararlanabilirsiniz.
+Bunun için [Vagrant](https://www.vagrantup.com/) ya da [Virtual Box](https://www.virtualbox.org/wiki/Downloads) kullanabilirsiniz. Ayrica Microsoft'un geliştiriciler için hazırladığı [şöyle](https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/) bir sayfadan da yararlanabilirsiniz.
 
 ##### Linux
 
@@ -100,11 +100,11 @@ Bunun icin [Vagrant](https://www.vagrantup.com/) ya da [Virtual Box](https://www
 
 ##### Windows
 
-* Oncelikle [NSIS](http://nsis.sourceforge.net/) indirip kurmamiz gerekiyor. NSIS v3.0b3 kurmanizi tavsiye ederim, zira daha onceki surumler turkce karakterlerde sorun yaratabiliyor.
+* Öncelikle [NSIS](http://nsis.sourceforge.net/) indirip kurmamız gerekiyor. NSIS v3.0b3 kurmanızı tavsiye ederim, zira daha önceki sürümler türkçe karakterlerde sorun yaratabiliyor.
 
-* Kurulum tamamladiktan sonra NSIS icin windows icinde `environment variables` set etmeniz gerekiyor. Sanirim [suradaki](http://www.computerhope.com/issues/ch000549.htm) tutorial yardimci olacaktir.
+* Kurulumu tamamladıktan sonra NSIS için windows içinde `environment variables` tanımlamanız gerekiyor. Sanırım [şuradaki](http://www.computerhope.com/issues/ch000549.htm) eğitim yardımcı olacaktır.
 
-* [Node.js](https://nodejs.org/en/) ve [git](https://git-scm.com/download/win) install edin.
+* [Node.js](https://nodejs.org/en/) ve [git](https://git-scm.com/download/win) yükleyin.
 
 * Terminal olarak git ile beraber gelen `git bash` kullanabilirsiniz.
 
@@ -112,9 +112,9 @@ Bunun icin [Vagrant](https://www.vagrantup.com/) ya da [Virtual Box](https://www
 
 ## Son Olarak
 
-Genel hatlariyla Electron'u "Bulutfon Api Dokumantasyonu" uzerinden anlatmaya calistim.
-Bulutfon Api Dokumantasyonu basic bir yapiya sahip yani herhangi bir third party framework ya da library kullanmiyor.
+Genel hatlariyla Electron'u "Bulutfon Api Dokümantasyonu" üzerinden anlatmaya çalıştım.
+Bulutfon Api Dokümantasyonu basit bir yapiya sahip, yani herhangi bir üçüncü parti framework ya da kütüphane kullanmıyor.
 
-Ama ilerleyen zaman icin Bulutfon icin gelistirdigimiz MVP'yi (yangying) duyuracagiz ve bu application icin de AngularJS gibi bazi framework ve library'leri kullandik. Bu baglamda "yangying" (Bulutfon MVP) electron icin cok daha gelismis bir ornek olacaktir. Yine akademi.help altinda konuyu etraflica ele alan bir yazi yazmayi dusunuyorum. Takipte kalin.
+Ama ilerleyen zaman için Bulutfon için gelistirdigimiz MVP'yi (yangying) duyuracağız ve bu uygulama için de AngularJS gibi bazı framework ve kütüphaneleri kullandık. Bu bağlamda "yangying" (Bulutfon MVP) electron için çok daha gelişmiş bir örnek olacaktir. Yine akademi.help altında konuyu etraflıca ele alan bir yazı yazmayı düşünüyorum. Takipte kalın.
 
-Karsilastiginiz sorun ya da kafaniza takilan sorulari yorum yazarak bizlere aktarabilirsiniz.
+karşılaştığınız sorun ya da kafanıza takılan soruları yorum yazarak bizlere aktarabilirsiniz.

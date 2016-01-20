@@ -120,7 +120,7 @@ foreach($cdrs as $cdr){
     <td>
         <?php
         if ($cdr['call_record']=="Var")
-            echo '<a href="?download='.$cdr['uuid'].'">İndir</a>';
+            echo '<a target="_blank" href="?download='.$cdr['uuid'].'">İndir</a>';
         else
             echo 'Yok';
         ?>
@@ -146,12 +146,12 @@ Kullanıcıya tüm verileri tek sayfada göstermek yerine sayfalama işlemi yap�
 </div>
 ```
 
-Son olarak ses kaydı olan aramalar için ses dosyasını indirme işlemini gerçekleştiriyoruz. 
+Son olarak ses kaydı olan aramalar için ses dosyasını dinleme işlemini gerçekleştiriyoruz. 
 
 ```php
-// Ses Dosyasını İndirme İşlemi
+// Ses Dosyasını Dinleme İşlemi
 if(isset($_GET['download'])){
-    $url    = 'https://api.bulutfon.com/call-records/'.$_GET['download'].'?';
+    $url    = 'https://api.bulutfon.com/call-records/'.$_GET['download'].'/stream';
     header('Location: '.$url . http_build_query(array(
             'access_token' => $token,
         )));

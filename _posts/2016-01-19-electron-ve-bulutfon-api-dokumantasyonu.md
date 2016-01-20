@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Electron ve Bulutfon Api Dokumantosyonu'
+title: 'Electron ve Bulutfon Api Dokümantosyonu'
 date: '2016-01-19 11:36:23 +0800'
 author: coskuntekin
 categories:

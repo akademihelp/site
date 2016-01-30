@@ -13,7 +13,9 @@ tags:
 Bir çok geliştiriciden Bulutfon'un alt yapısıyla ilgili detaylı sorular alıyoruz. Genel olarak alt yapıyı ve kullandığımız yazılımları merak ediyorlar. Hem onların sorularını cevaplamak, hem staj ve iş başvurusunda bulunacak arkadaşlar için genel olarak bu soruya cevap vermeye çalışacağım.
 
 # Programlama Dilleri
+
 Bulutfon'da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebilirim.
+
 - Ruby
 - Javascript; Server site tarafında kullanmıyoruz.
 - Python; Bazı workerları Ruby yerine Python ile yazmayı tercih ettik.
@@ -23,6 +25,7 @@ Bulutfon'da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebiliri
 - C#; Sadece nuget paketi için kullanılıyor.
 
 # Geliştirme Çatıları
+
 - Ruby'de Ruby on Rails
 - Javascript'de Angular (Yeni başladık)
 - CSS ve JS'de Bootstrap
@@ -61,6 +64,7 @@ Not: lab2023.com firmasında Unicorn yerine PUMA kullanılmaya başlandı. Çok 
 Not: CTO'muz Volkan genellikle Centos tercih etmesine rağmen Bulutfon'un sunucularının büyük kısmı Ubuntu'da çalışıyor diye biliyorum.
 
 # Diğer
+
 - Wireshark
 - Monit
 - Git

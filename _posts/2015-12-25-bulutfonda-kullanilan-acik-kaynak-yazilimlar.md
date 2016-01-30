@@ -34,31 +34,39 @@ Bulutfon'da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebiliri
 Not: Admin temamız lab2023.com tarafından yapılan açık kaynaklı [Hierapolis](http://github.com/lab2023/hierapolis) temasıdır.
 
 # Veritabanları
+
 **İlişkisel**
+
 - PostgreSQL
 
 **NoSQL**
+
 - Redis
 - MongoDB
 - CouchDB
 
 # MQ
+
 - RabbitMQ
 - SideKiq
 
 # Medya Sunucusu
+
 - Freeswitch
 
 # Sip
+
 - Opensips
 
 # HTTP Server
+
 - Nginx
 - Unicorn
 
 Not: lab2023.com firmasında Unicorn yerine PUMA kullanılmaya başlandı. Çok överlerse taşınabiliriz.
 
 # İşletim Sistemi
+
 - Ubuntu
 
 Not: CTO'muz Volkan genellikle Centos tercih etmesine rağmen Bulutfon'un sunucularının büyük kısmı Ubuntu'da çalışıyor diye biliyorum.

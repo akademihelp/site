@@ -203,7 +203,7 @@ Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kull
     <span class="nt">&lt;td&gt;</span>
         <span class="cp">&lt;?php</span>
         <span class="k">if</span> <span class="p">(</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'call_record'</span><span class="p">]</span><span class="o">==</span><span class="s2">"Var"</span><span class="p">)</span>
-            <span class="k">echo</span> <span class="s1">'&lt;a href="?download='</span><span class="o">.</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'uuid'</span><span class="p">]</span><span class="o">.</span><span class="s1">'"&gt;İndir&lt;/a&gt;'</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="s1">'&lt;a target="_blank" href="?download='</span><span class="o">.</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'uuid'</span><span class="p">]</span><span class="o">.</span><span class="s1">'"&gt;İndir&lt;/a&gt;'</span><span class="p">;</span>
         <span class="k">else</span>
             <span class="k">echo</span> <span class="s1">'Yok'</span><span class="p">;</span>
         <span class="cp">?&gt;</span>
@@ -225,10 +225,10 @@ Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kull
     ?&gt;
 &lt;/div&gt;
 </code></pre></div>
-<p>Son olarak ses kaydı olan aramalar için ses dosyasını indirme işlemini gerçekleştiriyoruz. </p>
-<div class="highlight"><pre><code class="language-php" data-lang="php">// Ses Dosyasını İndirme İşlemi
+<p>Son olarak ses kaydı olan aramalar için ses dosyasını dinleme işlemini gerçekleştiriyoruz. </p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">// Ses Dosyasını Dinleme İşlemi
 if(isset($_GET['download'])){
-    $url    = 'https://api.bulutfon.com/call-records/'.$_GET['download'].'?';
+    $url    = 'https://api.bulutfon.com/call-records/'.$_GET['download'].'/stream';
     header('Location: '.$url . http_build_query(array(
             'access_token' =&gt; $token,
         )));

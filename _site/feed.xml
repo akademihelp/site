@@ -6,53 +6,53 @@
 </description>
     <link>http://akademi.help/</link>
     <atom:link href="http://akademi.help/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jan 2016 14:22:53 +0800</pubDate>
-    <lastBuildDate>Tue, 19 Jan 2016 14:22:53 +0800</lastBuildDate>
-    <generator>Jekyll v3.0.1</generator>
+    <pubDate>Mon, 15 Feb 2016 16:06:01 +0800</pubDate>
+    <lastBuildDate>Mon, 15 Feb 2016 16:06:01 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
     
       <item>
-        <title>Electron ve Bulutfon Api Dokumantosyonu</title>
+        <title>Electron ve Bulutfon Api Dokümantosyonu</title>
         <description>&lt;h2 id=&quot;electron-atomshell-nedir&quot;&gt;Electron (AtomShell) Nedir?&lt;/h2&gt;
 
-&lt;p&gt;Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazilmasina imkan saglayan bir framework. Adinda anlasilacagi uzere &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; icin yazilmis bir framework ve open source.&lt;/p&gt;
+&lt;p&gt;Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazılmasına imkan sağlayan bir framework. Adından anaşılacağı üzere &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt; için yazılmış bir framework ve open source projedir.&lt;/p&gt;
 
-&lt;p&gt;Electron &lt;code&gt;Node.js&lt;/code&gt; ve &lt;code&gt;Chromium&lt;/code&gt; uzerine bina edildigi icin &lt;code&gt;webkit&lt;/code&gt; nimetlerinden yararlanarak cok efektif projeler yaratilabilir.&lt;/p&gt;
+&lt;p&gt;Electron &lt;code&gt;Node.js&lt;/code&gt; ve &lt;code&gt;Chromium&lt;/code&gt; üzerinden geliştirildiği için &lt;code&gt;webkit&lt;/code&gt; nimetlerinden yararlanarak çok efektif projeler yaratılabilir.&lt;/p&gt;
 
-&lt;p&gt;(Ben burada hemen bir parantez acmak istiyorum, yillar once Mozilla camiasinin onculugu ile baslayan IE&amp;#39;ye karsi alternative bir browser olusturma girisimine saygi duyarak, sadece &lt;code&gt;webkit&lt;/code&gt; i ustun kilip diger yapilari yok sayarak bir seyler yapmak, interneti IE olmasada, IE&amp;#39;nin yerine bir baska yapinin tekeline birakmaktir diye dusunuyorum ve bu bana cok da dogru gelmiyor. Elbette Electron&amp;#39;da benzer bir durum soz konusu degil, ama ortaya cikartilan projelerde internetin gelecegi adina bu gibi konular es gecilmemelidir. Eger okumak isterseniz &lt;a href=&quot;http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/&quot;&gt;soyle&lt;/a&gt; bir yazida mevcut.)&lt;/p&gt;
+&lt;p&gt;(Ben burada hemen bir parantez açmak istiyorum, yıllar önce Mozilla camiasinin öncülüğü ile başlayan IE&amp;#39;ye karsi alternatif bir tarayıcı oluşturma girişimine saygı duyarak, sadece &lt;code&gt;webkit&lt;/code&gt; i üstün kılıp diğer yapıları yok sayarak bir şeyler yapmak, interneti IE olmasada, IE&amp;#39;nin yerine bir başka yapının tekeline bırakmaktır diye düşünüyorum ve bu bana çok da doğru gelmiyor. Elbette Electron&amp;#39;da benzer bir durum söz konusu değil, ama ortaya çıkan projelerde internetin geleceği adına bu gibi konular es geçilmemelidir. Eğer okumak isterseniz &lt;a href=&quot;http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/&quot;&gt;şöyle&lt;/a&gt; bir yazıda mevcut.)&lt;/p&gt;
 
-&lt;h2 id=&quot;electron-icin-hazirlik&quot;&gt;Electron Icin Hazirlik&lt;/h2&gt;
+&lt;h2 id=&quot;electron-in-haz-rl-k&quot;&gt;Electron İçin Hazırlık&lt;/h2&gt;
 
-&lt;p&gt;Node.js uzerine bina edildigi icin oncelikle &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&amp;#39;in&lt;/a&gt; kurulu olmasi gerekiyor.&lt;/p&gt;
+&lt;p&gt;Node.js ile geliştirildiği için öncelikle &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&amp;#39;in&lt;/a&gt; kurulu olması gerekiyor.&lt;/p&gt;
 
-&lt;h4 id=&quot;nereden-baslamaliyim&quot;&gt;Nereden Baslamaliyim?&lt;/h4&gt;
+&lt;h4 id=&quot;nereden-ba-lamal-y-m&quot;&gt;Nereden Başlamalıyım?&lt;/h4&gt;
 
-&lt;p&gt;Iste burda bir secim yapmaniz gerekiyor. Electron ile calismak icin ya native &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/&quot;&gt;documentation&amp;#39;i&lt;/a&gt; takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.&lt;/p&gt;
+&lt;p&gt;İste burda bir seçim yapmanız gerekiyor. Electron ile çalışmak için ya native &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/&quot;&gt;documentation&amp;#39;ı&lt;/a&gt; takip edeceksiniz ya da bir boilerplate ile yolunuza devam edeceksiniz.&lt;/p&gt;
 
-&lt;p&gt;Boilerplate size hizli bir sekilde sonuc almaniza yardimci olacaktir. Ama documentation&amp;#39;ni da kesinlikle okumanizi tavsiye ederim. Zira ilerde karsilacaginiz her turlu issue&amp;#39;nun cevabini orada bulabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Boilerplate size hızlı bir şekilde sonuç almanızda yardımcı olacaktır. Ama documentation&amp;#39;ı da kesinlikle okumanızı tavsiye ederim. Zira ilerde karşılaşacağınız her türlü sorunun cevabını orada bulabilirsiniz.&lt;/p&gt;
 
-&lt;p&gt;Electron&amp;#39;un open source boilerplate&amp;#39;lerine &lt;a href=&quot;https://github.com/sindresorhus/awesome-electron#boilerplates&quot;&gt;buradan&lt;/a&gt; ulasabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Electron&amp;#39;un açık kaynak boilerplate&amp;#39;lerine &lt;a href=&quot;https://github.com/sindresorhus/awesome-electron#boilerplates&quot;&gt;buradan&lt;/a&gt; ulasabilirsiniz.&lt;/p&gt;
 
-&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;Bulutfon Api Dokumantosyonu&lt;/a&gt; icin &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate&quot;&gt;electron-boilerplate&amp;#39;i&lt;/a&gt; kullandik.&lt;/p&gt;
+&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;Bulutfon Api Dokumantosyonu&lt;/a&gt; için &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate&quot;&gt;electron-boilerplate&amp;#39;i&lt;/a&gt; kullandık.&lt;/p&gt;
 
-&lt;h4 id=&quot;neden-electron-boilerplate-sectik&quot;&gt;Neden electron-boilerplate Sectik?&lt;/h4&gt;
+&lt;h4 id=&quot;neden-electron-boilerplate-se-tik&quot;&gt;Neden Electron-Boilerplate Seçtik?&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Diger boilerplate&amp;#39;ler release&amp;#39;leri raw seklinde veriyor. Yani installer olmadan release yapiyor. Bu da son kullanici tarafinda memnuniyetesizlik dogurabilir.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; kullandigi icin HAML, Sass, Less, Coffee Script gibi powerful tool&amp;#39;lar ile calismaya imkan sagliyor.&lt;/li&gt;
-&lt;li&gt;Kolayca installer banner, desktop icon, docker icon eklemeyip installer window&amp;#39;u customize edebilirsiniz.&lt;/li&gt;
-&lt;li&gt;ES6 kullanimina olanak sagliyor. Yani yazdiginiz bir javascript module ES6 ile Kolayca import yapabilirsiniz.&lt;/li&gt;
-&lt;li&gt;Development, production ve test environment &amp;#39;larina sahip.&lt;/li&gt;
+&lt;li&gt;Diğer boilerplate&amp;#39;ler release&amp;#39;leri raw şeklinde veriyor. Yani installer olmadan release yapıyor. Bu da son kullanıcı tarafında memnuniyetesizlik doğurabilir.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; kullandığı icin HAML, Sass, Less, Coffee Script gibi powerful araçlar ile çalışmaya imkan sagliyor.&lt;/li&gt;
+&lt;li&gt;Kolayca installer banner, desktop icon, docker icon ekleyip installer window&amp;#39;u customize edebilirsiniz.&lt;/li&gt;
+&lt;li&gt;ES6 kullanımına olanak sağlıyor. Yani yazdığınız bir javascript module ES6 ile kolayca import yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Development, production ve test ortamlarına sahip.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://jasmine.github.io/2.0/introduction.html&quot;&gt;Jasmine&lt;/a&gt; ile test yapabilirsiniz.&lt;/li&gt;
-&lt;li&gt;Star, watch, fork gibi rakamlari fena degil ve repo owner pull-request leri es gecmiyor. Bence bu reponun gelismesi icin gerekli olan en buyuk etken, zira sizlerde reponun gelismesine katki saglayabilirsiniz. Ornegin &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b&quot;&gt;soyle.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Star, watch, fork gibi rakamlari fena değil ve repo owner pull-request leri es geçmiyor. Bence bu reponun gelişmesi için gerekli olan en buyuk etken, zira sizlerde reponun gelişmesine katkı sağlayabilirsiniz. Örnegin &lt;a href=&quot;https://github.com/szwacz/electron-boilerplate/commit/ad88e089d7f1f4232ab85ae8c34ea4e923eba23b&quot;&gt;şöyle.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;bulutfon-api-dokumantasyonu&quot;&gt;Bulutfon Api Dokumantasyonu&lt;/h2&gt;
+&lt;h2 id=&quot;bulutfon-api-dok-manstasyonu&quot;&gt;Bulutfon Api Dokümanstasyonu&lt;/h2&gt;
 
-&lt;p&gt;Electron, &lt;a href=&quot;http://developer.android.com/reference/android/webkit/WebView.html&quot;&gt;Android&lt;/a&gt; ve &lt;a href=&quot;https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx&quot;&gt;.NET&lt;/a&gt; developer&amp;#39; larin asina oldugu &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/api/web-view-tag/&quot;&gt;webview&lt;/a&gt; ozelligine sahip.&lt;/p&gt;
+&lt;p&gt;Electron, &lt;a href=&quot;http://developer.android.com/reference/android/webkit/WebView.html&quot;&gt;Android&lt;/a&gt; ve &lt;a href=&quot;https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx&quot;&gt;.NET&lt;/a&gt; geliştiricilerinin aşina olduğu &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/api/web-view-tag/&quot;&gt;webview&lt;/a&gt; özelliğine sahip.&lt;/p&gt;
 
-&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;bulutfon api dokumantasyonu&lt;/a&gt; icin bu ozellikten yararlandik.&lt;/p&gt;
+&lt;p&gt;Bizler &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron&quot;&gt;bulutfon api dokümantasyonu&lt;/a&gt; için bu özellikten yararlandık.&lt;/p&gt;
 
-&lt;p&gt;Kisaca bulutfon api dokumantasyonu reposuna goz atacak olursak;&lt;/p&gt;
+&lt;p&gt;Kısaca bulutfon api dokümantasyonu reposuna göz atacak olursak;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;git clone https://github.com/bulutfon/bulutfon-api-electron.git
 cd bulutfon-api-electron
 npm install
@@ -60,33 +60,33 @@ npm install
 &lt;p&gt;ve&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;npm start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;ile Bulutfon Api Dokumantasyonu&amp;#39;na merhaba diyebilirsiniz.&lt;/p&gt;
+&lt;p&gt;ile Bulutfon Api Dokümantasyonu&amp;#39;na merhaba diyebilirsiniz.&lt;/p&gt;
 
 &lt;h4 id=&quot;development-environment&quot;&gt;Development Environment&lt;/h4&gt;
 
-&lt;p&gt;Ilk screen&amp;#39;de eminimki Devtools dikkatinizi cekmistir. Zira Electron basic olarak &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/&quot;&gt;Devtools extension&amp;#39;a&lt;/a&gt; sahip ve bu da hata ayiklamada buyuk bir avantaj sagliyor.&lt;/p&gt;
+&lt;p&gt;İlk ekranda eminimki Devtools dikkatinizi çekmiştir. Zira Electron basit olarak &lt;a href=&quot;http://electron.atom.io/docs/v0.36.4/tutorial/devtools-extension/&quot;&gt;Devtools extension&amp;#39;a&lt;/a&gt; sahip ve bu da hata ayiklamada büyük bir avantaj sağlıyor.&lt;/p&gt;
 
-&lt;h4 id=&quot;project-folders&quot;&gt;Project Folders&lt;/h4&gt;
+&lt;h4 id=&quot;proje-dizinleri&quot;&gt;Proje Dizinleri&lt;/h4&gt;
 
 &lt;h5 id=&quot;app&quot;&gt;app&lt;/h5&gt;
 
-&lt;p&gt;&lt;code&gt;app&lt;/code&gt; icinde uygulamanizin kodlari bulunuyor.
-&lt;code&gt;app/package.json&lt;/code&gt; de application&amp;#39;a ait kimlik bilgileri ve yine application&amp;#39;a ait dependencies&amp;#39;leri bulabilirsiniz.
-&lt;code&gt;app/background.js&lt;/code&gt; de application&amp;#39;a ait electron base tanimlamalari mevcut. Ornegin, &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17&quot;&gt;surada&lt;/a&gt; application&amp;#39;a ait screen size degerleri mevcut. Bir diger code block&amp;#39;da Devtools&amp;#39;a ait. Bazen development environment ile production environment&amp;#39;da Devtools kullanma ihtiyaci dogabiliyor. Onun icin &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41&quot;&gt;suradan&lt;/a&gt; ilgili degisikligi yapabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;app&lt;/code&gt; içinde uygulamanizin kodlari bulunuyor.
+&lt;code&gt;app/package.json&lt;/code&gt; de uygulamaya ait kimlik bilgileri ve yine uygulamaya ait dependencies&amp;#39;leri bulabilirsiniz.
+&lt;code&gt;app/background.js&lt;/code&gt; de uygulamaya ait electron base tanımlamaları mevcut. Örneğin, &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L17&quot;&gt;şurada&lt;/a&gt; uygulamaya ait ekran boyutu değerleri mevcut. Bir diğer kod bloğu da Devtools&amp;#39;a ait. Bazen geliştirme ortamı ile üretim ortamında Devtools kullanma ihtiyacı doğabiliyor. Onun için &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/app/background.js#L41&quot;&gt;şuradan&lt;/a&gt; ilgili değişikliği yapabilirsiniz.&lt;/p&gt;
 
 &lt;h5 id=&quot;config&quot;&gt;config&lt;/h5&gt;
 
-&lt;p&gt;&lt;code&gt;config&lt;/code&gt; folder icinde uc environment&amp;#39;a ait json dosyalari var. Burada environment&amp;#39;lara ait specific atamalar yapilabilir.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;config&lt;/code&gt; klasörü içinde üç ortama ait json dosyalari var. Burada ortamlara ait spesifik atamalar yapilabilir.&lt;/p&gt;
 
 &lt;h5 id=&quot;resources&quot;&gt;resources&lt;/h5&gt;
 
-&lt;p&gt;&lt;code&gt;resources&lt;/code&gt; icinde installer banner, desktop icon, docker icon gibi image&amp;#39;lar mevcut. Orginal size ve format&amp;#39; lara sadik kalarak burada istediginiz degisikligi yapabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;resources&lt;/code&gt; içinde installer banner, desktop icon, docker icon gibi görseller mevcut. Orjinal boyut ve formatlara sadık kalarak burada istediğinizi yapabilirsiniz.&lt;/p&gt;
 
 &lt;h5 id=&quot;task&quot;&gt;task&lt;/h5&gt;
 
-&lt;p&gt;&lt;code&gt;task&lt;/code&gt; icinde build ve environment icin kullanilan kodlar mevcut. Burada onemli bir husus var. Eger &lt;code&gt;app&lt;/code&gt; folder icinde herhangi bir folder/file structure&amp;#39; da bir degisiklik yapmis iseniz bunu &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17&quot;&gt;build.js&lt;/a&gt; icinde tanimlamayi unutmayin. Zira daha oncede bahsettigim gibi proje Gulp ile entegre ve &lt;code&gt;npm start&lt;/code&gt; dediginizde Gulp projeyi build.js icindeki tanimalara gore build edecektir.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;task&lt;/code&gt; içinde build ve environment için kullanılan kodlar mevcut. Burada önemli bir husus var. Eğer &lt;code&gt;app&lt;/code&gt; klasörü içinde  herhangi bir dosya/dizin yapısında deişiklik yapmış iseniz bunu &lt;a href=&quot;https://github.com/bulutfon/bulutfon-api-electron/blob/master/tasks/build.js#L17&quot;&gt;build.js&lt;/a&gt; içinde tanımlamayı unutmayin. Zira daha önce de bahsettiğim gibi proje Gulp ile entegre ise &lt;code&gt;npm start&lt;/code&gt; dediginizde Gulp projeyi build.js icindeki tanımlara göre build edecektir.&lt;/p&gt;
 
-&lt;p&gt;Eger herhangi bir npm package eklemek isterseniz ise asagidaki yolu kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Eğer herhangi bir npm package eklemek isterseniz aşağıdaki yolu kullanabilirsiniz.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;cd/app&lt;/code&gt;&lt;/li&gt;
@@ -95,9 +95,9 @@ npm install
 
 &lt;h4 id=&quot;production-environment&quot;&gt;Production Environment&lt;/h4&gt;
 
-&lt;p&gt;Release almak istediginiz operation system&amp;#39;e sahip olmak zorundasiniz. Yani MAC icin OSX, Linux icin Ubuntu ya da bir digeri, Windows icin Windows 7&amp;#39;in hali hazirda kurulu olmasi gerekiyor.&lt;/p&gt;
+&lt;p&gt;Geliştirme yapmak istediğiniz işletim sistemine sahip olmak zorundasiniz. Yani MAC için OSX, Linux için Ubuntu ya da bir digeri, Windows için Windows 7&amp;#39;in hali hazirda kurulu olması gerekiyor.&lt;/p&gt;
 
-&lt;p&gt;Bunun icin &lt;a href=&quot;https://www.vagrantup.com/&quot;&gt;Vagrant&lt;/a&gt; ya da &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;Virtual Box&lt;/a&gt; kullanabilirsiniz. Ayrica Microsoft&amp;#39;un developer icin hazirladigi &lt;a href=&quot;https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/&quot;&gt;soyle&lt;/a&gt; bir sayfadan da yararlanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bunun için &lt;a href=&quot;https://www.vagrantup.com/&quot;&gt;Vagrant&lt;/a&gt; ya da &lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot;&gt;Virtual Box&lt;/a&gt; kullanabilirsiniz. Ayrica Microsoft&amp;#39;un geliştiriciler için hazırladığı &lt;a href=&quot;https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/&quot;&gt;şöyle&lt;/a&gt; bir sayfadan da yararlanabilirsiniz.&lt;/p&gt;
 
 &lt;h5 id=&quot;linux&quot;&gt;Linux&lt;/h5&gt;
 
@@ -106,21 +106,21 @@ npm install
 &lt;h5 id=&quot;windows&quot;&gt;Windows&lt;/h5&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Oncelikle &lt;a href=&quot;http://nsis.sourceforge.net/&quot;&gt;NSIS&lt;/a&gt; indirip kurmamiz gerekiyor. NSIS v3.0b3 kurmanizi tavsiye ederim, zira daha onceki surumler turkce karakterlerde sorun yaratabiliyor.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Kurulum tamamladiktan sonra NSIS icin windows icinde &lt;code&gt;environment variables&lt;/code&gt; set etmeniz gerekiyor. Sanirim &lt;a href=&quot;http://www.computerhope.com/issues/ch000549.htm&quot;&gt;suradaki&lt;/a&gt; tutorial yardimci olacaktir.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js&lt;/a&gt; ve &lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;git&lt;/a&gt; install edin.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Öncelikle &lt;a href=&quot;http://nsis.sourceforge.net/&quot;&gt;NSIS&lt;/a&gt; indirip kurmamız gerekiyor. NSIS v3.0b3 kurmanızı tavsiye ederim, zira daha önceki sürümler türkçe karakterlerde sorun yaratabiliyor.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Kurulumu tamamladıktan sonra NSIS için windows içinde &lt;code&gt;environment variables&lt;/code&gt; tanımlamanız gerekiyor. Sanırım &lt;a href=&quot;http://www.computerhope.com/issues/ch000549.htm&quot;&gt;şuradaki&lt;/a&gt; eğitim yardımcı olacaktır.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js&lt;/a&gt; ve &lt;a href=&quot;https://git-scm.com/download/win&quot;&gt;git&lt;/a&gt; yükleyin.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;Terminal olarak git ile beraber gelen &lt;code&gt;git bash&lt;/code&gt; kullanabilirsiniz.&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;npm run release&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;son-olarak&quot;&gt;Son Olarak&lt;/h2&gt;
 
-&lt;p&gt;Genel hatlariyla Electron&amp;#39;u &amp;quot;Bulutfon Api Dokumantasyonu&amp;quot; uzerinden anlatmaya calistim.
-Bulutfon Api Dokumantasyonu basic bir yapiya sahip yani herhangi bir third party framework ya da library kullanmiyor.&lt;/p&gt;
+&lt;p&gt;Genel hatlariyla Electron&amp;#39;u &amp;quot;Bulutfon Api Dokümantasyonu&amp;quot; üzerinden anlatmaya çalıştım.
+Bulutfon Api Dokümantasyonu basit bir yapiya sahip, yani herhangi bir üçüncü parti framework ya da kütüphane kullanmıyor.&lt;/p&gt;
 
-&lt;p&gt;Ama ilerleyen zaman icin Bulutfon icin gelistirdigimiz MVP&amp;#39;yi (yangying) duyuracagiz ve bu application icin de AngularJS gibi bazi framework ve library&amp;#39;leri kullandik. Bu baglamda &amp;quot;yangying&amp;quot; (Bulutfon MVP) electron icin cok daha gelismis bir ornek olacaktir. Yine akademi.help altinda konuyu etraflica ele alan bir yazi yazmayi dusunuyorum. Takipte kalin.&lt;/p&gt;
+&lt;p&gt;Ama ilerleyen zaman için Bulutfon için gelistirdigimiz MVP&amp;#39;yi (yangying) duyuracağız ve bu uygulama için de AngularJS gibi bazı framework ve kütüphaneleri kullandık. Bu bağlamda &amp;quot;yangying&amp;quot; (Bulutfon MVP) electron için çok daha gelişmiş bir örnek olacaktir. Yine akademi.help altında konuyu etraflıca ele alan bir yazı yazmayı düşünüyorum. Takipte kalın.&lt;/p&gt;
 
-&lt;p&gt;Karsilastiginiz sorun ya da kafaniza takilan sorulari yorum yazarak bizlere aktarabilirsiniz.&lt;/p&gt;
+&lt;p&gt;karşılaştığınız sorun ya da kafanıza takılan soruları yorum yazarak bizlere aktarabilirsiniz.&lt;/p&gt;
 </description>
         <pubDate>Tue, 19 Jan 2016 11:36:23 +0800</pubDate>
         <link>http://akademi.help/electron-ve-bulutfon-api-dokumantasyonu</link>
@@ -243,7 +243,7 @@ Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kull
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;td&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;call_record&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Var&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;a href=&quot;?download=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;uuid&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&quot;&amp;gt;İndir&amp;lt;/a&amp;gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&amp;lt;a target=&quot;_blank&quot; href=&quot;?download=&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cdr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;uuid&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&quot;&amp;gt;İndir&amp;lt;/a&amp;gt;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
             &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;Yok&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
         &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
@@ -265,10 +265,10 @@ Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kull
     ?&amp;gt;
 &amp;lt;/div&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Son olarak ses kaydı olan aramalar için ses dosyasını indirme işlemini gerçekleştiriyoruz. &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;// Ses Dosyasını İndirme İşlemi
+&lt;p&gt;Son olarak ses kaydı olan aramalar için ses dosyasını dinleme işlemini gerçekleştiriyoruz. &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;// Ses Dosyasını Dinleme İşlemi
 if(isset($_GET[&#39;download&#39;])){
-    $url    = &#39;https://api.bulutfon.com/call-records/&#39;.$_GET[&#39;download&#39;].&#39;?&#39;;
+    $url    = &#39;https://api.bulutfon.com/call-records/&#39;.$_GET[&#39;download&#39;].&#39;/stream&#39;;
     header(&#39;Location: &#39;.$url . http_build_query(array(
             &#39;access_token&#39; =&amp;gt; $token,
         )));
@@ -1312,14 +1312,17 @@ if(isset($_GET[&#39;download&#39;])){
 
 &lt;h1 id=&quot;programlama-dilleri&quot;&gt;Programlama Dilleri&lt;/h1&gt;
 
-&lt;p&gt;Bulutfon&amp;#39;da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebilirim.
-- Ruby
-- Javascript; Server site tarafında kullanmıyoruz.
-- Python; Bazı workerları Ruby yerine Python ile yazmayı tercih ettik.
-- C; Freeswitch&amp;#39;e modul yazmak için kullanılıyor.
-- Lua; Nginx ve Freeswitch LUA script çalıştırabiliyor.
-- PHP; Sadece composer paketi için kullanılıyor.
-- C#; Sadece nuget paketi için kullanılıyor.&lt;/p&gt;
+&lt;p&gt;Bulutfon&amp;#39;da ağırlıklı olarak Ruby programlama dili kullanılıyor diyebilirim.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ruby&lt;/li&gt;
+&lt;li&gt;Javascript; Server site tarafında kullanmıyoruz.&lt;/li&gt;
+&lt;li&gt;Python; Bazı workerları Ruby yerine Python ile yazmayı tercih ettik.&lt;/li&gt;
+&lt;li&gt;C; Freeswitch&amp;#39;e modul yazmak için kullanılıyor.&lt;/li&gt;
+&lt;li&gt;Lua; Nginx ve Freeswitch LUA script çalıştırabiliyor.&lt;/li&gt;
+&lt;li&gt;PHP; Sadece composer paketi için kullanılıyor.&lt;/li&gt;
+&lt;li&gt;C#; Sadece nuget paketi için kullanılıyor.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;geli-tirme-at-lar&quot;&gt;Geliştirme Çatıları&lt;/h1&gt;
 
@@ -1334,13 +1337,19 @@ if(isset($_GET[&#39;download&#39;])){
 
 &lt;h1 id=&quot;veritabanlar&quot;&gt;Veritabanları&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;İlişkisel&lt;/strong&gt;
-- PostgreSQL&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;İlişkisel&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;NoSQL&lt;/strong&gt;
-- Redis
-- MongoDB
-- CouchDB&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PostgreSQL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;NoSQL&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Redis&lt;/li&gt;
+&lt;li&gt;MongoDB&lt;/li&gt;
+&lt;li&gt;CouchDB&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h1 id=&quot;mq&quot;&gt;MQ&lt;/h1&gt;
 
@@ -1359,6 +1368,7 @@ if(isset($_GET[&#39;download&#39;])){
 
 &lt;ul&gt;
 &lt;li&gt;Opensips&lt;/li&gt;
+&lt;li&gt;Kamailio&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;http-server&quot;&gt;HTTP Server&lt;/h1&gt;

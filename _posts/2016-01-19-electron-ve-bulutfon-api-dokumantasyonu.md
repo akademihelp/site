@@ -18,7 +18,7 @@ Electron; javascript, HTML ve CSS Kullanarak cross platform desktop app yazılma
 
 Electron `Node.js` ve `Chromium` üzerinden geliştirildiği için `webkit` nimetlerinden yararlanarak çok efektif projeler yaratılabilir.
 
-(Ben burada hemen bir parantez açmak istiyorum, yıllar önce Mozilla camiasinin öncülüğü ile başlayan IE'ye karsi alternatif bir tarayıcı oluşturma girişimine saygı duyarak, sadece `webkit` i üstün kılıp diğer yapıları yok sayarak bir şeyler yapmak, interneti IE olmasada, IE'nin yerine bir başka yapının tekeline bırakmaktır diye düşünüyorum ve bu bana çok da doğru gelmiyor. Elbette Electron'da benzer bir durum söz konusu değil, ama ortaya çıkan projelerde internetin geleceği adına bu gibi konular es geçilmemelidir. Eğer okumak isterseniz [soyle](http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/) bir yazıda mevcut.)
+(Ben burada hemen bir parantez açmak istiyorum, yıllar önce Mozilla camiasinin öncülüğü ile başlayan IE'ye karsi alternatif bir tarayıcı oluşturma girişimine saygı duyarak, sadece `webkit` i üstün kılıp diğer yapıları yok sayarak bir şeyler yapmak, interneti IE olmasada, IE'nin yerine bir başka yapının tekeline bırakmaktır diye düşünüyorum ve bu bana çok da doğru gelmiyor. Elbette Electron'da benzer bir durum söz konusu değil, ama ortaya çıkan projelerde internetin geleceği adına bu gibi konular es geçilmemelidir. Eğer okumak isterseniz [şöyle](http://www.nukeador.com/23/01/2015/we-have-to-fight-again-for-the-web/) bir yazıda mevcut.)
 
 ## Electron İçin Hazırlık
 

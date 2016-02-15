@@ -2,8 +2,6 @@
 
 [Bulutfon](https://www.bulutfon.com/), [Lab2023](http://lab2023.com/) ve [Netinternet](https://www.netinternet.com.tr/) geliştiricilerinin düzenli paylaşımlarıdır.
 
-# Hizli Baslagic
-
 ### Download
 
 * Repo clone code `git clone https://github.com/akademihelp/site.git`
@@ -24,4 +22,4 @@
 (ornegin [sunun](https://github.com/akademihelp/site/blob/develop/_posts/2015-12-25-akademide-ilk-gun.md) gibi) post taki baslangic tag larini gorebilirsiniz.
 * Gorsel eklemek icin `root/images` dizini kullanilabilir.
 Ornek kod `![Gorselin aciklamasi](/images/bulutfon-gelen-fakslarin-goruntulenmesi.png)`
-* Code highlight icin `redcarpet` kullanabilirsiniz
+* Code highlight icin `redcarpet` kullanabilirsiniz.

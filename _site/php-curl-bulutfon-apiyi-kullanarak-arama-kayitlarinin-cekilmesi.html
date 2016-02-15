@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article:http://ogp.me/ns/article#">
+
+    <!-- Global stuff -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <!-- Robots & indexing -->
+    
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+
+    <title>PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi</title>
+
+    <!-- Page specific content -->
+    <meta name="description" content="Merhaba arkadaşlar,Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kullanarak arama kayıtlarını çekip, listelemesini yapacağız. ">
+    
+        <meta name="keywords" content="bulutfon,cdr,api,curl,arama kayıtları,post">
+    
+    <meta name="author" content="http://akademi.help">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Web fonts -->
+    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <!-- Favicon -->
+    <link href="/images/favicon.png" rel="icon" type="image/ico" >
+    <!--[if IE]><link rel="shortcut icon" href="/images/favicon.ico"><![endif]-->
+
+    <link rel="canonical" href="http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Akademi Help" href="http://akademi.help/rss" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi" />
+    <meta property="og:description" content="Merhaba arkadaşlar,Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kullanarak arama kayıtlarını çekip, listelemesini yapacağız. " />
+    <meta property="og:image" content="/images/akademi-help.png" />
+    <meta property="og:site_name" content="https://akademi.help" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@akademi_help">
+    <meta name="twitter:title" content="PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi">
+    <meta name="twitter:description" content="Merhaba arkadaşlar,Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kullanarak arama kayıtlarını çekip, listelemesini yapacağız. ">
+    <meta name="twitter:creator" content="@akademi_help">
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">
+      <strong>
+        Akademi Help
+      </strong>
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/hakkimizda">Hakkımızda</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi</h1>
+    <p class="post-meta"><time datetime="2016-01-18T22:53:06+08:00" itemprop="datePublished">18-01-2016</time> | <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">huseyintunc</span></span></p>
+  </header>
+  <!-- Author -->
+  
+  <!-- Post -->
+  <div class="post-content" itemprop="articleBody">
+      <p>Merhaba arkadaşlar,
+Yazı dizimize bugün arama kayıtları ile devam edeceğiz. Bulutfon Apiyi kullanarak arama kayıtlarını çekip, listelemesini yapacağız. </p>
+
+<p>Eğer önceki yazıları okuduysanız az çok neler yapacağımızı tahmin ediyorsunuzdur. İlk olarak uygulamanın html yapısını oluşturacağız. Ardından Curl ile arama kayıtlarını çekip listeleme yapacağız. Artık gereksiz kod kalabalağı yapmamak için CSS kodlarını makaleye eklemiyorum. Basit haliyle anlatıp ihtiyaç duyanlar için kodları paylaşıyorum ki uygulamanın çalışan halini ve kodlarını inceleyebilesiniz. </p>
+
+<h1 id="uygulamam-z-n-ekran-g-r-nt-s">Uygulamamızın Ekran Görüntüsü</h1>
+
+<p><img src="/images/gelen-aramalar-ekran-goruntusu.png" alt="Uygulamanın ekran görüntüsü"></p>
+
+<p>Html yapısını oluşturarak kodları yazmaya başlayalım.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Bulutfon Api CDR<span class="nt">&lt;/title&gt;</span>
+    <span class="c">&lt;!-- Main CSS --&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/main.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Arayan<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Aranan<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Yönü<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Arama Tipi<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Tarih<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Ses Kaydı<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;th&gt;</span>Kapanma<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="c">&lt;!-- Örnek Kayıt --&gt;</span>
+        <span class="c">&lt;!-- Daha sonra bu alana arama kayıtlarını çekeceğiz. --&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>905068118260<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>905068118260<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Gelen<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Arama Tipi<span class="nt">&lt;/td&gt;</span> <span class="c">&lt;!-- Aramanın sesli arama mı veya fax mı olduğunu göstereceğimiz alan --&gt;</span>
+            <span class="nt">&lt;td&gt;</span>15-01-2016 19:59:00<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Yok<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Kapanma Sebebi<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="c">&lt;!-- Örnek Kayıt Bitiş --&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+    <span class="c">&lt;!-- Gelen verilere göre sayfalama yapacağımız alan. --&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pagination"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"current"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!-- Sayfalama bitiş --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+<h1 id="curl-ile-arama-kay-tlar-n-n-ekilmesi">Curl ile Arama Kayıtlarının Çekilmesi</h1>
+
+<p>Arama kayıtlarını çekerken dikkat etmemiz gereken birkaç önemli nokta var. Bunlardan ilki sayfa numarası, ikincisi ise limit değeri.  Sayfa numarası çekeceğimiz verilerden kaçıncı sayfayı çekmek istediğimizi gösteriyor. Limit ise her sayfada kaç veri olacağını belirtiyor. 
+Örneğin toplamda 23 kaydımız varsa limit değeri olarak 5 yazdığımızda, 5 sayfalık veri dönecektir. Lafı fazla uzatmadan php kısmına geçelim.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$token</span>          <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden aldığımız master token
+</span><span class="nv">$page</span>           <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Başlangıç değeri olarak sayfa numarasını 1 yapıyoruz.
+</span><span class="nv">$limit</span>          <span class="o">=</span> <span class="mi">4</span><span class="p">;</span> <span class="c1">// Her sayfada kaç veri gösterileceğini belirliyoruz.
+// Bu alanda eğer kullanıcı bir sayfa numarasına tıklamışsa sayfa değerini değiştirerek kullanıcının girdiği sayfanın verilerini çekiyoruz.
+</span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">])){</span>
+    <span class="nv">$page</span>       <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">];</span> <span class="c1">// Başka bir sayfaya tıklandıysa 1. sayfa yerine o sayfayı çektireceğiz.
+</span><span class="p">}</span>
+<span class="c1">// Burada ise arama kayıtlarını çekeceğimiz bulutfon tarafındaki servise gönderilecek parametreleri belirliyoruz.
+</span><span class="nv">$url</span>            <span class="o">=</span> <span class="s1">'https://api.bulutfon.com/cdrs?limit='</span><span class="o">.</span><span class="nv">$limit</span><span class="o">.</span><span class="s1">'&amp;page='</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">'&amp;access_token='</span><span class="o">.</span><span class="nv">$token</span><span class="p">;</span>
+<span class="nv">$curl</span>           <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYHOST</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_SSL_VERIFYPEER</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nv">$curl_response</span>  <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+<span class="nv">$result</span>         <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$curl_response</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nv">$cdrs</span>           <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'cdrs'</span><span class="p">];</span> <span class="c1">// Arama kayıtlarını değişkene atıyoruz.
+</span><span class="nv">$pages</span>          <span class="o">=</span> <span class="nv">$result</span><span class="p">[</span><span class="s1">'pagination'</span><span class="p">];</span> <span class="c1">// Sayfalama ve diğer bilgileri pages değişkenine atıyoruz.
+</span><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Bulutfon&#39;dan verileri çektiğimizde bize 2 tipte  veri dönüyor. Birincisi arama kayıtları, diğeri ise sayfalama ve diğer istatistiki bilgiler. Daha sonra bu sayfalama bilgilerini aşağıda sayfalama işlemi yaparken kullanacağız. </p>
+
+<h1 id="gelen-verilerin-listelenmesi">Gelen Verilerin Listelenmesi</h1>
+
+<p>Artık html sayfamız hazır, veriler elimizde. Geriye bu verileri listelemek kalıyor. Oluşturduğumuz tablodaki örnek kaydı aşağıdaki kodlarla değiştiriyoruz. </p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// Gelen verileri foreach döngüsüyle tek tek alıyoruz.
+</span><span class="k">foreach</span><span class="p">(</span><span class="nv">$cdrs</span> <span class="k">as</span> <span class="nv">$cdr</span><span class="p">){</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$cdr</span><span class="p">[</span><span class="s1">'caller'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$cdr</span><span class="p">[</span><span class="s1">'callee'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="cp">&lt;?php</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'direction'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"IN"</span><span class="p">)</span>
+        <span class="k">echo</span> <span class="s1">'&lt;td class="in"&gt;Gelen&lt;/td&gt;'</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">echo</span> <span class="s1">'&lt;td class="out"&gt;Giden&lt;/td&gt;'</span><span class="p">;</span>
+    <span class="cp">?&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$cdr</span><span class="p">[</span><span class="s1">'bf_calltype'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$cdr</span><span class="p">[</span><span class="s1">'call_time'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>
+        <span class="cp">&lt;?php</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'call_record'</span><span class="p">]</span><span class="o">==</span><span class="s2">"Var"</span><span class="p">)</span>
+            <span class="k">echo</span> <span class="s1">'&lt;a target="_blank" href="?download='</span><span class="o">.</span><span class="nv">$cdr</span><span class="p">[</span><span class="s1">'uuid'</span><span class="p">]</span><span class="o">.</span><span class="s1">'"&gt;İndir&lt;/a&gt;'</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="k">echo</span> <span class="s1">'Yok'</span><span class="p">;</span>
+        <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$cdr</span><span class="p">[</span><span class="s1">'hangup_cause'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="nt">&lt;/td&gt;</span>
+<span class="nt">&lt;/tr&gt;</span>
+<span class="cp">&lt;?php</span> <span class="p">}</span> <span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Kullanıcıya tüm verileri tek sayfada göstermek yerine sayfalama işlemi yapıyoruz.  Sayfa sayısını ise bize gelen pagination verilerine göre belirliyoruz. </p>
+<div class="highlight"><pre><code class="language-" data-lang="">&lt;!-- Gelen verilere göre sayfalama yapıyoruz. --&gt;
+&lt;div class="pagination"&gt;
+    &lt;?php
+    for ($i=1;$i&lt;=$pages['total_pages'];$i++){
+        if ($i==$page)
+            echo '&lt;a class="current"&gt;'.$i.'&lt;/a&gt;';
+        else
+            echo '&lt;a href="?page='.$i.'"&gt;'.$i.'&lt;/a&gt;';
+    }
+    ?&gt;
+&lt;/div&gt;
+</code></pre></div>
+<p>Son olarak ses kaydı olan aramalar için ses dosyasını dinleme işlemini gerçekleştiriyoruz. </p>
+<div class="highlight"><pre><code class="language-php" data-lang="php">// Ses Dosyasını Dinleme İşlemi
+if(isset($_GET['download'])){
+    $url    = 'https://api.bulutfon.com/call-records/'.$_GET['download'].'/stream';
+    header('Location: '.$url . http_build_query(array(
+            'access_token' =&gt; $token,
+        )));
+}
+</code></pre></div>
+<p>Daha fazla veriye ihtiyaç duyanlar için Bulutfon&#39;dan gelen verilerin tam listesi;
+<img src="/images/veriler-tam-liste.png" alt=""></p>
+
+<p>Soru ve isteklerinizi yorum olarak belirtebilirsiniz.<br>
+Örnek kodları <a href="https://github.com/hsyntnc/BulutfonSampleApps/tree/master/CDR">buraya</a> tıklayarak inceleyebilir, uygulamanın çalışan hali içinse <a href="http://tunc.tk/Bulutfon/CDR/">buraya</a> tıklayabilirsiniz.</p>
+
+<p>Faydalı olması dileğiyle.
+İyi çalışmalar.</p>
+
+  </div>
+  <hr>
+  <!--Tags List-->
+  <div class="post-content">
+    <ul class="tag-list-inline">
+      <li>
+        Etiketler:
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#bulutfon">
+          bulutfon
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#cdr">
+          cdr
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#api">
+          api
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#curl">
+          curl
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#arama-kayıtları">
+          arama kayıtları
+        </a>
+      </li>
+      
+      <li>
+        <a class="post-badge" href="/tag.html#post">
+          post
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr>
+  <!--Social Icons-->
+  <div class="post-content">
+    <ul class="social-media-list">
+      <li>
+        Paylaş:
+      </li>
+      <li>
+        <div class="fb-share-button" data-href="" data-layout="button"></div>
+      </li>
+      <li>
+        <a href="" class="twitter-share-button"{count} data-via="akademi_help">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+      <li>
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: tr_TR</script>
+        <script type="IN/Share"></script>
+      </li>
+      <li>
+        <a target="_blank" class="btn btn-email btn-sm" href="mailto:arkadasinizin@epostaadresi.com?subject=PHP, Curl, Bulutfon Apiyi Kullanarak Arama Kayıtlarının Çekilmesi" title="Email ile paylaşabilirsiniz">
+          e-posta
+        </a>
+      </li>
+      <li>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script src="https://apis.google.com/js/platform.js" async defer>
+          {lang: 'tr'}
+        </script>
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-annotation="none"></div>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <!-- Author -->
+  <div class="post-content" itemprop="articleFooter">
+    <img src="http://www.gravatar.com/avatar/7eab3defefdd13406fa68ed21d79795e?s=40">
+    <small class="author">Hüseyin TUNÇ</small> -
+    <small class="author">https://github.com/hsyntnc</small>
+  </div>
+  <hr>
+  <!-- Disqus -->
+  <div class="post-content">
+    <div id="disqus_thread"></div>
+    <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+    var disqus_config = function () {
+    this.page.url = 'http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi'; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = 'http://akademi.help/php-curl-bulutfon-apiyi-kullanarak-arama-kayitlarinin-cekilmesi'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//akademihelp.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <ul class="contact-list">
+          <li>Akademi Help Iletisim Bilgileri</li>
+          
+          <li>
+            Github:
+            <a href="https://github.com/akademihelp">
+              akademihelp
+            </a>
+          </li>
+          
+          <li>
+            Bizi
+            <a href="/feed.xml"> RSS ile </a>
+            takip edebilirsiniz.
+          </li>
+          <li>
+            <a target="_blank" href="https://www.bulutfon.com/">
+              <small>
+                bulutfon.com
+              </small>
+            </a>|
+            <a target="_blank" href="http://www.lab2023.com/">
+              <small>
+                lab2023.com
+              </small>
+              </a>|
+            <a target="_blank" href="https://www.netinternet.com.tr">
+              <small>
+                netinternet.com.tr
+              </small>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-2">
+      </div>
+      <div class="footer-col footer-col-1 text-right">
+        <p>Bulutfon, Lab2023 ve Netinternet geliştiricilerinin düzenli paylaşımlarıdır.
+</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71823740-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  </body>
+
+</html>

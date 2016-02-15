@@ -178,8 +178,10 @@
 
 <h1 id="curl-lemleri">Curl İşlemleri</h1>
 <div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
-    <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>  <span class="c1">// Curl oturumunu başlattık     curl_setopt($ch,CURLOPT_URL,'[https://api.bulutfon.com/messages](https://api.bulutfon.com/messages)'); // SMS gönderimi için kullanacağımız api adresi
-</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir     curl_setopt($ch,CURLOPT_POSTFIELDS,'title='.$title.'&amp;access_token='.$token.'&amp;receivers='.$receivers.'&amp;content='.$message); //  Burada ise göndereceğimiz parametreleri belirtiyoruz.
+    <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span> <span class="c1">// Curl oturumunu başlattık
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">'https://api.bulutfon.com/messages'</span><span class="p">);</span> <span class="c1">// SMS gönderimi için kullanacağımız api adresi
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
+</span>    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">'title='</span> <span class="o">.</span> <span class="nv">$title</span> <span class="o">.</span> <span class="s1">'&amp;access_token='</span> <span class="o">.</span> <span class="nv">$token</span> <span class="o">.</span> <span class="s1">'&amp;receivers='</span> <span class="o">.</span> <span class="nv">$receivers</span> <span class="o">.</span> <span class="s1">'&amp;content='</span> <span class="o">.</span> <span class="nv">$message</span><span class="p">);</span> <span class="c1">//  Burada ise göndereceğimiz parametreleri belirtiyoruz.
 </span>    <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl calıştır.
 </span>    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl oturumunu kapat
 </span>  <span class="cp">?&gt;</span>
@@ -191,29 +193,27 @@
 <p>Uygulamanın tam kodlarına <a href="https://gist.github.com/hsyntnc/4a9334feb1da3030b0f2">buraya</a> tıklayarak ulaşabilirsiniz.</p>
 <div class="highlight"><pre><code class="language-php" data-lang="php">  <span class="cp">&lt;?php</span>
   <span class="cm">/*
-  Bulutfon Api
-  SMS Gönderme
-  */</span>
+   * Bulutfon Api
+   * SMS Gönderme
+   */</span>
   <span class="nv">$token</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon panelinden alcağınız master token
 </span>  <span class="nv">$title</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span> <span class="c1">// Bulutfon üzerinden onaylattığınız sms başlığı
 </span>  <span class="k">if</span> <span class="p">(</span><span class="o">@</span><span class="nv">$_POST</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Formun post edilip edilmediğinin kontrolü
-</span>    <span class="nv">$receivers</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
-</span>    <span class="nv">$message</span>   <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'message'</span><span class="p">];</span> <span class="c1">// Formdan gelen mesaj alanı
-</span>    <span class="k">if</span> <span class="p">(</span><span class="nv">$receivers</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">||</span> <span class="nv">$message</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Formdan gelen verilerin boş olup olmadığını kontrol ediyoruz.
-</span>        <span class="k">echo</span> <span class="s2">"Lütfen tüm alanları doldurunuz."</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span> <span class="c1">// Curl oturumunu başlattık
-</span>        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">'[https://api.bulutfon.com/messages](https://api.bulutfon.com/messages)'</span><span class="p">);</span>
-        <span class="c1">// SMS gönderimi için kullanacağımız api adresi
-</span>        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-        <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
-</span>        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">'title='</span> <span class="o">.</span> <span class="nv">$title</span> <span class="o">.</span> <span class="s1">'&amp;access_token='</span> <span class="o">.</span> <span class="nv">$token</span> <span class="o">.</span> <span class="s1">'&amp;receivers='</span> <span class="o">.</span> <span class="nv">$receivers</span> <span class="o">.</span> <span class="s1">'&amp;content='</span> <span class="o">.</span> <span class="nv">$message</span><span class="p">);</span> <span class="c1">//  Burada ise göndereceğimiz parametreleri belirtiyoruz.
-</span>        <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl calıştır.
-</span>        <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl oturumunu kapat
-</span>    <span class="p">}</span>
+</span>      <span class="nv">$receivers</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'receivers'</span><span class="p">];</span> <span class="c1">// Formdan gelen alıcı listesi
+</span>      <span class="nv">$message</span>   <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'message'</span><span class="p">];</span> <span class="c1">// Formdan gelen mesaj alanı
+</span>      <span class="k">if</span> <span class="p">(</span><span class="nv">$receivers</span> <span class="o">==</span> <span class="s2">""</span> <span class="o">||</span> <span class="nv">$message</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Formdan gelen verilerin boş olup olmadığını kontrol ediyoruz.
+</span>          <span class="k">echo</span> <span class="s2">"Lütfen tüm alanları doldurunuz."</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span> <span class="c1">// Curl oturumunu başlattık
+</span>          <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">'https://api.bulutfon.com/messages'</span><span class="p">);</span> <span class="c1">// SMS gönderimi için kullanacağımız api adresi
+</span>          <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// Burada curl post kullanacagımızı belirttik 1 yerine  true de denebilir
+</span>          <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="s1">'title='</span> <span class="o">.</span> <span class="nv">$title</span> <span class="o">.</span> <span class="s1">'&amp;access_token='</span> <span class="o">.</span> <span class="nv">$token</span> <span class="o">.</span> <span class="s1">'&amp;receivers='</span> <span class="o">.</span> <span class="nv">$receivers</span> <span class="o">.</span> <span class="s1">'&amp;content='</span> <span class="o">.</span> <span class="nv">$message</span><span class="p">);</span> <span class="c1">//  Burada ise göndereceğimiz parametreleri belirtiyoruz.
+</span>          <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl calıştır.
+</span>          <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> <span class="c1">// Curl oturumunu kapat
+</span>      <span class="p">}</span>
   <span class="p">}</span>
   <span class="cp">?&gt;</span>
-<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;title&gt;</span>Bulutfon SMS Gönderme<span class="nt">&lt;/title&gt;</span>
@@ -225,8 +225,7 @@
         <span class="nt">&lt;tr&gt;</span>
           <span class="nt">&lt;td</span> <span class="na">valign=</span><span class="s">"top"</span> <span class="na">width=</span><span class="s">"150"</span><span class="nt">&gt;</span>Alıcı Listesi<span class="nt">&lt;/td&gt;</span>
           <span class="nt">&lt;td&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"receivers"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;br&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"receivers"</span><span class="nt">&gt;&lt;br&gt;</span>
             <span class="nt">&lt;small&gt;</span>Birden fazla alıcı girmek için araya virgül (,) işareti koyunuz. Lütfen numaraları ülke kodu ile birlikte giriniz ör: 905326203322<span class="nt">&lt;/small&gt;</span>
           <span class="nt">&lt;/td&gt;</span>
         <span class="nt">&lt;/tr&gt;</span>
@@ -238,14 +237,12 @@
         <span class="nt">&lt;/tr&gt;</span>
         <span class="nt">&lt;tr&gt;</span>
           <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
-          <span class="nt">&lt;td&gt;</span>
-            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Gönder<span class="nt">&lt;/button&gt;</span>
-          <span class="nt">&lt;/td&gt;</span>
+          <span class="nt">&lt;td&gt;&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Gönder<span class="nt">&lt;/button&gt;&lt;/td&gt;</span>
         <span class="nt">&lt;/tr&gt;</span>
       <span class="nt">&lt;/table&gt;</span>
     <span class="nt">&lt;/form&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+  <span class="nt">&lt;/html&gt;</span>
 </code></pre></div>
 <p>Faydalı olması dileğiyle.</p>
 

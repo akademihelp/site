@@ -6,9 +6,41 @@
 </description>
     <link>http://akademi.help/</link>
     <atom:link href="http://akademi.help/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Feb 2016 16:11:11 +0800</pubDate>
-    <lastBuildDate>Mon, 15 Feb 2016 16:11:11 +0800</lastBuildDate>
+    <pubDate>Wed, 17 Feb 2016 16:12:28 +0800</pubDate>
+    <lastBuildDate>Wed, 17 Feb 2016 16:12:28 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>Akademide Ilk Video</title>
+        <description>&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+  &lt;iframe class=&quot;embed-responsive-item&quot; src=&quot;//www.youtube.com/embed/bnIs7q_-Olc&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;video-eklemek-i-in&quot;&gt;Video Eklemek Için&lt;/h2&gt;
+
+&lt;p&gt;Etikelere &lt;code&gt;video&lt;/code&gt; tag&amp;#39;i eklenmelidir.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;embed-responsive embed-responsive-16by9&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;iframe&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;embed-responsive-item&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;//www.youtube.com/embed/bnIs7q_-Olc&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;allowfullscreen=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;iframe&lt;/code&gt; kod bloğunda sadece videonun ID&amp;#39;si değiştirilerek video eklenebilir.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Feb 2016 11:36:23 +0800</pubDate>
+        <link>http://akademi.help/akademide-ilk-video</link>
+        <guid isPermaLink="true">http://akademi.help/akademide-ilk-video</guid>
+        
+        <category>akademi</category>
+        
+        <category>youtube</category>
+        
+        <category>video</category>
+        
+        
+        <category>introduction</category>
+        
+      </item>
     
       <item>
         <title>Electron ve Bulutfon Api Dokümantosyonu</title>

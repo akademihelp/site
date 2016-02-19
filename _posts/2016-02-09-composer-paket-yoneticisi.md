@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'Composer Nedir? Composer Paket Yöneticisi Nasıl Kurulur?'
-date: '2016-02-17 11:36:23 +0800'
-author: coskuntekin
+title: 'Composer Paket Yöneticisi'
+date: '2016-02-09 11:36:23 +0800'
+author: huseyintunc
 categories:
   - introduction
 tags:

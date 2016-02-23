@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Electron ve Bulutfon Api Dökümantasyonu'
+title: 'Electron ve Bulutfon Api Dokümantasyonu'
 date: '2016-01-19 11:36:23 +0800'
 author: coskuntekin
 categories:
@@ -48,9 +48,9 @@ Bizler [Bulutfon Api Dokumantosyonu](https://github.com/bulutfon/bulutfon-api-el
 
 Electron, [Android](http://developer.android.com/reference/android/webkit/WebView.html) ve [.NET](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) geliştiricilerinin aşina olduğu [webview](http://electron.atom.io/docs/v0.36.4/api/web-view-tag/) özelliğine sahip.
 
-Bizler [Bulutfon api dökümantasyonu](https://github.com/bulutfon/bulutfon-api-electron) için bu özellikten yararlandık.
+Bizler [Bulutfon api dokümantasyonu](https://github.com/bulutfon/bulutfon-api-electron) için bu özellikten yararlandık.
 
-Kısaca Bulutfon API dökümantasyonu reposuna göz atacak olursak;
+Kısaca Bulutfon API dokümantasyonu reposuna göz atacak olursak;
 
 ```
 git clone https://github.com/bulutfon/bulutfon-api-electron.git
@@ -112,7 +112,7 @@ Bunun için [Vagrant](https://www.vagrantup.com/) ya da [Virtual Box](https://ww
 
 ## Son Olarak
 
-Genel hatlarıyla Electron'u "Bulutfon Api Dökümantasyonu" üzerinden anlatmaya çalıştım.
+Genel hatlarıyla Electron'u "Bulutfon Api Dokümantasyonu" üzerinden anlatmaya çalıştım.
 Bulutfon Api Dokümantasyonu basit bir yapıya sahip, yani herhangi bir üçüncü parti framework ya da kütüphane kullanmıyor.
 
 Ama ilerleyen zaman için Bulutfon için gelistirdigimiz MVP'yi (yangying) duyuracağız ve bu uygulama için de AngularJS gibi bazı framework ve kütüphaneleri kullandık. Bu bağlamda "yangying" (Bulutfon MVP) electron için çok daha gelişmiş bir örnek olacaktır. Yine akademi.help altında konuyu etraflıca ele alan bir yazı yazmayı düşünüyorum. Takipte kalın.
